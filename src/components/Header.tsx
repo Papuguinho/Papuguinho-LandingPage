@@ -42,7 +42,7 @@ const Header = () => {
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection("hero")}>
           <img src={papuguinhoLogo} alt="Papuguinho" className="h-10 w-10 object-contain" />
-          <span className="text-xl font-bold text-primary">Papuguinho</span>
+          <span className="text-xl font-bold text-primary font-display">Papuguinho</span>
         </div>
 
         {/* Desktop Navigation */}
