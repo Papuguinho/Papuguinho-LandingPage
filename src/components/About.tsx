@@ -1,12 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { MessageSquare, Heart, Users } from "lucide-react";
-
 const About = () => {
-  return (
-    <section className="py-20 bg-background">
+  return <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-bold text-foreground md:text-4xl lg:text-3xl">
             O que é Comunicação Aumentativa?
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -56,8 +54,6 @@ const About = () => {
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;

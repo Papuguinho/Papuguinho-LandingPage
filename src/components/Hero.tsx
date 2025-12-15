@@ -5,7 +5,7 @@ const Hero = () => {
       <div className="container mx-auto px-4">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
           <div className="animate-fade-in-up space-y-6 text-center lg:text-left">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="text-4xl tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-5xl font-semibold text-center">
               Dê voz a quem{" "}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 mais precisa
