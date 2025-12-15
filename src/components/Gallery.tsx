@@ -1,31 +1,42 @@
 import { Card } from "@/components/ui/card";
-import { ImageIcon } from "lucide-react";
+import papuguinho01 from "@/assets/gallery/papuguinho01.jpg";
+import papuguinho02 from "@/assets/gallery/papuguinho02.jpg";
+import papuguinho03 from "@/assets/gallery/papuguinho03.jpg";
+import papuguinho04 from "@/assets/gallery/papuguinho04.jpg";
+import papuguinho05 from "@/assets/gallery/papuguinho05.jpg";
+import papuguinho06 from "@/assets/gallery/papuguinho06.jpg";
 
 const Gallery = () => {
   const screenshots = [
     {
-      title: "Prancha de Comunicação",
-      description: "Interface intuitiva com ícones coloridos",
+      title: "Tela de Cadastro",
+      description: "Crie sua conta de forma rápida e fácil",
+      image: papuguinho01,
     },
     {
-      title: "Categorias Organizadas",
-      description: "Alimentos, emoções, ações e muito mais",
+      title: "Tela de Login",
+      description: "Acesse sua conta com segurança",
+      image: papuguinho02,
     },
     {
-      title: "Formação de Frases",
-      description: "Construção visual de sentenças completas",
+      title: "Prancha Geral",
+      description: "Comunicação visual com ícones intuitivos",
+      image: papuguinho03,
     },
     {
-      title: "Feedback Sonoro",
-      description: "Reprodução de áudio para cada palavra",
+      title: "Pastas de Pranchas",
+      description: "Categorias organizadas por temas",
+      image: papuguinho04,
     },
     {
-      title: "Personalização",
-      description: "Adapte as pranchas às necessidades da criança",
+      title: "Prancha de Ações",
+      description: "Verbos e ações para formar frases",
+      image: papuguinho05,
     },
     {
-      title: "Interface Acessível",
-      description: "Design pensado para facilitar o uso",
+      title: "Escolha de Avatar",
+      description: "Personalize com diferentes papuguinhos",
+      image: papuguinho06,
     },
   ];
 
@@ -46,8 +57,12 @@ const Gallery = () => {
               className="overflow-hidden hover:shadow-lg transition-shadow duration-300 animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <ImageIcon className="h-16 w-16 text-primary/40" />
+              <div className="aspect-video bg-gradient-to-br from-primary/10 to-accent/10 overflow-hidden">
+                <img 
+                  src={screenshot.image} 
+                  alt={screenshot.title}
+                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+                />
               </div>
               <div className="p-4">
                 <h3 className="font-semibold text-lg mb-2">{screenshot.title}</h3>
