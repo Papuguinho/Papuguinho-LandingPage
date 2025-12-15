@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        'display': ['Chewy', 'cursive'],
+        'display': ['"More Sugar"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
