@@ -1,22 +1,16 @@
 import { Card } from "@/components/ui/card";
-import { Play } from "lucide-react";
 
 const VideoDemo = () => {
   const videos = [
     {
       title: "Como usar o Papuguinho",
       description: "Tutorial completo para começar a usar o aplicativo",
-      duration: "5:23",
+      videoSrc: "/videos/como-usar-papuguinho.mp4",
     },
     {
-      title: "Criando pranchas personalizadas",
-      description: "Aprenda a adaptar o app às necessidades da criança",
-      duration: "4:15",
-    },
-    {
-      title: "Depoimento de Especialistas",
-      description: "Fonoaudiólogos falam sobre CAA e o Papuguinho",
-      duration: "8:42",
+      title: "Papuguinho",
+      description: "Conheça o aplicativo Papuguinho",
+      videoSrc: "/videos/papuguinho-video.mp4",
     },
   ];
 
@@ -30,19 +24,22 @@ const VideoDemo = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {videos.map((video, index) => (
             <Card
               key={index}
-              className="overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer group animate-fade-in-up"
+              className="overflow-hidden hover:shadow-lg transition-shadow duration-300 animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="aspect-video bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center relative">
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
-                <Play className="h-16 w-16 text-white relative z-10 group-hover:scale-110 transition-transform" />
-                <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                  {video.duration}
-                </div>
+              <div className="aspect-video">
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                >
+                  <source src={video.videoSrc} type="video/mp4" />
+                  Seu navegador não suporta vídeos.
+                </video>
               </div>
               <div className="p-4">
                 <h3 className="font-semibold text-lg mb-2">{video.title}</h3>
