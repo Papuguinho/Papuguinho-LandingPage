@@ -1,73 +1,67 @@
-# Welcome to your Lovable project
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1ddd12b3-ef3a-4891-b9c6-8bc24ed7a96c" width="100%" alt="Papuguinho Banner">
+</p> 
 
-## Project info
+---
 
-**URL**: https://lovable.dev/projects/be9971a0-5be3-488b-99f4-b5f14266923b
+# 🌐 Papuguinho: Landing Page Informativa
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+### ✨ O que é este repositório? | What is this repository?
 
-**Use Lovable**
+<p align="justify">
+🇧🇷 <b>Português:</b> Este é o código-fonte do site oficial do projeto Papuguinho. A Landing Page tem como objetivo centralizar informações sobre o aplicativo de CAA, apresentar artigos científicos relacionados, novidades do projeto e guiar o usuário para as plataformas de download. É o nosso principal ponto de comunicação com a comunidade e profissionais da saúde/educação.
+</p>
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/be9971a0-5be3-488b-99f4-b5f14266923b) and start prompting.
+<p align="justify">
+🇺🇸 <b>English:</b> This is the source code for the official Papuguinho website. The Landing Page aims to centralize information about the AAC app, present related scientific papers, project news, and guide users to the download platforms. It is our main communication point with the community and health/education professionals.
+</p>
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+### 🔗 Link de Acesso | Live Preview
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+🇧🇷 O site pode ser acessado através do link oficial:<br>
+🇺🇸 *The website can be accessed through the official link:*
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+👉 [**papuguinho.com**](https://app.papuguinho.com) *(Substitua pelo link final)*
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### 🎯 Objetivos do Site | Website Goals
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+* **🇧🇷 Divulgação Científica:** Publicação de resumos e artigos produzidos durante a Iniciação Científica no IFSP.
+* **🇺🇸 Scientific Outreach:** Publication of abstracts and papers produced during Research at IFSP.
+* **🇧🇷 Central de Ajuda:** Manuais e instruções de como utilizar o aplicativo Papuguinho.
+* **🇺🇸 Help Center:** Manuals and instructions on how to use the Papuguinho application.
+* **🇧🇷 Transparência:** Informações sobre o projeto ser gratuito e open-source.
+* **🇺🇸 Transparency:** Information about the project being free and open-source.
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+### 🛠️ Tecnologias | Tech Stack
 
-**Edit a file directly in GitHub**
+| Categoria / Category | Tecnologia / Tech |
+| :--- | :--- |
+| **Desenvolvimento Web** | Flutter / Web |
+| **Hospedagem / Hosting** | Firebase Hosting |
+| **Design / UI-UX** | Figma |
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+### 🤝 Apoio Institucional | Institutional Support
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Este site e o projeto Papuguinho são vinculados ao **IFSP - Campus Jacareí** e ao **Grupo de Pesquisa MIND (Inclusão e Diversidade)**.
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+### ⚖️ Licença | License
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+🇧🇷 Assim como o aplicativo, este site é licenciado sob a **GNU GPLv3**. <br>
+🇺🇸 *Like the app, this website is licensed under the **GNU GPLv3**.*
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/be9971a0-5be3-488b-99f4-b5f14266923b) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+<p align="center">
+  Conheça mais sobre a nossa causa no site oficial.<br>
+  <i>Learn more about our cause on the official website.</i>
+</p>
