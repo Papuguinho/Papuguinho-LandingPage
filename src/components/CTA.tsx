@@ -22,14 +22,6 @@ const CTA = () => {
               <Download className="w-5 h-5 mr-2" />
               Baixar para Android
             </Button>
-            <Button 
-              size="lg"
-              variant="outline"
-              className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
-            >
-              <Download className="w-5 h-5 mr-2" />
-              Baixar para iOS
-            </Button>
           </div>
 
           <div className="pt-8 border-t border-primary-foreground/20">
@@ -39,9 +31,12 @@ const CTA = () => {
             <Button 
               variant="outline"
               className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
+              asChild
             >
-              <Mail className="w-5 h-5 mr-2" />
-              Fale Conosco
+              <a href="mailto:papuguinho@gmail.com" target="_blank" rel="noopener noreferrer">
+                <Mail className="w-5 h-5 mr-2" />
+                Fale Conosco
+              </a>
             </Button>
           </div>
         </div>
