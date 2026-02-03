@@ -22,6 +22,15 @@ const CTA = () => {
               <Download className="w-5 h-5 mr-2" />
               Baixar para Android
             </Button>
+            <Button 
+              size="lg"
+              className="bg-background text-primary hover:bg-background/90 shadow-xl"
+              asChild
+            >
+              <a href="https://app.papuguinho.com" target="_blank" rel="noopener noreferrer">
+                Versão Web
+              </a>
+            </Button>
           </div>
 
           <div className="pt-8 border-t border-primary-foreground/20">
