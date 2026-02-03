@@ -25,7 +25,7 @@
 🇧🇷 O site pode ser acessado através do link oficial:<br>
 🇺🇸 *The website can be accessed through the official link:*
 
-👉 [**papuguinho.com**](https://app.papuguinho.com) *(Substitua pelo link final)*
+👉 [**www.papuguinho.com**](https://www.papuguinho.com/)
 
 ---
 
