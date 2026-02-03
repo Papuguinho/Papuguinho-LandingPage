@@ -40,16 +40,6 @@
 
 ---
 
-### 🛠️ Tecnologias | Tech Stack
-
-| Categoria / Category | Tecnologia / Tech |
-| :--- | :--- |
-| **Desenvolvimento Web** | Flutter / Web |
-| **Hospedagem / Hosting** | Firebase Hosting |
-| **Design / UI-UX** | Figma |
-
----
-
 ### 🤝 Apoio Institucional | Institutional Support
 
 Este site e o projeto Papuguinho são vinculados ao **IFSP - Campus Jacareí** e ao **Grupo de Pesquisa MIND (Inclusão e Diversidade)**.
