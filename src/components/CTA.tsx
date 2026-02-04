@@ -38,8 +38,8 @@ const CTA = () => {
               Tem dúvidas ou sugestões? Entre em contato!
             </p>
             <Button 
-              variant="outline"
-              className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
+              size="lg"
+              className="bg-background text-primary hover:bg-background/90 shadow-xl"
               asChild
             >
               <a href="mailto:papuguinho@gmail.com" target="_blank" rel="noopener noreferrer">
