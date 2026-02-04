@@ -28,7 +28,7 @@ const CTA = () => {
               asChild
             >
               <a href="https://app.papuguinho.com" target="_blank" rel="noopener noreferrer">
-                Versão Web
+                Abrir na web
               </a>
             </Button>
           </div>
