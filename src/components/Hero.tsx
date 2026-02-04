@@ -19,7 +19,12 @@ const Hero = () => {
               <Button size="lg" className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all">
                 Baixar Grátis
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary/5">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-2 border-primary text-primary hover:bg-primary/5"
+                onClick={() => document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })}
+              >
                 Saiba Mais
               </Button>
             </div>
