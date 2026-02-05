@@ -4,9 +4,7 @@ const About = () => {
   return <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-3xl font-bold text-foreground md:text-4xl lg:text-3xl">
-            O que é Comunicação Aumentativa?
-          </h2>
+          <h2 className="text-3xl font-bold text-foreground md:text-4xl lg:text-3xl">O QUE É COMUNICAÇÃO AUMENTATIVA ALTERNATIVA?</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             A CAA é um conjunto de ferramentas e estratégias que ajudam pessoas 
             com dificuldades de comunicação a expressar seus pensamentos, necessidades e sentimentos.
