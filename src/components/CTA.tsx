@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Download, Mail } from "lucide-react";
+import { Download, Globe, Mail } from "lucide-react";
 
 const CTA = () => {
   return (
@@ -28,6 +28,7 @@ const CTA = () => {
               asChild
             >
               <a href="https://app.papuguinho.com" target="_blank" rel="noopener noreferrer">
+                <Globe className="w-5 h-5 mr-2" />
                 Abrir na web
               </a>
             </Button>
