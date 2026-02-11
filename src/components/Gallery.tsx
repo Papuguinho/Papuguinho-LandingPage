@@ -57,11 +57,11 @@ const Gallery = () => {
               className="overflow-hidden hover:shadow-lg transition-shadow duration-300 animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="aspect-video bg-gradient-to-br from-primary/10 to-accent/10 overflow-hidden">
+              <div className="aspect-video bg-gradient-to-br from-primary/5 to-accent/5 overflow-hidden flex items-center justify-center">
                 <img 
                   src={screenshot.image} 
                   alt={screenshot.title}
-                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-4">
