@@ -14,8 +14,8 @@ const Gallery = () => {
       image: papuguinho01,
     },
     {
-      title: "Tela de Login",
-      description: "Acesse sua conta com segurança",
+      title: "Entrar no Histórico",
+      description: "Acesse o histórico com e-mail e senha",
       image: papuguinho02,
     },
     {
@@ -24,18 +24,18 @@ const Gallery = () => {
       image: papuguinho03,
     },
     {
-      title: "Pastas de Pranchas",
+      title: "Pranchas Temáticas",
       description: "Categorias organizadas por temas",
       image: papuguinho04,
     },
     {
-      title: "Prancha de Ações",
-      description: "Verbos e ações para formar frases",
+      title: "Modo Infantil",
+      description: "Fixe a tela para uso seguro por crianças",
       image: papuguinho05,
     },
     {
-      title: "Escolha de Avatar",
-      description: "Personalize com diferentes papuguinhos",
+      title: "Personalize seu App",
+      description: "Crie pictogramas e edite à sua maneira",
       image: papuguinho06,
     },
   ];
