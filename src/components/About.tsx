@@ -4,7 +4,7 @@ const About = () => {
   return <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-3xl font-bold text-foreground md:text-4xl lg:text-3xl">O QUE É COMUNICAÇÃO AUMENTATIVA ALTERNATIVA?</h2>
+          <h2 className="text-3xl font-bold text-foreground md:text-4xl lg:text-3xl">O QUE É COMUNICAÇÃO ALTERNATIVA AUMENTATIVA?</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             A CAA é um conjunto de ferramentas e estratégias que ajudam pessoas 
             com dificuldades de comunicação a expressar seus pensamentos, necessidades e sentimentos.
@@ -16,9 +16,9 @@ const About = () => {
             <div className="w-16 h-16 mx-auto rounded-full bg-primary/10 flex items-center justify-center">
               <MessageSquare className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="text-xl font-semibold text-foreground">
-              Expressão Facilitada
-            </h3>
+            <h3 className="text-xl font-semibold text-foreground">EXPRESSÃO FACILITADA
+
+          </h3>
             <p className="text-muted-foreground">
               Permite que crianças formem frases tocando em ícones visuais, 
               transformando imagens em palavras faladas.
