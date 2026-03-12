@@ -30,6 +30,8 @@ const Header = () => {
     { label: "Galeria", id: "gallery" },
     { label: "Vídeos", id: "videos" },
     { label: "FAQ", id: "faq" },
+    { label: "Parcerias", id: "partners" },
+    { label: "Desenvolvedores", id: "developers" },
   ];
 
   return (
