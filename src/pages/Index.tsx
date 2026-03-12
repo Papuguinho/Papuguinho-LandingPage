@@ -7,6 +7,7 @@ import VideoDemo from "@/components/VideoDemo";
 import FAQ from "@/components/FAQ";
 import Benefits from "@/components/Benefits";
 import CTA from "@/components/CTA";
+import Partners from "@/components/Partners";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -26,6 +27,7 @@ const Index = () => {
       <VideoDemo />
       <FAQ />
       <Benefits />
+      <Partners />
       <div id="cta">
         <CTA />
       </div>
