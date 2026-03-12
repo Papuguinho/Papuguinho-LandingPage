@@ -1,7 +1,9 @@
+import { Instagram, Linkedin, Github } from "lucide-react";
+
 const Footer = () => {
   return <footer className="bg-muted py-12">
       <div className="container mx-auto px-4">
-        <div className="grid gap-8 md:grid-cols-3 mb-8">
+        <div className="grid gap-8 md:grid-cols-4 mb-8">
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-foreground font-display">Papuguinho</h3>
             <p className="text-muted-foreground">
@@ -41,6 +43,39 @@ const Footer = () => {
               Desenvolvido com ❤️ por estudantes do{" "}
               <a href="https://www.ifsp.edu.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-justify">Instituto Federal de São Paulo - Campus Jacareí</a>
             </p>
+          </div>
+
+          <div className="space-y-4">
+            <h4 className="font-semibold text-foreground">Redes Sociais</h4>
+            <div className="flex gap-4">
+              <a 
+                href="https://www.instagram.com/papuguinho?igsh=MXFteGN3djV3emQ3OA==" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram size={20} />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/papuguinho" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={20} />
+              </a>
+              <a 
+                href="https://github.com/Papuguinho" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                aria-label="GitHub"
+              >
+                <Github size={20} />
+              </a>
+            </div>
           </div>
         </div>
 
