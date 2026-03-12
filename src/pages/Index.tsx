@@ -27,6 +27,7 @@ const Index = () => {
       <VideoDemo />
       <FAQ />
       <Benefits />
+      <Partners />
       <div id="cta">
         <CTA />
       </div>
