@@ -3,7 +3,7 @@ import { Instagram, Linkedin, Github } from "lucide-react";
 const Footer = () => {
   return <footer className="bg-muted py-12">
       <div className="container mx-auto px-4">
-        <div className="grid gap-8 md:grid-cols-4 mb-8">
+        <div className="grid gap-8 md:grid-cols-3 mb-8">
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-foreground font-display">Papuguinho</h3>
             <p className="text-muted-foreground">
@@ -11,31 +11,6 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="space-y-4">
-            <h4 className="font-semibold text-foreground">Links Úteis</h4>
-            <ul className="space-y-2 text-muted-foreground">
-              <li>
-                <a href="#" className="hover:text-primary transition-colors">
-                  Sobre o Projeto
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary transition-colors">
-                  Como Usar
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary transition-colors">
-                  Recursos
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary transition-colors">
-                  Suporte
-                </a>
-              </li>
-            </ul>
-          </div>
 
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground text-center">Desenvolvimento</h4>
