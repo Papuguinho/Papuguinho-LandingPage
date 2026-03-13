@@ -50,7 +50,7 @@ const Developers = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {developers.map((dev, index) => (
             <Card
               key={index}
@@ -69,6 +69,30 @@ const Developers = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Segunda linha: 2 cards centralizados */}
+        <div className="flex justify-center mt-6">
+          <div className="grid md:grid-cols-2 gap-6 max-w-2xl">
+            {developers.slice(3).map((dev, index) => (
+              <Card
+                key={index + 3}
+                className="hover:shadow-lg transition-shadow duration-300 animate-fade-in-up"
+                style={{ animationDelay: `${(index + 3) * 0.1}s` }}
+              >
+                <CardContent className="pt-6 text-center">
+                  <Avatar className="h-16 w-16 mx-auto mb-4">
+                    <AvatarFallback className="bg-primary/20 text-primary text-lg font-bold">
+                      {dev.initials}
+                    </AvatarFallback>
+                  </Avatar>
+                  <h3 className="font-semibold text-lg mb-1 text-foreground">{dev.name}</h3>
+                  <p className="text-sm font-medium text-primary mb-3">{dev.role}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{dev.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>
