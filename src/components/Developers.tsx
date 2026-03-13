@@ -50,7 +50,7 @@ const Developers = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
           {developers.map((dev, index) => (
             <Card
               key={index}
