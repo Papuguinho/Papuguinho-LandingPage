@@ -3,7 +3,7 @@ import { Instagram, Linkedin, Github } from "lucide-react";
 const Footer = () => {
   return <footer className="bg-muted py-12">
       <div className="container mx-auto px-4">
-        <div className="grid gap-8 md:grid-cols-4 mb-8">
+        <div className="grid gap-8 md:grid-cols-3 mb-8">
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-foreground font-display">Papuguinho</h3>
             <p className="text-muted-foreground">
