@@ -28,7 +28,7 @@ const partners = [
     image: prefeitura,
   },
   {
-    name: "Secretaria de Educação de Jacareí",
+    name: "SECRETARIA MUNICIPAL DE EDUCAÇÃO DE JACAREÍ",
     description: "Órgão responsável pela articulação pedagógica e implementação do projeto nas salas de Atendimento Educacional Especializado (AEE), promovendo a formação de professores e o suporte direto aos alunos da rede municipal.",
     image: secretaria,
   },
