@@ -3,7 +3,7 @@ import ifsp from "@/assets/partners/ifsp.jpeg";
 import arasaac from "@/assets/partners/arasaac.jpeg";
 import mind from "@/assets/partners/mind.jpeg";
 import prefeitura from "@/assets/partners/prefeitura.jpeg";
-import secretaria from "@/assets/partners/secretaria.jpeg";
+import secretaria from "@/assets/partners/secretaria.png";
 import emei from "@/assets/partners/emei.jpeg";
 
 const partners = [
