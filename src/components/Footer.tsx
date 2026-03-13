@@ -21,33 +21,33 @@ const Footer = () => {
           </div>
 
           <div className="space-y-4">
-            <h4 className="font-semibold text-foreground">Redes Sociais</h4>
+            <h4 className="font-semibold text-foreground text-right">Redes Sociais</h4>
             <div className="flex gap-4">
-              <a 
-                href="https://www.instagram.com/papuguinho?igsh=MXFteGN3djV3emQ3OA==" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-                aria-label="Instagram"
-              >
+              <a
+              href="https://www.instagram.com/papuguinho?igsh=MXFteGN3djV3emQ3OA=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+              aria-label="Instagram">
+              
                 <Instagram size={20} />
               </a>
-              <a 
-                href="https://www.linkedin.com/company/papuguinho" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-                aria-label="LinkedIn"
-              >
+              <a
+              href="https://www.linkedin.com/company/papuguinho"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+              aria-label="LinkedIn">
+              
                 <Linkedin size={20} />
               </a>
-              <a 
-                href="https://github.com/Papuguinho" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-                aria-label="GitHub"
-              >
+              <a
+              href="https://github.com/Papuguinho"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+              aria-label="GitHub">
+              
                 <Github size={20} />
               </a>
             </div>
