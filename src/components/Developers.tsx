@@ -51,7 +51,7 @@ const Developers = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {developers.map((dev, index) => (
+          {developers.slice(0, 3).map((dev, index) => (
             <Card
               key={index}
               className="hover:shadow-lg transition-shadow duration-300 animate-fade-in-up"
