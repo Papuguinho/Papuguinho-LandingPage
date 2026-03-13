@@ -22,7 +22,7 @@ const Footer = () => {
 
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground text-center">Redes Sociais</h4>
-            <div className="gap-4 flex items-start justify-end">
+            <div className="gap-4 flex items-start justify-center">
               <a
               href="https://www.instagram.com/papuguinho?igsh=MXFteGN3djV3emQ3OA=="
               target="_blank"
