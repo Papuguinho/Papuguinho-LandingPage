@@ -11,31 +11,6 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="space-y-4">
-            <h4 className="font-semibold text-foreground">Links Úteis</h4>
-            <ul className="space-y-2 text-muted-foreground">
-              <li>
-                <a href="#" className="hover:text-primary transition-colors">
-                  Sobre o Projeto
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary transition-colors">
-                  Como Usar
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary transition-colors">
-                  Recursos
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary transition-colors">
-                  Suporte
-                </a>
-              </li>
-            </ul>
-          </div>
 
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground text-center">Desenvolvimento</h4>
