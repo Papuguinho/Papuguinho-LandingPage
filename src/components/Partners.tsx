@@ -7,37 +7,37 @@ import secretaria from "@/assets/partners/secretaria.jpeg";
 import emei from "@/assets/partners/emei.jpeg";
 
 const partners = [
-  {
-    name: "IFSP - Campus Jacareí",
-    description: "Base institucional do projeto, oferecendo fomento à pesquisa através de bolsas de Iniciação Científica e suporte laboratorial.",
-    image: ifsp,
-  },
-  {
-    name: "ARASAAC",
-    description: "Fornecedor dos recursos gráficos e sistemas de comunicação aumentativa e alternativa (CAA) utilizados nas interfaces do projeto.",
-    image: arasaac,
-  },
-  {
-    name: "Grupo MIND",
-    description: "Grupo de pesquisa do IFSP-Jacareí, certificado pelo CNPq. Tem o propósito de promover pesquisas que favoreçam a inclusão de todos os estudantes nos espaços escolares.",
-    image: mind,
-  },
-  {
-    name: "Prefeitura de Jacareí",
-    description: "Parceira institucional responsável pela viabilização e implementação do projeto na rede municipal de ensino, promovendo a inclusão e o uso de tecnologias assistivas nas escolas públicas.",
-    image: prefeitura,
-  },
-  {
-    name: "SECRETARIA MUNICIPAL DE EDUCAÇÃO DE JACAREÍ",
-    description: "Órgão responsável pela articulação pedagógica e implementação do projeto nas salas de Atendimento Educacional Especializado (AEE), promovendo a formação de professores e o suporte direto aos alunos da rede municipal.",
-    image: secretaria,
-  },
-  {
-    name: "EMEI Thiago Silva Santos",
-    description: "Escola-piloto e primeira unidade de ensino a receber o Papuguinho, desempenhando um papel fundamental na fase de testes, validação pedagógica e fornecimento de sugestões essenciais para o aprimoramento da ferramenta no cotidiano escolar.",
-    image: emei,
-  },
-];
+{
+  name: "IFSP - Campus Jacareí",
+  description: "Base institucional do projeto, oferecendo fomento à pesquisa através de bolsas de Iniciação Científica e suporte laboratorial.",
+  image: ifsp
+},
+{
+  name: "ARASAAC",
+  description: "Fornecedor dos recursos gráficos e sistemas de comunicação aumentativa e alternativa (CAA) utilizados nas interfaces do projeto.",
+  image: arasaac
+},
+{
+  name: "Grupo MIND",
+  description: "Grupo de pesquisa do IFSP-Jacareí, certificado pelo CNPq. Tem o propósito de promover pesquisas que favoreçam a inclusão de todos os estudantes nos espaços escolares.",
+  image: mind
+},
+{
+  name: "Prefeitura de Jacareí",
+  description: "Parceira institucional responsável pela viabilização e implementação do projeto na rede municipal de ensino, promovendo a inclusão e o uso de tecnologias assistivas nas escolas públicas.",
+  image: prefeitura
+},
+{
+  name: "SECRETARIA MUNICIPAL DE EDUCAÇÃO DE JACAREÍ",
+  description: "Órgão responsável pela articulação pedagógica e implementação do projeto nas salas de Atendimento Educacional Especializado (AEE), promovendo a formação de professores e o suporte direto aos alunos da rede municipal.",
+  image: secretaria
+},
+{
+  name: "EMEI Thiago Silva Santos",
+  description: "Escola-piloto e primeira unidade de ensino a receber o Papuguinho, desempenhando um papel fundamental na fase de testes, validação pedagógica e fornecimento de sugestões essenciais para o aprimoramento da ferramenta no cotidiano escolar.",
+  image: emei
+}];
+
 
 const Partners = () => {
   return (
@@ -51,29 +51,29 @@ const Partners = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {partners.map((partner, index) => (
-            <Card
-              key={index}
-              className="overflow-hidden hover:shadow-lg transition-shadow duration-300 animate-fade-in-up flex flex-col"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
+          {partners.map((partner, index) =>
+          <Card
+            key={index}
+            className="overflow-hidden hover:shadow-lg transition-shadow duration-300 animate-fade-in-up flex flex-col"
+            style={{ animationDelay: `${index * 0.1}s` }}>
+            
               <div className="h-48 bg-background flex items-center justify-center p-6">
                 <img
-                  src={partner.image}
-                  alt={partner.name}
-                  className="max-h-full max-w-full object-contain"
-                />
+                src={partner.image}
+                alt={partner.name}
+                className="max-h-full max-w-full object-contain" />
+              
               </div>
               <div className="p-5 flex-1 flex flex-col">
-                <h3 className="font-semibold text-lg mb-2 text-foreground">{partner.name}</h3>
+                <h3 className="font-semibold text-lg mb-2 text-foreground text-center">{partner.name}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{partner.description}</p>
               </div>
             </Card>
-          ))}
+          )}
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default Partners;
