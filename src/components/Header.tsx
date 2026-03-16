@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
 import papuguinhoLogo from "@/assets/papuguinho-mascot.png";
 
 const Header = () => {
@@ -46,8 +52,8 @@ const Header = () => {
           <span className="text-xl font-bold text-primary font-display">Papuguinho</span>
         </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-6">
+        {/* Desktop Navigation (lg+) */}
+        <div className="hidden lg:flex items-center gap-6">
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -62,35 +68,41 @@ const Header = () => {
           </Button>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile/Tablet Menu Button */}
         <button
-          className="md:hidden text-foreground"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
+          className="lg:hidden text-foreground"
+          onClick={() => setIsMobileMenuOpen(true)}
+          aria-label="Abrir menu"
         >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          <Menu size={24} />
         </button>
       </nav>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-background border-t border-border">
-          <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
+      {/* Mobile/Tablet Sheet Menu */}
+      <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+        <SheetContent side="right" className="w-72">
+          <SheetHeader>
+            <SheetTitle className="flex items-center gap-2">
+              <img src={papuguinhoLogo} alt="Papuguinho" className="h-8 w-8 object-contain" />
+              Papuguinho
+            </SheetTitle>
+          </SheetHeader>
+          <nav className="flex flex-col gap-2 mt-6">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-left text-foreground/80 hover:text-primary transition-colors font-medium py-2"
+                className="text-left text-foreground/80 hover:text-primary hover:bg-accent transition-colors font-medium py-3 px-3 rounded-md"
               >
                 {item.label}
               </button>
             ))}
-            <Button onClick={() => scrollToSection("cta")} className="w-full">
+            <Button onClick={() => scrollToSection("cta")} className="w-full mt-4">
               Download
             </Button>
-          </div>
-        </div>
-      )}
+          </nav>
+        </SheetContent>
+      </Sheet>
     </header>
   );
 };
