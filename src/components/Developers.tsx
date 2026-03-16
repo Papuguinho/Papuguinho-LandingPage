@@ -54,11 +54,11 @@ const Developers = () => {
           {developers.map((dev, index) => (
             <Card
               key={index}
-              className={`hover:shadow-lg transition-shadow duration-300 animate-fade-in-up ${
+              className={`hover:shadow-lg transition-shadow duration-300 animate-fade-in-up lg:col-span-2 ${
                 index === developers.length - 1
-                  ? "md:col-span-2 md:max-w-sm md:mx-auto lg:col-span-1 lg:max-w-none"
+                  ? "md:col-span-2 md:max-w-sm md:mx-auto lg:col-span-2 lg:max-w-none"
                   : ""
-              }`}
+              } ${index === 3 ? "lg:col-start-2" : ""}`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardContent className="pt-6 text-center">
