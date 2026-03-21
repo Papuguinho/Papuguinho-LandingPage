@@ -1,4 +1,5 @@
 import { Instagram, Linkedin, Github } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return <footer className="bg-muted py-12">
@@ -54,8 +55,11 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
+        <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground space-y-2">
           <p>© 2024 Papuguinho. Todos os direitos reservados. Projeto gratuito e de código aberto.</p>
+          <Link to="/privacidade" className="text-primary hover:underline">
+            Política de Privacidade
+          </Link>
         </div>
       </div>
     </footer>;
