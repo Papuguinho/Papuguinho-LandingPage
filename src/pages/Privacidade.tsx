@@ -61,6 +61,10 @@ const sections = [
 ];
 
 const Privacidade = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-3xl">
