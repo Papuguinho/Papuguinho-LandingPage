@@ -22,7 +22,7 @@ const sections = [
       "Coletamos o mínimo de informações necessárias para o funcionamento adequado e a personalização pedagógica do aplicativo. Os dados inseridos pelo adulto responsável incluem:",
     items: [
       { label: "E-mail e Senha", desc: "Utilizados estritamente para a criação da conta do responsável, autenticação segura e recuperação de acesso." },
-      { label: "Nome / Nome Completo", desc: "Utilizado apenas localmente como "Display Name" (nome de exibição) para tornar a interface acolhedora para a criança." },
+      { label: "Nome / Nome Completo", desc: 'Utilizado apenas localmente como "Display Name" (nome de exibição) para tornar a interface acolhedora para a criança.' },
       { label: "Data de Nascimento e Nível Escolar", desc: "Utilizados de forma anonimizada pelo sistema do aplicativo para adequar a dificuldade das atividades, sugerir conteúdos apropriados para a faixa etária e personalizar a jornada pedagógica." },
       { label: "Gênero", desc: "Utilizado exclusivamente para a adaptação da interface visual e filtragem dos pictogramas apresentados no aplicativo." },
       { label: "Motivo de Uso", desc: "Utilizado internamente para fins de pesquisa e melhoria contínua da experiência educacional oferecida pelo Papuguinho." },
