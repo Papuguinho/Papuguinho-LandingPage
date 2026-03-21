@@ -117,7 +117,21 @@ const Privacidade = () => {
                   </ul>
                 )}
 
-                {section.email && (
+                {section.links && (
+                  <div className="mt-4">
+                    <p className="text-muted-foreground font-medium mb-2">Links para as políticas dos provedores utilizados:</p>
+                    <ul className="space-y-1">
+                      {section.links.map((link) => (
+                        <li key={link.url} className="pl-4 border-l-2 border-primary/30">
+                          <a href={link.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                            {link.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                   <a
                     href={`mailto:${section.email}`}
                     className="inline-flex items-center gap-2 mt-3 text-primary hover:underline font-medium"
