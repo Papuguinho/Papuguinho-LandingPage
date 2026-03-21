@@ -1,4 +1,5 @@
 import { Instagram, Linkedin, Github } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return <footer className="bg-muted py-12">
