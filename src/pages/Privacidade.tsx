@@ -44,6 +44,10 @@ const sections = [
     title: "5. Armazenamento e Segurança",
     content:
       "Os dados são armazenados em infraestrutura de nuvem com altos padrões de criptografia e segurança cibernética, com regras de acesso estritas que garantem que apenas o adulto autenticado com sua senha possa acessar ou modificar o perfil vinculado à sua conta.",
+    links: [
+      { label: "Google Play Services", url: "https://www.google.com/policies/privacy/" },
+      { label: "Firebase Privacy", url: "https://firebase.google.com/support/privacy/" },
+    ],
   },
   {
     icon: Trash2,
