@@ -37,6 +37,20 @@ const developers = [
       "Técnica em Informática e pesquisadora (IFSP-Jacareí). Responsável pela elaboração do design do aplicativo (UX/UI), identidade visual e pelo desenvolvimento do site informativo.",
     initials: "MS",
   },
+  {
+    name: "Ana Paula Kawabe de Lima Ferreira",
+    role: "Suporte acadêmico e inclusivo",
+    description:
+      "Graduada em Licenciatura em Química (UNESP), Mestrado em Ciências (UFLA), Pós Graduação em Educação Especial e Inclusiva em andamento (UFABC), Doutorado em Ensino de Ciências em Andamento (UNICAMP-SP). Fundadora do Grupo MIND.",
+    initials: "AF",
+  },
+  {
+    name: "Alexssandro Ferreira da Silva",
+    role: "Suporte acadêmico e inclusivo",
+    description:
+      "Graduado em Administração (FADMINAS) e Análise e Desenvolvimento de Sistemas (IFSP), Pós Graduado em Gestão Pública Municipal e em Educação Empreendedora (UFSJ), Licenciatura em Pedagogia em andamento (UNIVESP), Mestrado em Ensino de Ciências (UNICAMP-SP). Fundador Grupo MIND.",
+    initials: "AS",
+  },
 ];
 
 const Developers = () => {
@@ -56,9 +70,9 @@ const Developers = () => {
               key={index}
               className={`hover:shadow-lg transition-shadow duration-300 animate-fade-in-up lg:col-span-2 ${
                 index === developers.length - 1
-                  ? "md:col-span-2 md:max-w-sm md:mx-auto lg:col-span-2 lg:max-w-none"
+                  ? "md:col-span-2 md:max-w-sm md:mx-auto lg:col-span-2 lg:max-w-none lg:col-start-3"
                   : ""
-              } ${index === 3 ? "lg:col-start-2" : ""}`}
+              }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardContent className="pt-6 text-center">
