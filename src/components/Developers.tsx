@@ -48,7 +48,7 @@ const developers = [
     name: "Alexssandro Ferreira da Silva",
     role: "Suporte acadêmico e inclusivo",
     description:
-      "Graduado em Administração (FADMINAS) e Análise e Desenvolvimento de Sistemas (IFSP), Pós Graduado em Gestão Pública Municipal e em Educação Empreendedora (UFSJ), Licenciatura em Pedagogia em andamento (UNIVESP), Mestrado em Ensino de Ciências (UNICAMP-SP). Fundador Grupo MIND.",
+      "Graduado em Administração (FADMINAS) e Análise e Desenvolvimento de Sistemas (IFSP), Pós Graduado em Gestão Pública Municipal e em Educação Empreendedora (UFSJ), Licenciatura em Pedagogia em andamento (UNIVESP), Mestrado em Ensino de Ciências (UNICAMP-SP). Fundador do Grupo MIND.",
     initials: "AS",
   },
 ];
