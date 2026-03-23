@@ -34,7 +34,7 @@ const developers = [
     name: "Marcela Jordana Victoria Souza",
     role: "Designer de Produto (UI/UX), Desenvolvedora Web, Pesquisadora",
     description:
-      "Técnica em Informática e pesquisadora (IFSP-Jacareí). Responsável pela elaboração do design do aplicativo (UX/UI), identidade visual e pelo desenvolvimento do site informativo.",
+      "Técnica em Informática e pesquisadora (IFSP-Jacareí), cursando farmácia (UNESP-Araraquara). Responsável pela elaboração do design do aplicativo (UX/UI), identidade visual e pelo desenvolvimento do site informativo.",
     initials: "MS",
   },
   {
