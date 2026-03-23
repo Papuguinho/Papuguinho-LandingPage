@@ -70,9 +70,9 @@ const Developers = () => {
               key={index}
               className={`hover:shadow-lg transition-shadow duration-300 animate-fade-in-up lg:col-span-2 ${
                 index === developers.length - 1
-                  ? "md:col-span-2 md:max-w-sm md:mx-auto lg:col-span-2 lg:max-w-none"
+                  ? "md:col-span-2 md:max-w-sm md:mx-auto lg:col-span-2 lg:max-w-none lg:col-start-3"
                   : ""
-              } ${index === 3 ? "lg:col-start-2" : ""}`}
+              }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardContent className="pt-6 text-center">
