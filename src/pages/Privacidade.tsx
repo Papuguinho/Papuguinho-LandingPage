@@ -57,7 +57,8 @@ const sections = [
     icon: Trash2,
     title: "6. Direitos do Usuário (Exclusão de Dados)",
     content:
-      "Em cumprimento à LGPD, o adulto responsável possui total controle sobre os dados. É possível visualizar, editar ou solicitar a exclusão permanente de toda a conta e dos perfis associados diretamente pelas configurações do aplicativo ou entrando em contato através do nosso canal de atendimento.",
+      "Em conformidade com a Lei Geral de Proteção de Dados (LGPD), o adulto responsável detém total controle sobre as informações processadas no Papuguinho. Você pode visualizar, editar ou solicitar a exclusão permanente de sua conta e de todos os perfis associados a qualquer momento.",
+    deleteAccount: true,
   },
   {
     icon: MessageCircle,
