@@ -10,17 +10,20 @@ const partners = [
 {
   name: "IFSP - Campus Jacareí",
   description: "Base institucional do projeto, oferecendo fomento à pesquisa através de bolsas de Iniciação Científica e suporte laboratorial.",
-  image: ifsp
+  image: ifsp,
+  link: ""
 },
 {
   name: "ARASAAC",
   description: "Fornecedor dos recursos gráficos e sistemas de comunicação aumentativa e alternativa (CAA) utilizados nas interfaces do projeto.",
-  image: arasaac
+  image: arasaac,
+  link: ""
 },
 {
   name: "Grupo MIND",
   description: "Grupo de pesquisa do IFSP-Jacareí, certificado pelo CNPq. Tem o propósito de promover pesquisas que favoreçam a inclusão de todos os estudantes nos espaços escolares.",
-  image: mind
+  image: mind,
+  link: "https://grupopesquisamind.github.io/site_mind/home.html"
 },
 {
   name: "Prefeitura de Jacareí",
