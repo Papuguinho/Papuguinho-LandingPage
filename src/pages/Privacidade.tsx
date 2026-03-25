@@ -28,6 +28,7 @@ const sections = [
       { label: "Gênero", desc: "Utilizado exclusivamente para a adaptação da interface visual e filtragem dos pictogramas apresentados no aplicativo." },
       { label: "Motivo de Uso", desc: "Utilizado internamente para fins de pesquisa e melhoria contínua da experiência educacional oferecida pelo Papuguinho." },
       { label: "Mensagens", desc: "Coletamos e armazenamos o conteúdo das interações para compor o histórico de mensagens. A finalidade exclusiva deste recurso é permitir que o tutor ou responsável monitore as mensagens geradas pela criança, garantindo um ambiente seguro e possibilitando o acompanhamento pedagógico ou de segurança." },
+      { label: "Pictogramas Personalizados", desc: "Para permitir a personalização da experiência, armazenamos as fotos e nomes enviados pelo usuário para a criação de novos pictogramas. Esses dados são de uso exclusivo do perfil que os criou, garantindo que nenhum outro usuário da plataforma tenha acesso a conteúdos privados ou as imagens carregadas." },
     ],
   },
   {
