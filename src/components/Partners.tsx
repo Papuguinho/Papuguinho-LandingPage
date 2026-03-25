@@ -28,17 +28,20 @@ const partners = [
 {
   name: "Prefeitura de Jacareí",
   description: "Parceira institucional responsável pela viabilização e implementação do projeto na rede municipal de ensino, promovendo a inclusão e o uso de tecnologias assistivas nas escolas públicas.",
-  image: prefeitura
+  image: prefeitura,
+  link: ""
 },
 {
   name: "SECRETARIA MUNICIPAL DE EDUCAÇÃO DE JACAREÍ",
   description: "Órgão responsável pela articulação pedagógica e implementação do projeto nas salas de Atendimento Educacional Especializado (AEE), promovendo a formação de professores e o suporte direto aos alunos da rede municipal.",
-  image: secretaria
+  image: secretaria,
+  link: ""
 },
 {
   name: "EMEI Thiago Silva Santos",
   description: "Escola-piloto e primeira unidade de ensino a receber o Papuguinho, desempenhando um papel fundamental na fase de testes, validação pedagógica e fornecimento de sugestões essenciais para o aprimoramento da ferramenta no cotidiano escolar.",
-  image: emei
+  image: emei,
+  link: ""
 }];
 
 
