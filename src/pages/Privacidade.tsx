@@ -27,6 +27,7 @@ const sections = [
       { label: "Data de Nascimento e Nível Escolar", desc: "Utilizados de forma anonimizada pelo sistema do aplicativo para adequar a dificuldade das atividades, sugerir conteúdos apropriados para a faixa etária e personalizar a jornada pedagógica." },
       { label: "Gênero", desc: "Utilizado exclusivamente para a adaptação da interface visual e filtragem dos pictogramas apresentados no aplicativo." },
       { label: "Motivo de Uso", desc: "Utilizado internamente para fins de pesquisa e melhoria contínua da experiência educacional oferecida pelo Papuguinho." },
+      { label: "Mensagens", desc: "Coletamos e armazenamos o conteúdo das interações para compor o histórico de mensagens. A finalidade exclusiva deste recurso é permitir que o tutor ou responsável monitore as mensagens geradas pela criança, garantindo um ambiente seguro e possibilitando o acompanhamento pedagógico ou de segurança." },
     ],
   },
   {
