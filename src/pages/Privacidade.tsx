@@ -140,6 +140,54 @@ const Privacidade = () => {
                   </p>
                 )}
 
+                {section.deleteAccount && (
+                  <div className="mt-6 space-y-6">
+                    <div>
+                      <h3 className="font-bold text-foreground mb-2">Como excluir sua conta permanentemente?</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Ao optar pela exclusão da conta, o usuário declara estar ciente de que todos os seus dados, perfis de crianças, pictogramas personalizados e históricos serão removidos definitivamente de nossa base de dados, não sendo possível a recuperação posterior.
+                      </p>
+                      <p className="text-muted-foreground leading-relaxed mt-3">
+                        Para realizar a exclusão direta pelo aplicativo, siga o fluxo:
+                      </p>
+                      <ol className="mt-2 space-y-1 list-decimal list-inside text-muted-foreground">
+                        <li>Acesse o menu <span className="font-semibold text-foreground">Perfil</span>;</li>
+                        <li>Selecione a opção <span className="font-semibold text-foreground">Excluir Conta</span>;</li>
+                        <li>Leia o aviso e clique em <span className="font-semibold text-foreground">Confirmar Exclusão</span>;</li>
+                        <li>Realize a <span className="font-semibold text-foreground">Autenticação da escolha</span> (reentrada de senha ou biometria).</li>
+                      </ol>
+                      <p className="mt-3 text-muted-foreground leading-relaxed bg-muted/50 rounded-md p-3 border">
+                        <span className="font-semibold text-foreground">Nota de Segurança:</span> Por segurança, o Firebase exige que o usuário tenha feito login recentemente para realizar operações sensíveis como a exclusão. Caso o aplicativo informe que a "sessão está expirada", basta realizar o <span className="font-semibold">Logout (Sair)</span>, efetuar o <span className="font-semibold">Login</span> novamente e repetir o processo de exclusão.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="font-bold text-foreground mb-2">Como excluir apenas o histórico de mensagens?</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Caso deseje manter a conta ativa, mas limpar as interações registradas, siga estes passos:
+                      </p>
+                      <ol className="mt-2 space-y-1 list-decimal list-inside text-muted-foreground">
+                        <li>Acesse o menu <span className="font-semibold text-foreground">Perfil</span>;</li>
+                        <li>Clique em <span className="font-semibold text-foreground">Histórico</span>;</li>
+                        <li>Realize a <span className="font-semibold text-foreground">Autenticação</span> para acesso à área restrita;</li>
+                        <li>Clique no ícone da <span className="font-semibold text-foreground">Lixeira</span>;</li>
+                        <li>Selecione <span className="font-semibold text-foreground">Confirmar Exclusão</span>.</li>
+                      </ol>
+                    </div>
+
+                    <div>
+                      <h3 className="font-bold text-foreground mb-2">Canal de Atendimento</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Você também pode exercer seus direitos de acesso ou exclusão entrando em contato diretamente com nossa equipe através do e-mail de suporte{" "}
+                        <a href="mailto:papuguinho@gmail.com" className="inline-flex items-center gap-1 text-primary hover:underline font-medium">
+                          <Mail size={14} />
+                          papuguinho@gmail.com
+                        </a>.
+                      </p>
+                    </div>
+                  </div>
+                )}
+
                 {section.email && (
                   <a
                     href={`mailto:${section.email}`}
