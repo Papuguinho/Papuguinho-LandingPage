@@ -125,6 +125,20 @@ const Privacidade = () => {
                   </ul>
                 )}
 
+                {section.firebaseLink && (
+                  <p className="mt-4 text-muted-foreground">
+                    Políticas de Terceiros: Para mais detalhes sobre como o Google protege os dados em sua infraestrutura, você pode consultar a{" "}
+                    <a
+                      href="https://firebase.google.com/support/privacy?hl=pt-br"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-green-600 underline underline-offset-4 hover:text-green-500 font-medium"
+                    >
+                      Privacidade e Segurança no Firebase
+                    </a>.
+                  </p>
+                )}
+
                 {section.email && (
                   <a
                     href={`mailto:${section.email}`}
