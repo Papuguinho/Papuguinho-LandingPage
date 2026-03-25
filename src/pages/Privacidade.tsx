@@ -46,7 +46,12 @@ const sections = [
     icon: Lock,
     title: "5. Armazenamento e Segurança",
     content:
-      "Os dados são armazenados em infraestrutura de nuvem com altos padrões de criptografia e segurança cibernética, com regras de acesso estritas que garantem que apenas o adulto autenticado com sua senha possa acessar ou modificar o perfil vinculado à sua conta.",
+      "Os dados são armazenados em infraestrutura de nuvem de alta confiabilidade, utilizando os serviços Google Firebase (Firestore e Authentication). Aplicamos altos padrões de criptografia e segurança cibernética, com regras de acesso estritas que garantem que apenas o adulto autenticado possa acessar ou modificar o perfil vinculado à sua conta.",
+    bullets: [
+      "Autenticação: Utilizamos o Firebase Auth para garantir que o acesso seja restrito a usuários validados por e-mail e senha.",
+      "Banco de Dados: As informações são processadas no Cloud Firestore, que conta com camadas de proteção de dados em repouso e em trânsito.",
+    ],
+    firebaseLink: true,
   },
   {
     icon: Trash2,
