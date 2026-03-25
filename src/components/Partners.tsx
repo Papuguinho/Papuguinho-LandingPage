@@ -73,6 +73,16 @@ const Partners = () => {
               <div className="p-5 flex-1 flex flex-col">
                 <h3 className="font-semibold text-lg mb-2 text-foreground text-center">{partner.name}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{partner.description}</p>
+                {partner.link && (
+                  <a
+                    href={partner.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 text-sm font-medium text-primary hover:text-primary/80 underline underline-offset-4 transition-colors"
+                  >
+                    Visitar site
+                  </a>
+                )}
               </div>
             </Card>
           )}
