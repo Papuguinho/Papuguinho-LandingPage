@@ -10,32 +10,38 @@ const partners = [
 {
   name: "IFSP - Campus Jacareí",
   description: "Base institucional do projeto, oferecendo fomento à pesquisa através de bolsas de Iniciação Científica e suporte laboratorial.",
-  image: ifsp
+  image: ifsp,
+  link: ""
 },
 {
   name: "ARASAAC",
   description: "Fornecedor dos recursos gráficos e sistemas de comunicação aumentativa e alternativa (CAA) utilizados nas interfaces do projeto.",
-  image: arasaac
+  image: arasaac,
+  link: ""
 },
 {
   name: "Grupo MIND",
   description: "Grupo de pesquisa do IFSP-Jacareí, certificado pelo CNPq. Tem o propósito de promover pesquisas que favoreçam a inclusão de todos os estudantes nos espaços escolares.",
-  image: mind
+  image: mind,
+  link: "https://grupopesquisamind.github.io/site_mind/home.html"
 },
 {
   name: "Prefeitura de Jacareí",
   description: "Parceira institucional responsável pela viabilização e implementação do projeto na rede municipal de ensino, promovendo a inclusão e o uso de tecnologias assistivas nas escolas públicas.",
-  image: prefeitura
+  image: prefeitura,
+  link: ""
 },
 {
   name: "SECRETARIA MUNICIPAL DE EDUCAÇÃO DE JACAREÍ",
   description: "Órgão responsável pela articulação pedagógica e implementação do projeto nas salas de Atendimento Educacional Especializado (AEE), promovendo a formação de professores e o suporte direto aos alunos da rede municipal.",
-  image: secretaria
+  image: secretaria,
+  link: ""
 },
 {
   name: "EMEI Thiago Silva Santos",
   description: "Escola-piloto e primeira unidade de ensino a receber o Papuguinho, desempenhando um papel fundamental na fase de testes, validação pedagógica e fornecimento de sugestões essenciais para o aprimoramento da ferramenta no cotidiano escolar.",
-  image: emei
+  image: emei,
+  link: ""
 }];
 
 
@@ -67,6 +73,16 @@ const Partners = () => {
               <div className="p-5 flex-1 flex flex-col">
                 <h3 className="font-semibold text-lg mb-2 text-foreground text-center">{partner.name}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{partner.description}</p>
+                {partner.link && (
+                  <a
+                    href={partner.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 text-sm font-medium text-primary hover:text-primary/80 underline underline-offset-4 transition-colors"
+                  >
+                    Visitar site
+                  </a>
+                )}
               </div>
             </Card>
           )}
