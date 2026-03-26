@@ -50,6 +50,7 @@ const sections = [
     bullets: [
       "Autenticação: Utilizamos o Firebase Auth para garantir que o acesso seja restrito a usuários validados por e-mail e senha.",
       "Banco de Dados: As informações são processadas no Cloud Firestore, que conta com camadas de proteção de dados em repouso e em trânsito.",
+      "Nota sobre Autenticação Biométrica: Para a proteção de áreas restritas (como o Perfil e o Modo Infantil), o aplicativo pode solicitar a biometria ou PIN do dispositivo. Este processo de validação ocorre de forma 100% local no hardware do seu celular. O Papuguinho não coleta, não processa e não armazena dados biométricos em nossos servidores.",
     ],
     firebaseLink: true,
   },
