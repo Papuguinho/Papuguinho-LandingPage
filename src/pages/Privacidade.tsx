@@ -204,7 +204,7 @@ const Privacidade = () => {
         </div>
 
         <p className="text-center text-sm text-muted-foreground mt-10 mb-4">
-          © 2024 Papuguinho. Todos os direitos reservados.
+          © {new Date().getFullYear()} Papuguinho. Todos os direitos reservados.
         </p>
       </div>
     </main>
