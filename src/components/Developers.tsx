@@ -25,14 +25,14 @@ const developers = [
   },
   {
     name: "Manuela Antonelli",
-    role: "Desenvolvedora Web, Pesquisadora",
+    role: "Cofundadora, Desenvolvedora Web, Pesquisadora",
     description:
       "Cursando Análise e Desenvolvimento de Sistemas (IFSP-Jacareí) e Pedagogia e Educação (UNINTER). Responsável pelo desenvolvimento do site informativo, adaptações inclusivas e pedagógicas do aplicativo.",
     initials: "MA",
   },
   {
     name: "Marcela Jordana Victoria Souza",
-    role: "Designer de Produto (UI/UX), Desenvolvedora Web, Pesquisadora",
+    role: "Cofundadora, Designer de Produto (UI/UX), Desenvolvedora Web, Pesquisadora",
     description:
       "Técnica em Informática e pesquisadora (IFSP-Jacareí), cursando farmácia (UNESP-Araraquara). Responsável pela elaboração do design do aplicativo (UX/UI), identidade visual e pelo desenvolvimento do site informativo.",
     initials: "MS",
