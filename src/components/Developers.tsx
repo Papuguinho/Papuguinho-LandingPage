@@ -11,9 +11,9 @@ const developers = [
   },
   {
     name: "Gabriel de Paula Baroni",
-    role: "Desenvolvedor de Software e Pesquisador",
+    role: "Cofundador, Desenvolvedor de Software e Pesquisador",
     description:
-      "Técnico em Informática e pesquisador (IFSP-Jacareí), cursando Bacharelado Interdisciplinar em Ciência e Tecnologia (UNIFESP-São José dos Campos). Responsável pelo desenvolvimento do software com arquitetura em FlutterFlow/Firebase.",
+      "Técnico em Informática e pesquisador (IFSP-Jacareí), cursando Bacharelado Interdisciplinar em Ciência e Tecnologia (UNIFESP-São José dos Campos). Responsável pelo desenvolvimento do software com arquitetura em Flutter/Dart.",
     initials: "GB",
   },
   {
