@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 const developers = [
   {
     name: "Tardelli Ronan Coelho Stekel",
-    role: "Orientador do Projeto",
+    role: "Cofundador e Orientador do Projeto",
     description:
       "Doutor em Geofísica Espacial (INPE), Professor e pesquisador (IFSP-Jacareí). Responsável pela criação do projeto, orientação científica e coordenação da equipe.",
     initials: "TS",
