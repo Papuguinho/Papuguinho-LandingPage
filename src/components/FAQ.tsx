@@ -40,7 +40,7 @@ const FAQ = () => {
     {
       question: "Em quais dispositivos posso usar o Papuguinho?",
       answer:
-        "O aplicativo está disponível para smartphones e tablets Android e iOS, garantindo acesso para a maioria dos dispositivos móveis.",
+        "O aplicativo está disponível para smartphones e tablets Android, garantindo acesso para a maioria dos dispositivos móveis.",
     },
     {
       question: "Como posso contribuir ou dar feedback?",
