@@ -18,9 +18,9 @@ const developers = [
   },
   {
     name: "José Antonio de Carvalho Neto",
-    role: "Desenvolvedor de Software e Pesquisador",
+    role: "Cofundador, Desenvolvedor de Software e Pesquisador",
     description:
-      "Cursando Análise e Desenvolvimento de Sistemas (IFSP-Jacareí). Responsável pelo desenvolvimento do software com arquitetura em FlutterFlow/Firebase.",
+      "Cursando Análise e Desenvolvimento de Sistemas (IFSP-Jacareí). Responsável pelo desenvolvimento do software com arquitetura em Flutter/Dart.",
     initials: "JC",
   },
   {
