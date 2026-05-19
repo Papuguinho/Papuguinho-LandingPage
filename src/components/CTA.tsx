@@ -18,9 +18,12 @@ const CTA = () => {
             <Button 
               size="lg"
               className="bg-background text-primary hover:bg-background/90 shadow-xl"
+              asChild
             >
-              <Download className="w-5 h-5 mr-2" />
-              Baixar para Android
+              <a href="https://play.google.com/store/apps/details?id=com.mycompany.versao1appcaa" target="_blank" rel="noopener noreferrer">
+                <Download className="w-5 h-5 mr-2" />
+                Baixar para Android
+              </a>
             </Button>
             <Button 
               size="lg"
