@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const developers = [
   {
@@ -15,6 +15,7 @@ const developers = [
     description:
       "Técnico em Informática e pesquisador (IFSP-Jacareí), cursando Bacharelado Interdisciplinar em Ciência e Tecnologia (UNIFESP-São José dos Campos). Responsável pelo desenvolvimento do software com arquitetura em Flutter/Dart.",
     initials: "GB",
+    image: "https://github.com/Gabriel-Baroni.png",
   },
   {
     name: "José Antonio de Carvalho Neto",
@@ -77,6 +78,7 @@ const Developers = () => {
             >
               <CardContent className="pt-6 text-center">
                 <Avatar className="h-16 w-16 mx-auto mb-4">
+                  {dev.image && <AvatarImage src={dev.image} alt={dev.name} />}
                   <AvatarFallback className="bg-primary/20 text-primary text-lg font-bold">
                     {dev.initials}
                   </AvatarFallback>
