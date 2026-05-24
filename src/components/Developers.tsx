@@ -23,6 +23,7 @@ const developers = [
     description:
       "Cursando Análise e Desenvolvimento de Sistemas (IFSP-Jacareí). Responsável pelo desenvolvimento do software com arquitetura em Flutter/Dart.",
     initials: "JC",
+    image: "https://github.com/joseantoniodecarvalhoneto.png",
   },
   {
     name: "Manuela Antonelli",
@@ -30,6 +31,7 @@ const developers = [
     description:
       "Cursando Análise e Desenvolvimento de Sistemas (IFSP-Jacareí) e Pedagogia e Educação (UNINTER). Responsável pelo desenvolvimento do site informativo, adaptações inclusivas e pedagógicas do aplicativo.",
     initials: "MA",
+    image: "https://github.com/ManuelaAntonelli.png",
   },
   {
     name: "Marcela Jordana Victoria Souza",
@@ -37,6 +39,7 @@ const developers = [
     description:
       "Técnica em Informática e pesquisadora (IFSP-Jacareí), cursando farmácia (UNESP-Araraquara). Responsável pela elaboração do design do aplicativo (UX/UI), identidade visual e pelo desenvolvimento do site informativo.",
     initials: "MS",
+    image: "https://github.com/marcela-vic938.png",
   },
   {
     name: "Ana Paula Kawabe de Lima Ferreira",
