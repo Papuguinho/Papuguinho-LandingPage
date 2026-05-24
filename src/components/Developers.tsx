@@ -1,7 +1,24 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Github, Linkedin, Globe, GraduationCap } from "lucide-react";
 
-const developers = [
+type DeveloperLink = {
+  label: string;
+  url: string;
+  icon: typeof Github;
+};
+
+type Developer = {
+  name: string;
+  role: string;
+  description: string;
+  initials: string;
+  image?: string;
+  links?: DeveloperLink[];
+};
+
+const developers: Developer[] = [
   {
     name: "Tardelli Ronan Coelho Stekel",
     role: "Cofundador e Orientador do Projeto",
@@ -16,6 +33,12 @@ const developers = [
       "Técnico em Informática e pesquisador (IFSP-Jacareí), cursando Bacharelado Interdisciplinar em Ciência e Tecnologia (UNIFESP-São José dos Campos). Responsável pelo desenvolvimento do software com arquitetura em Flutter/Dart.",
     initials: "GB",
     image: "https://gabrielbaroni.vercel.app/assets/hero/eu.jpg",
+    links: [
+      { label: "GitHub", url: "https://github.com/Gabriel-Baroni", icon: Github },
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/gabrieldpbaroni/", icon: Linkedin },
+      { label: "Lattes", url: "https://buscatextual.cnpq.br/buscatextual/visualizacv.do", icon: GraduationCap },
+      { label: "Portfólio", url: "https://gabrielbaroni.vercel.app", icon: Globe },
+    ],
   },
   {
     name: "José Antonio de Carvalho Neto",
@@ -69,16 +92,14 @@ const Developers = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">
-          {developers.map((dev, index) => (
-            <Card
-              key={index}
-              className={`hover:shadow-lg transition-shadow duration-300 animate-fade-in-up lg:col-span-2 ${
-                index === developers.length - 1
-                  ? "md:col-span-2 md:max-w-sm md:mx-auto lg:col-span-2 lg:max-w-none lg:col-start-3"
-                  : ""
-              }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
+          {developers.map((dev, index) => {
+            const cardClassName = `hover:shadow-lg transition-shadow duration-300 animate-fade-in-up lg:col-span-2 ${
+              index === developers.length - 1
+                ? "md:col-span-2 md:max-w-sm md:mx-auto lg:col-span-2 lg:max-w-none lg:col-start-3"
+                : ""
+            }`;
+
+            const cardInner = (
               <CardContent className="pt-6 text-center">
                 <Avatar className="h-16 w-16 mx-auto mb-4">
                   {dev.image && <AvatarImage src={dev.image} alt={dev.name} />}
@@ -90,8 +111,52 @@ const Developers = () => {
                 <p className="text-sm font-medium text-primary mb-3">{dev.role}</p>
                 <p className="text-sm text-muted-foreground leading-relaxed">{dev.description}</p>
               </CardContent>
-            </Card>
-          ))}
+            );
+
+            if (dev.links && dev.links.length > 0) {
+              return (
+                <Popover key={index}>
+                  <PopoverTrigger asChild>
+                    <Card
+                      className={`${cardClassName} cursor-pointer`}
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      {cardInner}
+                    </Card>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-56 p-2" align="center">
+                    <div className="flex flex-col gap-1">
+                      {dev.links.map((link) => {
+                        const Icon = link.icon;
+                        return (
+                          <a
+                            key={link.label}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 rounded-md px-3 py-2 text-sm text-foreground hover:bg-accent transition-colors"
+                          >
+                            <Icon className="h-4 w-4 text-primary" />
+                            {link.label}
+                          </a>
+                        );
+                      })}
+                    </div>
+                  </PopoverContent>
+                </Popover>
+              );
+            }
+
+            return (
+              <Card
+                key={index}
+                className={cardClassName}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {cardInner}
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>
