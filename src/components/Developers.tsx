@@ -15,7 +15,7 @@ const developers = [
     description:
       "Técnico em Informática e pesquisador (IFSP-Jacareí), cursando Bacharelado Interdisciplinar em Ciência e Tecnologia (UNIFESP-São José dos Campos). Responsável pelo desenvolvimento do software com arquitetura em Flutter/Dart.",
     initials: "GB",
-    image: "https://github.com/Gabriel-Baroni.png",
+    image: "https://gabrielbaroni.vercel.app/assets/hero/eu.jpg",
   },
   {
     name: "José Antonio de Carvalho Neto",
