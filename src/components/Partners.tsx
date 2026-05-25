@@ -11,13 +11,13 @@ const partners = [
   name: "IFSP - Campus Jacareí",
   description: "Base institucional do projeto, oferecendo fomento à pesquisa através de bolsas de Iniciação Científica e suporte laboratorial.",
   image: ifsp,
-  link: ""
+  link: "https://jcr.ifsp.edu.br"
 },
 {
   name: "ARASAAC",
   description: "Fornecedor dos recursos gráficos e sistemas de comunicação aumentativa e alternativa (CAA) utilizados nas interfaces do projeto.",
   image: arasaac,
-  link: ""
+  link: "https://arasaac.org/index.html"
 },
 {
   name: "Grupo MIND",
