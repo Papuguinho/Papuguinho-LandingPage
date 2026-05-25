@@ -36,7 +36,7 @@ const developers: Developer[] = [
     links: [
       { label: "GitHub", url: "https://github.com/Gabriel-Baroni", icon: Github },
       { label: "LinkedIn", url: "https://www.linkedin.com/in/gabrieldpbaroni/", icon: Linkedin },
-      { label: "Lattes", url: "https://buscatextual.cnpq.br/buscatextual/visualizacv.do", icon: GraduationCap },
+      { label: "Lattes", url: "https://lattes.cnpq.br/0153768116859752", icon: GraduationCap },
       { label: "Portfólio", url: "https://gabrielbaroni.vercel.app", icon: Globe },
     ],
   },
