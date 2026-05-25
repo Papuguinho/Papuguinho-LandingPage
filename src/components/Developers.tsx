@@ -1,7 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Github, Linkedin, Globe, GraduationCap } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Globe, GraduationCap, Mail } from "lucide-react";
 
 type DeveloperLink = {
   label: string;
@@ -36,7 +37,7 @@ const developers: Developer[] = [
     links: [
       { label: "GitHub", url: "https://github.com/Gabriel-Baroni", icon: Github },
       { label: "LinkedIn", url: "https://www.linkedin.com/in/gabrieldpbaroni/", icon: Linkedin },
-      { label: "Lattes", url: "https://buscatextual.cnpq.br/buscatextual/visualizacv.do", icon: GraduationCap },
+      { label: "Lattes", url: "https://lattes.cnpq.br/0153768116859752", icon: GraduationCap },
       { label: "Portfólio", url: "https://gabrielbaroni.vercel.app", icon: Globe },
     ],
   },
@@ -110,42 +111,37 @@ const Developers = () => {
                 <h3 className="font-semibold text-lg mb-1 text-foreground">{dev.name}</h3>
                 <p className="text-sm font-medium text-primary mb-3">{dev.role}</p>
                 <p className="text-sm text-muted-foreground leading-relaxed">{dev.description}</p>
+                {dev.links && dev.links.length > 0 && (
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <Button variant="outline" size="sm" className="mt-4">
+                        <Mail className="h-4 w-4 mr-2" />
+                        Contato
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-56 p-2" align="center">
+                      <div className="flex flex-col gap-1">
+                        {dev.links.map((link) => {
+                          const Icon = link.icon;
+                          return (
+                            <a
+                              key={link.label}
+                              href={link.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-2 rounded-md px-3 py-2 text-sm text-foreground hover:bg-accent transition-colors"
+                            >
+                              <Icon className="h-4 w-4 text-primary" />
+                              {link.label}
+                            </a>
+                          );
+                        })}
+                      </div>
+                    </PopoverContent>
+                  </Popover>
+                )}
               </CardContent>
             );
-
-            if (dev.links && dev.links.length > 0) {
-              return (
-                <Popover key={index}>
-                  <PopoverTrigger asChild>
-                    <Card
-                      className={`${cardClassName} cursor-pointer`}
-                      style={{ animationDelay: `${index * 0.1}s` }}
-                    >
-                      {cardInner}
-                    </Card>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-56 p-2" align="center">
-                    <div className="flex flex-col gap-1">
-                      {dev.links.map((link) => {
-                        const Icon = link.icon;
-                        return (
-                          <a
-                            key={link.label}
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 rounded-md px-3 py-2 text-sm text-foreground hover:bg-accent transition-colors"
-                          >
-                            <Icon className="h-4 w-4 text-primary" />
-                            {link.label}
-                          </a>
-                        );
-                      })}
-                    </div>
-                  </PopoverContent>
-                </Popover>
-              );
-            }
 
             return (
               <Card
