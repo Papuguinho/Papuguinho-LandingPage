@@ -31,7 +31,7 @@ const developers: Developer[] = [
     name: "Gabriel de Paula Baroni",
     role: "Cofundador, Desenvolvedor de Software e Pesquisador",
     description:
-      "Técnico em Informática e pesquisador (IFSP-Jacareí), cursando Bacharelado Interdisciplinar em Ciência e Tecnologia (UNIFESP-São José dos Campos). Responsável pelo desenvolvimento do software com arquitetura em Flutter/Dart.",
+      "Técnico em Informática e pesquisador (IFSP-Jacareí), cursando Bacharelado Interdisciplinar em Ciência e Tecnologia (UNIFESP-São José dos Campos). Responsável pelo desenvolvimento do software com arquitetura em Flutter e serviços do Firebase.",
     initials: "GB",
     image: "https://gabrielbaroni.vercel.app/assets/hero/eu.jpg",
     links: [
@@ -45,7 +45,7 @@ const developers: Developer[] = [
     name: "José Antonio de Carvalho Neto",
     role: "Cofundador, Desenvolvedor de Software e Pesquisador",
     description:
-      "Cursando Análise e Desenvolvimento de Sistemas (IFSP-Jacareí). Responsável pelo desenvolvimento do software com arquitetura em Flutter/Dart.",
+      "Cursando Análise e Desenvolvimento de Sistemas (IFSP-Jacareí). Responsável pelo desenvolvimento do software com arquitetura em Flutter e serviços do Firebase.",
     initials: "JC",
     image: "https://github.com/joseantoniodecarvalhoneto.png",
   },
