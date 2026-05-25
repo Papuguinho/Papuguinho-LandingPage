@@ -1,7 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Github, Linkedin, Globe, GraduationCap } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Globe, GraduationCap, Mail } from "lucide-react";
 
 type DeveloperLink = {
   label: string;
