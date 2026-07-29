@@ -28,7 +28,7 @@ const Hero = () => {
               </Button>
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all" asChild>
                 <a href="https://estudio.papuguinho.com" target="_blank" rel="noopener noreferrer">
-                  Estudio Papuguinho
+                  Estúdio Papuguinho
                 </a>
               </Button>
             </div>
