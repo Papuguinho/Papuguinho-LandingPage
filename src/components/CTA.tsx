@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Download, Globe, Mail } from "lucide-react";
+import { Download, Globe, Mail, Palette } from "lucide-react";
+
 
 const CTA = () => {
   return (
