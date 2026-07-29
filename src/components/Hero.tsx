@@ -26,6 +26,11 @@ const Hero = () => {
             })}>
                 Saiba Mais
               </Button>
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all" asChild>
+                <a href="https://estudio.papuguinho.com" target="_blank" rel="noopener noreferrer">
+                  Estudio Papuguinho
+                </a>
+              </Button>
             </div>
             <p className="text-sm text-muted-foreground text-center">Desenvolvido com ❤️ por estudantes do Instituto Federal de São Paulo -  Campus Jacareí </p>
           </div>
