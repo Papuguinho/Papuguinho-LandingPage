@@ -36,7 +36,18 @@ const CTA = () => {
                 Abrir na web
               </a>
             </Button>
+            <Button 
+              size="lg"
+              className="bg-background text-primary hover:bg-background/90 shadow-xl"
+              asChild
+            >
+              <a href="https://estudio.papuguinho.com" target="_blank" rel="noopener noreferrer">
+                <Palette className="w-5 h-5 mr-2" />
+                Estúdio Papuguinho
+              </a>
+            </Button>
           </div>
+
 
           <div className="pt-8 border-t border-primary-foreground/20">
             <p className="text-primary-foreground/90 mb-4">
