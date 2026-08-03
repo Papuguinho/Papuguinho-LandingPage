@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Remendo do til na fonte da marca.
+ *
+ * A "More Sugar" MAPEIA Ã ã Õ õ para glifos SEM o til — ela não deixa o
+ * caractere vazio, devolve um A/O pelado. Por isso o navegador nunca cai
+ * sozinho para a próxima fonte da pilha, e "COMUNICAÇÃO" saía "COMUNICAÇAO",
+ * o que lê como erro de digitação num título.
+ *
+ * A saída é `unicode-range`: uma família só para esses quatro caracteres,
+ * resolvida a partir de fontes já instaladas no aparelho (sem request extra).
+ * A lista cobre macOS/iOS, Windows, Android e Linux — o glifo emprestado é um
+ * pouco diferente do resto, o que é bem melhor que a palavra errada.
+ *
+ * Ela vem ANTES da "More Sugar" em tailwind.config.ts → fontFamily.display.
+ */
+@font-face {
+  font-family: "Til";
+  src:
+    local("Arial Rounded MT Bold"), local("SF Pro Rounded"), local("Segoe UI"),
+    local("Roboto"), local("Noto Sans"), local("DejaVu Sans"), local("Verdana"), local("Arial");
+  unicode-range: U+00C3, U+00E3, U+00D5, U+00F5; /* Ã ã Õ õ */
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
@@ -111,5 +134,19 @@ All colors MUST be HSL.
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-display uppercase;
+  }
+
+  /*
+   * Rolagem das âncoras (#cta, #features, menu do topo).
+   * `scroll-padding-top` desconta o cabeçalho fixo — sem isso o alvo para
+   * embaixo dele. Feito no CSS de propósito: assim funciona no link nativo,
+   * sem depender de JS.
+   */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
   }
 }

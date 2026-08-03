@@ -14,7 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        'display': ['"More Sugar"', 'sans-serif'],
+        // "Til" só existe para Ã ã Õ õ (ver @font-face em src/index.css); todo
+        // o resto continua vindo da "More Sugar".
+        'display': ['"Til"', '"More Sugar"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

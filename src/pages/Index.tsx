@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -12,6 +13,16 @@ import Developers from "@/components/Developers";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  // Numa SPA o navegador processa o #hash ANTES de o React montar, então o alvo
+  // ainda não existe e o link direto (papuguinho.com/#cta) não rola. Depois de
+  // montar, refazemos o pulo uma vez.
+  useEffect(() => {
+    const alvo = window.location.hash?.slice(1);
+    if (!alvo) return;
+    const t = setTimeout(() => document.getElementById(alvo)?.scrollIntoView(), 100);
+    return () => clearTimeout(t);
+  }, []);
+
   return (
     <main className="min-h-screen">
       <Header />

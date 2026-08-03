@@ -18,12 +18,10 @@ const Hero = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button size="lg" className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all" asChild>
-                <a href="#cta" onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById("cta")?.scrollIntoView({ behavior: "smooth" });
-                }}>
-                  Baixar Grátis
-                </a>
+                {/* Âncora nativa: o preventDefault + scrollIntoView que estava aqui
+                    engolia o clique sem rolar. O CSS (scroll-behavior + scroll-padding-top
+                    em index.css) faz a rolagem suave e desvia do cabeçalho fixo. */}
+                <a href="#cta">Baixar Grátis</a>
               </Button>
 
               <Button size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary/5" onClick={() => document.getElementById("features")?.scrollIntoView({
