@@ -47,14 +47,17 @@ const Hero = () => {
           </div>
           <div className="relative flex justify-center">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl"></div>
+              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl"></div>
               <img src={papuguinhoMascot} alt="Papuguinho — mascote do aplicativo de comunicação aumentativa e alternativa (CAA)" width="896" height="896" fetchPriority="high" className="relative w-full max-w-md animate-float drop-shadow-2xl" />
             </div>
           </div>
         </div>
       </div>
-      <div className="absolute top-10 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-10 left-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+      {/* Enfeites: vêm DEPOIS no DOM, então ficavam por cima dos botões e engoliam o
+          clique (o de baixo cobria o "Baixar Grátis" inteiro). Decoração nunca pode
+          receber ponteiro — daí o pointer-events-none e o aria-hidden. */}
+      <div aria-hidden="true" className="pointer-events-none absolute top-10 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+      <div aria-hidden="true" className="pointer-events-none absolute bottom-10 left-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
     </section>;
 };
 export default Hero;
