@@ -1,10 +1,10 @@
 import { Card } from "@/components/ui/card";
-import ifsp from "@/assets/partners/ifsp.jpeg";
-import arasaac from "@/assets/partners/arasaac.jpeg";
-import mind from "@/assets/partners/mind.jpeg";
-import prefeitura from "@/assets/partners/prefeitura.jpeg";
-import secretaria from "@/assets/partners/secretaria.png";
-import emei from "@/assets/partners/emei.jpeg";
+import ifsp from "@/assets/partners/ifsp.webp";
+import arasaac from "@/assets/partners/arasaac.webp";
+import mind from "@/assets/partners/mind.webp";
+import prefeitura from "@/assets/partners/prefeitura.webp";
+import secretaria from "@/assets/partners/secretaria.webp";
+import emei from "@/assets/partners/emei.webp";
 
 const partners = [
 {
@@ -67,6 +67,8 @@ const Partners = () => {
                 <img
                 src={partner.image}
                 alt={partner.name}
+                loading="lazy"
+                decoding="async"
                 className="max-h-full max-w-full object-contain" />
               
               </div>

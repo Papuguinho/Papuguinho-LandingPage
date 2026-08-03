@@ -1,10 +1,10 @@
 import { Card } from "@/components/ui/card";
-import papuguinho01 from "@/assets/gallery/papuguinho01.jpg";
-import papuguinho02 from "@/assets/gallery/papuguinho02.jpg";
-import papuguinho03 from "@/assets/gallery/papuguinho03.jpg";
-import papuguinho04 from "@/assets/gallery/papuguinho04.jpg";
-import papuguinho05 from "@/assets/gallery/papuguinho05.jpg";
-import papuguinho06 from "@/assets/gallery/papuguinho06.jpg";
+import papuguinho01 from "@/assets/gallery/papuguinho01.webp";
+import papuguinho02 from "@/assets/gallery/papuguinho02.webp";
+import papuguinho03 from "@/assets/gallery/papuguinho03.webp";
+import papuguinho04 from "@/assets/gallery/papuguinho04.webp";
+import papuguinho05 from "@/assets/gallery/papuguinho05.webp";
+import papuguinho06 from "@/assets/gallery/papuguinho06.webp";
 
 const Gallery = () => {
   const screenshots = [
@@ -58,9 +58,11 @@ const Gallery = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="aspect-video bg-gradient-to-br from-primary/5 to-accent/5 overflow-hidden flex items-center justify-center">
-                <img 
-                  src={screenshot.image} 
+                <img
+                  src={screenshot.image}
                   alt={screenshot.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
                 />
               </div>
