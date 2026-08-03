@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import papuguinhoMascot from "@/assets/papuguinho-mascot.png";
+// .webp: 123 KB no lugar de 1,73 MB do .png — esta é a imagem de LCP da página.
+import papuguinhoMascot from "@/assets/papuguinho-mascot.webp";
 const Hero = () => {
   return <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5 pt-32 pb-20 md:pt-40 md:pb-32">
       <div className="container mx-auto px-4">
@@ -41,7 +42,7 @@ const Hero = () => {
           <div className="relative flex justify-center">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl"></div>
-              <img src={papuguinhoMascot} alt="Papuguinho - Mascote do aplicativo" className="relative w-full max-w-md animate-float drop-shadow-2xl" />
+              <img src={papuguinhoMascot} alt="Papuguinho — mascote do aplicativo de comunicação aumentativa e alternativa (CAA)" width="896" height="896" fetchPriority="high" className="relative w-full max-w-md animate-float drop-shadow-2xl" />
             </div>
           </div>
         </div>

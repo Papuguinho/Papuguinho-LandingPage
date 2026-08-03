@@ -25,7 +25,7 @@ const Footer = () => {
             <h4 className="font-semibold text-foreground text-center">Redes Sociais</h4>
             <div className="gap-4 flex items-start justify-center">
               <a
-              href="https://www.instagram.com/papuguinho?igsh=MXFteGN3djV3emQ3OA=="
+              href="https://www.instagram.com/papuguinho"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"

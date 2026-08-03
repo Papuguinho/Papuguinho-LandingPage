@@ -1,35 +1,152 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Papuguinho - Comunicação Aumentativa para Crianças com TEA</title>
-    <meta name="description" content="Sistema gratuito de Comunicação Aumentativa e Alternativa (CAA) para crianças com Transtorno do Espectro Autista. Desenvolvido por estudantes do IFSP.">
-    <meta name="author" content="Instituto Federal de São Paulo" />
-    <meta name="keywords" content="CAA, comunicação aumentativa, autismo, TEA, acessibilidade, educação inclusiva">
 
-    
-    
+    <title>Papuguinho — Comunicação Aumentativa e Alternativa (CAA) para crianças com autismo</title>
+    <meta
+      name="description"
+      content="Papuguinho é um sistema gratuito de Comunicação Aumentativa e Alternativa (CAA) para crianças com Transtorno do Espectro Autista (TEA). App Android, versão web e o Estúdio Papuguinho para criar pranchas imprimíveis. Feito no IFSP — Campus Jacareí."
+    />
+    <link rel="canonical" href="https://papuguinho.com/" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
+    <meta name="author" content="Papuguinho — IFSP Campus Jacareí" />
+    <meta name="theme-color" content="#1DD762" />
+    <meta name="apple-mobile-web-app-title" content="Papuguinho" />
+
+    <!-- ícones locais (antes vinham do bucket do Lovable) -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- compartilhamento -->
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/oa2ekuV7mVbRyJoBQeRZCjIlCu82/social-images/social-1763986425331-Papuguinho 3D.png">
-
+    <meta property="og:site_name" content="Papuguinho" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content="https://papuguinho.com/" />
+    <meta
+      property="og:title"
+      content="Papuguinho — Comunicação Aumentativa e Alternativa (CAA) para crianças com autismo"
+    />
+    <meta
+      property="og:description"
+      content="Sistema gratuito de CAA para crianças com TEA: app Android, versão web e o Estúdio Papuguinho para criar pranchas de comunicação imprimíveis."
+    />
+    <meta property="og:image" content="https://papuguinho.com/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Papuguinho — comunicação aumentativa e alternativa para crianças com autismo"
+    />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/oa2ekuV7mVbRyJoBQeRZCjIlCu82/social-images/social-1763986425331-Papuguinho 3D.png">
-    
-  
-  <!-- More Sugar Font -->
-  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/more-sugar">
-  
-  <link rel="icon" type="image/x-icon" href="https://storage.googleapis.com/gpt-engineer-file-uploads/oa2ekuV7mVbRyJoBQeRZCjIlCu82/uploads/1763986329421-Papuguinho 3D.png">
-  <meta property="og:title" content="Papuguinho - Comunicação Aumentativa para Crianças com TEA">
-  <meta name="twitter:title" content="Papuguinho - Comunicação Aumentativa para Crianças com TEA">
-  <meta property="og:description" content="Sistema gratuito de Comunicação Aumentativa e Alternativa (CAA) para crianças com Transtorno do Espectro Autista. Desenvolvido por estudantes do IFSP.">
-  <meta name="twitter:description" content="Sistema gratuito de Comunicação Aumentativa e Alternativa (CAA) para crianças com Transtorno do Espectro Autista. Desenvolvido por estudantes do IFSP.">
-</head>
+    <meta
+      name="twitter:title"
+      content="Papuguinho — Comunicação Aumentativa e Alternativa (CAA) para crianças com autismo"
+    />
+    <meta
+      name="twitter:description"
+      content="Sistema gratuito de CAA para crianças com TEA: app Android, versão web e o Estúdio Papuguinho para criar pranchas de comunicação imprimíveis."
+    />
+    <meta name="twitter:image" content="https://papuguinho.com/og.png" />
+
+    <link rel="preconnect" href="https://fonts.cdnfonts.com" />
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/more-sugar" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.cdnfonts.com/css/more-sugar" /></noscript>
+
+    <!--
+      Grafo de entidade. É o que ensina o Google que "Papuguinho" é NOME PRÓPRIO de
+      um produto — e não erro de digitação de outra palavra. Os `sameAs` amarram os
+      perfis oficiais à mesma entidade, e o nó do Estúdio liga os dois domínios.
+    -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://papuguinho.com/#org",
+            "name": "Papuguinho",
+            "alternateName": ["Papuguinho CAA", "Papuguinho App", "Projeto Papuguinho"],
+            "url": "https://papuguinho.com/",
+            "logo": "https://papuguinho.com/icon-512.png",
+            "image": "https://papuguinho.com/og.png",
+            "description": "Papuguinho é um sistema gratuito de Comunicação Aumentativa e Alternativa (CAA) para crianças com Transtorno do Espectro Autista, desenvolvido no Instituto Federal de São Paulo, Campus Jacareí.",
+            "sameAs": [
+              "https://www.instagram.com/papuguinho",
+              "https://www.linkedin.com/company/papuguinho",
+              "https://github.com/Papuguinho",
+              "https://play.google.com/store/apps/details?id=com.mycompany.versao1appcaa"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://papuguinho.com/#site",
+            "url": "https://papuguinho.com/",
+            "name": "Papuguinho",
+            "alternateName": "Papuguinho — CAA para crianças com autismo",
+            "inLanguage": "pt-BR",
+            "publisher": { "@id": "https://papuguinho.com/#org" }
+          },
+          {
+            "@type": "MobileApplication",
+            "@id": "https://papuguinho.com/#app",
+            "name": "Papuguinho",
+            "operatingSystem": "Android",
+            "applicationCategory": "EducationalApplication",
+            "inLanguage": "pt-BR",
+            "isAccessibleForFree": true,
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+            "installUrl": "https://play.google.com/store/apps/details?id=com.mycompany.versao1appcaa",
+            "downloadUrl": "https://play.google.com/store/apps/details?id=com.mycompany.versao1appcaa",
+            "description": "App de comunicação aumentativa e alternativa (CAA) para crianças com autismo: pictogramas, voz e rotinas.",
+            "publisher": { "@id": "https://papuguinho.com/#org" }
+          },
+          {
+            "@type": "WebApplication",
+            "@id": "https://estudio.papuguinho.com/#app",
+            "name": "Estúdio Papuguinho",
+            "url": "https://estudio.papuguinho.com/",
+            "applicationCategory": "EducationalApplication",
+            "operatingSystem": "Web (navegador)",
+            "inLanguage": "pt-BR",
+            "isAccessibleForFree": true,
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+            "description": "Cria pranchas de comunicação (CAA) com pictogramas ARASAAC a partir de um tema em português, prontas para editar e imprimir em A4.",
+            "publisher": { "@id": "https://papuguinho.com/#org" }
+          }
+        ]
+      }
+    </script>
+  </head>
 
   <body>
     <div id="root"></div>
+    <noscript>
+      <h1>Papuguinho — Comunicação Aumentativa e Alternativa (CAA) para crianças com autismo</h1>
+      <p>
+        O <strong>Papuguinho</strong> é um sistema gratuito de Comunicação Aumentativa e Alternativa
+        (CAA) para crianças com Transtorno do Espectro Autista (TEA), desenvolvido no Instituto
+        Federal de São Paulo — Campus Jacareí. Esta página precisa de JavaScript; enquanto isso, os
+        links abaixo funcionam:
+      </p>
+      <ul>
+        <li>
+          <a href="https://play.google.com/store/apps/details?id=com.mycompany.versao1appcaa"
+            >Papuguinho na Google Play (Android)</a
+          >
+        </li>
+        <li><a href="https://app.papuguinho.com">Papuguinho na web</a></li>
+        <li>
+          <a href="https://estudio.papuguinho.com/"
+            >Estúdio Papuguinho — criar pranchas de comunicação para imprimir</a
+          >
+        </li>
+        <li><a href="https://estudio.papuguinho.com/caa/">O que é CAA — guia</a></li>
+        <li><a href="https://www.instagram.com/papuguinho">Papuguinho no Instagram</a></li>
+        <li><a href="/privacidade">Política de privacidade</a></li>
+      </ul>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

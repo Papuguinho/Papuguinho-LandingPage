@@ -7,7 +7,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import papuguinhoLogo from "@/assets/papuguinho-mascot.png";
+import papuguinhoLogo from "@/assets/papuguinho-mascot.webp";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
