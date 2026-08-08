@@ -5,45 +5,59 @@ import mind from "@/assets/partners/mind.webp";
 import prefeitura from "@/assets/partners/prefeitura.webp";
 import secretaria from "@/assets/partners/secretaria.webp";
 import emei from "@/assets/partners/emei.webp";
+import unifesp from "@/assets/partners/unifesp.webp";
+import codeLab from "@/assets/partners/codeLab.webp";
 
 const partners = [
-{
-  name: "IFSP - Campus Jacareí",
-  description: "Base institucional do projeto, oferecendo fomento à pesquisa através de bolsas de Iniciação Científica e suporte laboratorial.",
-  image: ifsp,
-  link: "https://jcr.ifsp.edu.br"
-},
-{
-  name: "ARASAAC",
-  description: "Fornecedor dos recursos gráficos e sistemas de comunicação aumentativa e alternativa (CAA) utilizados nas interfaces do projeto.",
-  image: arasaac,
-  link: "https://arasaac.org/index.html"
-},
-{
-  name: "Grupo MIND",
-  description: "Grupo de pesquisa do IFSP-Jacareí, certificado pelo CNPq. Tem o propósito de promover pesquisas que favoreçam a inclusão de todos os estudantes nos espaços escolares.",
-  image: mind,
-  link: "https://grupopesquisamind.github.io/site_mind/home.html"
-},
-{
-  name: "Prefeitura de Jacareí",
-  description: "Parceira institucional responsável pela viabilização e implementação do projeto na rede municipal de ensino, promovendo a inclusão e o uso de tecnologias assistivas nas escolas públicas.",
-  image: prefeitura,
-  link: ""
-},
-{
-  name: "SECRETARIA MUNICIPAL DE EDUCAÇÃO DE JACAREÍ",
-  description: "Órgão responsável pela articulação pedagógica e implementação do projeto nas salas de Atendimento Educacional Especializado (AEE), promovendo a formação de professores e o suporte direto aos alunos da rede municipal.",
-  image: secretaria,
-  link: ""
-},
-{
-  name: "EMEI Thiago Silva Santos",
-  description: "Escola-piloto e primeira unidade de ensino a receber o Papuguinho, desempenhando um papel fundamental na fase de testes, validação pedagógica e fornecimento de sugestões essenciais para o aprimoramento da ferramenta no cotidiano escolar.",
-  image: emei,
-  link: ""
-}];
-
+  {
+    name: "IFSP - Campus Jacareí",
+    description: "Base institucional do projeto, oferecendo fomento à pesquisa através de bolsas de Iniciação Científica e suporte laboratorial.",
+    image: ifsp,
+    link: "https://jcr.ifsp.edu.br"
+  },
+  {
+    name: "ICT-UNIFESP",
+    description: "Instituição parceira no desenvolvimento acadêmico e tecnológico, contribuindo com pesquisa e inovação para o projeto.",
+    image: unifesp,
+    link: "https://campus.unifesp.br/sjc/"
+  },
+  {
+    name: "CodeLab Unifesp",
+    description: "Programa de extensão que reúne estudantes e docentes do ICT-Unifesp no desenvolvimento de softwares de código aberto e gratuito para solucionar problemas da comunidade e promover impacto social.",
+    image: codeLab,
+    link: "https://www.codelab-unifesp.org/"
+  },
+  {
+    name: "ARASAAC",
+    description: "Fornecedor dos recursos gráficos e sistemas de comunicação aumentativa e alternativa (CAA) utilizados nas interfaces do projeto.",
+    image: arasaac,
+    link: "https://arasaac.org/index.html"
+  },
+  {
+    name: "Grupo MIND",
+    description: "Grupo de pesquisa do IFSP-Jacareí, certificado pelo CNPq. Tem o propósito de promover pesquisas que favoreçam a inclusão de todos os estudantes nos espaços escolares.",
+    image: mind,
+    link: "https://grupopesquisamind.github.io/"
+  },
+  {
+    name: "Prefeitura de Jacareí",
+    description: "Parceira institucional responsável pela viabilização e implementação do projeto na rede municipal de ensino, promovendo a inclusão e o uso de tecnologias assistivas nas escolas públicas.",
+    image: prefeitura,
+    link: "https://www.jacarei.sp.gov.br/"
+  },
+  {
+    name: "SECRETARIA MUNICIPAL DE EDUCAÇÃO DE JACAREÍ",
+    description: "Órgão responsável pela articulação pedagógica e implementação do projeto nas salas de Atendimento Educacional Especializado (AEE), promovendo a formação de professores e o suporte direto aos alunos da rede municipal.",
+    image: secretaria,
+    link: "https://educajacarei.com.br/"
+  },
+  {
+    name: "EMEI Thiago Silva Santos",
+    description: "Escola-piloto e primeira unidade de ensino a receber o Papuguinho, desempenhando um papel fundamental na fase de testes, validação pedagógica e fornecimento de sugestões essenciais para o aprimoramento da ferramenta no cotidiano escolar.",
+    image: emei,
+    link: ""
+  }
+];
 
 const Partners = () => {
   return (
