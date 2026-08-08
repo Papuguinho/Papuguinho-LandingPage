@@ -100,6 +100,20 @@ export function gerarGuia(outDir: string): void {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Google tag (gtag.js) — mesma propriedade do site. É \`async\`: a página
+     continua renderizando inteira sem JavaScript, como foi projetada. Aqui é
+     onde a medição mais importa, já que a URL não é linkada de lugar nenhum. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YHW0W81BQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // Sem perfil comportamental para publicidade (ver Política de Privacidade).
+  gtag('config', 'G-YHW0W81BQ8', {
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false,
+  });
+</script>
 <title>${TITULO} · Papuguinho</title>
 <meta name="description" content="${DESCRICAO}">
 <link rel="canonical" href="${SITE}${CAMINHO}">
