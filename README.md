@@ -42,7 +42,7 @@
 
 ### 🤝 Apoio Institucional | Institutional Support
 
-Este site e o projeto Papuguinho são vinculados ao **IFSP - Campus Jacareí** e ao **Grupo de Pesquisa MIND (Inclusão e Diversidade)**.
+Este site e o projeto Papuguinho são vinculados ao **IFSP - Campus Jacareí** e ao **ICT-Unifesp**, além de diversas outras parcerias.
 
 ---
 
