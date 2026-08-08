@@ -6,7 +6,7 @@ import prefeitura from "@/assets/partners/prefeitura.webp";
 import secretaria from "@/assets/partners/secretaria.webp";
 import emei from "@/assets/partners/emei.webp";
 import unifesp from "@/assets/partners/unifesp.webp";
-import codeLab from "@/assets/partners/codelab.webp";
+import codeLab from "@/assets/partners/codeLab.webp";
 
 const partners = [
   {
