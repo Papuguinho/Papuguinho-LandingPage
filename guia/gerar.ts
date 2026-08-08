@@ -108,7 +108,11 @@ export function gerarGuia(outDir: string): void {
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-YHW0W81BQ8');
+  // Sem perfil comportamental para publicidade (ver Política de Privacidade).
+  gtag('config', 'G-YHW0W81BQ8', {
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false,
+  });
 </script>
 <title>${TITULO} · Papuguinho</title>
 <meta name="description" content="${DESCRICAO}">

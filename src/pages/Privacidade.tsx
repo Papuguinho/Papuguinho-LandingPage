@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Mail, Shield, UserCheck, Database, Ban, Lock, Trash2, MessageCircle } from "lucide-react";
+import { ArrowLeft, Mail, Shield, UserCheck, Database, Ban, Lock, Trash2, MessageCircle, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const sections = [
@@ -55,15 +55,28 @@ const sections = [
     firebaseLink: true,
   },
   {
+    icon: BarChart3,
+    title: "6. Medição de Acesso ao Site (papuguinho.com)",
+    content:
+      "Esta seção trata apenas do site institucional papuguinho.com — não do aplicativo. Usamos o Google Analytics para saber quantas pessoas visitam o site e quais páginas são úteis, o que nos ajuda a melhorar a divulgação do projeto. Essa medição é do site público e não alcança os dados das crianças, os perfis, as mensagens ou os pictogramas do aplicativo, que seguem protegidos conforme as seções anteriores.",
+    bullets: [
+      "O que é registrado: páginas visitadas, origem aproximada do acesso, tipo de dispositivo e navegador — de forma agregada, sem identificar a pessoa.",
+      "Cookies: o Google Analytics grava um cookie no navegador (_ga) para não contar a mesma visita duas vezes.",
+      "Desativamos, na configuração da ferramenta, os sinais de publicidade e a personalização de anúncios (allow_google_signals e allow_ad_personalization_signals). Ou seja, a medição não alimenta perfil comportamental para fins publicitários.",
+      "Como recusar: você pode bloquear cookies nas configurações do seu navegador ou instalar o complemento oficial de desativação do Google Analytics, sem qualquer prejuízo ao uso do site ou do aplicativo.",
+    ],
+    analyticsOptOut: true,
+  },
+  {
     icon: Trash2,
-    title: "6. Direitos do Usuário (Exclusão de Dados)",
+    title: "7. Direitos do Usuário (Exclusão de Dados)",
     content:
       "Em conformidade com a Lei Geral de Proteção de Dados (LGPD), o adulto responsável detém total controle sobre as informações processadas no Papuguinho. Você pode visualizar, editar ou solicitar a exclusão permanente de sua conta e de todos os perfis associados a qualquer momento.",
     deleteAccount: true,
   },
   {
     icon: MessageCircle,
-    title: "7. Contato",
+    title: "8. Contato",
     content: "Se você tiver dúvidas sobre esta Política de Privacidade ou sobre como tratamos os dados de sua família, entre em contato conosco através do e-mail:",
     email: "papuguinho@gmail.com",
   },
@@ -88,7 +101,7 @@ const Privacidade = () => {
           Política de Privacidade
         </h1>
         <p className="text-center text-muted-foreground mb-10">
-          Última atualização: Março de 2026
+          Última atualização: Agosto de 2026
         </p>
 
         <div className="space-y-8">
@@ -137,6 +150,20 @@ const Privacidade = () => {
                       className="text-green-600 underline underline-offset-4 hover:text-green-500 font-medium"
                     >
                       Privacidade e Segurança no Firebase
+                    </a>.
+                  </p>
+                )}
+
+                {section.analyticsOptOut && (
+                  <p className="mt-4 text-muted-foreground">
+                    Complemento oficial do Google para desativar a medição em todos os sites:{" "}
+                    <a
+                      href="https://tools.google.com/dlpage/gaoptout?hl=pt-BR"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-green-600 underline underline-offset-4 hover:text-green-500 font-medium"
+                    >
+                      Complemento de Desativação do Google Analytics
                     </a>.
                   </p>
                 )}

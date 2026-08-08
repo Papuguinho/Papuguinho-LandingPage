@@ -13,7 +13,12 @@
       }
       gtag("js", new Date());
 
-      gtag("config", "G-YHW0W81BQ8");
+      // Desliga a parte do GA4 que faz perfil comportamental para publicidade —
+      // é o que a nossa Política de Privacidade declara que não fazemos.
+      gtag("config", "G-YHW0W81BQ8", {
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+      });
     </script>
 
     <title>Papuguinho — Comunicação Aumentativa e Alternativa (CAA) para crianças com autismo</title>
