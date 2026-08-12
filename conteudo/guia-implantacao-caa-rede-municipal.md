@@ -3,7 +3,7 @@
 **Como levar o Papuguinho para as escolas do seu município**
 
 *Produzido pela equipe do Papuguinho — IFSP campus Jacareí (SP) em parceria com o ICT-Unifesp e a Unesp*
-*Contato: papuguinho.com · stekel@ifsp.edu.br*
+*Contato: papuguinho.com · papuguinho@gmail.com*
 
 ---
 
@@ -75,7 +75,7 @@ Ofereça uma formação introdutória para professores de educação especial e 
 3. Como usar o Estúdio para criar pranchas de rotina personalizadas
 4. Como envolver a família no uso em casa
 
-A equipe do IFSP campus Jacareí pode apoiar remotamente a formação inicial — entre em contato: **stekel@ifsp.edu.br**
+A equipe do IFSP campus Jacareí pode apoiar remotamente a formação inicial — entre em contato: **papuguinho@gmail.com**
 
 ---
 
@@ -122,7 +122,7 @@ A equipe do Papuguinho está disponível para apoiar gestores municipais, secret
 
 - **Site:** [papuguinho.com](https://www.papuguinho.com)
 - **Estúdio:** [estudio.papuguinho.com](https://estudio.papuguinho.com)
-- **E-mail:** stekel@ifsp.edu.br
+- **E-mail:** papuguinho@gmail.com
 - **Instituição:** IFSP campus Jacareí — Instituto Federal de São Paulo
 
 ---
