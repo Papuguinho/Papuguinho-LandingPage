@@ -1,50 +1,63 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Quote } from "lucide-react";
+//imagino fazer um carrosel dos depoimentos com Swiper, importando eles aqui
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+// os estilos do swiper tbm
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Maria Silva",
-      role: "Mãe de João, 6 anos",
+      id: "1",
+      name: "Marcela Jordana",
+      occupation: "UX/UI Designer",
       content:
-        "O Papuguinho transformou a comunicação do meu filho. Ele consegue expressar suas necessidades e emoções de forma muito mais clara agora.",
-      initials: "MS",
+        "As funcionalidades de personalização de pictogramas com certeza é o diferencial, além da genialidade do modo infantil ",
+      stars: 5,
     },
     {
-      name: "Ana Costa",
-      role: "Mãe de Laura, 5 anos",
+      id: "2",
+      name: "Marcela Jordana",
+      occupation: "UX/UI Designer",
       content:
-        "Ferramenta incrível! A Laura adora usar o aplicativo e tem se desenvolvido muito. Os sons ajudam muito no aprendizado.",
-      initials: "AC",
+        "As funcionalidades de personalização de pictogramas com certeza é o diferencial, além da genialidade do modo infantil ",
+      stars: 5,
     },
     {
-      name: "Carlos Oliveira",
-      role: "Pai de Pedro, 7 anos",
+      id: "3",
+      name: "Marcela Jordana",
+      occupation: "UX/UI Designer",
       content:
-        "Gratuito e de qualidade! O Pedro usa todos os dias e conseguimos entender melhor o que ele quer nos dizer. Recomendo muito!",
-      initials: "CO",
+        "As funcionalidades de personalização de pictogramas com certeza é o diferencial, além da genialidade do modo infantil ",
+      stars: 5,
     },
     {
-      name: "Juliana Santos",
-      role: "Mãe de Gabriel, 4 anos",
+      id: "4",
+      name: "Marcela Jordana",
+      occupation: "UX/UI Designer",
       content:
-        "A interface é super intuitiva. Gabriel aprendeu a usar rapidamente e agora se comunica com muito mais autonomia.",
-      initials: "JS",
+        "As funcionalidades de personalização de pictogramas com certeza é o diferencial, além da genialidade do modo infantil ",
+      stars: 5,
     },
     {
-      name: "Roberto Lima",
-      role: "Pai de Sofia, 8 anos",
+      id: "5",
+      name: "Marcela Jordana",
+      occupation: "UX/UI Designer",
       content:
-        "Excelente recurso desenvolvido pelos estudantes do IFSP. A Sofia adora o papagainho e usa o app com entusiasmo.",
-      initials: "RL",
+        "As funcionalidades de personalização de pictogramas com certeza é o diferencial, além da genialidade do modo infantil ",
+      stars: 5,
     },
     {
-      name: "Patricia Ferreira",
-      role: "Mãe de Miguel, 5 anos",
+      id: "6",
+      name: "Marcela Jordana",
+      occupation: "UX/UI Designer",
       content:
-        "O Papuguinho facilitou muito nossa rotina. Miguel consegue montar frases e expressar o que sente. Gratidão aos desenvolvedores!",
-      initials: "PF",
+        "As funcionalidades de personalização de pictogramas com certeza é o diferencial, além da genialidade do modo infantil ",
+      stars: 5,
     },
   ];
 
@@ -59,24 +72,30 @@ const Testimonials = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
+          {testimonials.map((testimonial) => (
             <Card
-              key={index}
+              key={testimonial.id}
               className="hover:shadow-lg transition-shadow duration-300 animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={{
+                animationDelay: `${testimonials.indexOf(testimonial) * 0.1}s`,
+              }}
             >
               <CardContent className="pt-6">
                 <Quote className="h-8 w-8 text-primary/40 mb-4" />
-                <p className="text-muted-foreground mb-6 italic">"{testimonial.content}"</p>
+                <p className="text-muted-foreground mb-6 italic">
+                  "{testimonial.content}"
+                </p>
                 <div className="flex items-center gap-3">
                   <Avatar>
                     <AvatarFallback className="bg-primary/20 text-primary">
-                      {testimonial.initials}
+                      {testimonial.stars}
                     </AvatarFallback>
                   </Avatar>
                   <div>
                     <p className="font-semibold">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {testimonial.occupation}
+                    </p>
                   </div>
                 </div>
               </CardContent>

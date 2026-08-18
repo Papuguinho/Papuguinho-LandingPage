@@ -11,6 +11,7 @@ import CTA from "@/components/CTA";
 import Partners from "@/components/Partners";
 import Developers from "@/components/Developers";
 import Footer from "@/components/Footer";
+import Testimonials from "@/components/Testimonials";
 
 const Index = () => {
   // Numa SPA o navegador processa o #hash ANTES de o React montar, então o alvo
@@ -35,10 +36,12 @@ const Index = () => {
       <div id="features">
         <Features />
       </div>
+      
       <Gallery />
       <VideoDemo />
       <FAQ />
       <Benefits />
+      <Testimonials />
       <Partners />
       <Developers />
       <div id="cta">
