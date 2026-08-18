@@ -1,13 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Quote } from "lucide-react";
-//imagino fazer um carrosel dos depoimentos com Swiper, importando eles aqui
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
-// os estilos do swiper tbm
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const Testimonials = () => {
   const testimonials = [
@@ -62,48 +59,59 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12 animate-fade-in-up">
-          <h2 className="text-4xl font-bold mb-4 text-primary">Depoimentos</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Veja o que os pais e cuidadores estão dizendo sobre o Papuguinho
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial) => (
-            <Card
-              key={testimonial.id}
-              className="hover:shadow-lg transition-shadow duration-300 animate-fade-in-up"
-              style={{
-                animationDelay: `${testimonials.indexOf(testimonial) * 0.1}s`,
-              }}
-            >
-              <CardContent className="pt-6">
-                <Quote className="h-8 w-8 text-primary/40 mb-4" />
-                <p className="text-muted-foreground mb-6 italic">
-                  "{testimonial.content}"
-                </p>
-                <div className="flex items-center gap-3">
-                  <Avatar>
-                    <AvatarFallback className="bg-primary/20 text-primary">
-                      {testimonial.stars}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <p className="font-semibold">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">
-                      {testimonial.occupation}
-                    </p>
-                  </div>
+    <div className="carrousel-container mx-auto w-full overflow-hidden py-16">
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={32}
+        slidesPerView="auto"
+        centeredSlides
+        initialSlide={0}
+        loop
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 5000, disableOnInteraction: true }}
+        className="aSwiper !overflow-visible"
+      >
+        {testimonials.map((testimonial) => (
+          <SwiperSlide
+            key={testimonial.id}
+            className="!h-[337px] !w-[calc(100vw-2rem)] sm:!w-[596px]" // estipular tamanho maximo
+          >
+            <div className="flex h-full flex-col items-center px-4 pb-12 pt-8">
+              <Card className="testimonial-card relative flex h-[249px] w-full items-center justify-center rounded-lg border-0 bg-[#F6FDFB] px-6 py-8 text-center shadow-md transition-transform duration-300 ease-out sm:w-[596px] sm:flex-none">
+                <div className="absolute left-1/2 top-0 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-md bg-[#36B878] text-white shadow-md">
+                  <Quote size={24} strokeWidth={2.5} />
                 </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
+                <CardContent className="flex w-full flex-col items-center p-0">
+                  <p className="text-base leading-relaxed text-slate-700">
+                    {testimonial.content}
+                  </p>
+                  <div className="my-6 h-px w-full bg-[#B9E8D0]" />
+                  <div
+                    className="flex items-bottom gap-1 text-[#F4B942]"
+                    aria-label={`${testimonial.stars} estrelas`}
+                  >
+                    {Array.from({ length: testimonial.stars }, (_, index) => (
+                      <span key={index} aria-hidden="true">
+                        ★
+                      </span>
+                    ))}
+                  </div>
+                  <span className="mt-1 text-sm font-medium text-slate-500">
+                    Avaliação: {testimonial.stars}
+                  </span>
+                </CardContent>
+              </Card>
+              <p className="mt-4 text-center text-sm font-semibold text-slate-700">
+                {testimonial.name}{" "}
+                <span className="px-1 text-[#36B878]">|</span>{" "}
+                {testimonial.occupation}
+              </p>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 };
 
