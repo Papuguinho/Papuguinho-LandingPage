@@ -1,0 +1,137 @@
+import { Github, Linkedin, Globe, GraduationCap } from "lucide-react";
+import  leonardoImage from "@/assets/profile/fotoLeonardo.png";
+import rannyImage from "@/assets/profile/rannyImage.png";
+
+export type DeveloperLink = {
+  label: string;
+  url: string;
+  icon: typeof Github;
+};
+
+export type Developer = {
+  name: string;
+  role: string;
+  description: string;
+  initials: string;
+  image?: string;
+  links?: DeveloperLink[];
+};
+
+export const developers: Developer[] = [
+  {
+    name: "Tardelli Ronan Coelho Stekel",
+    role: "Cofundador e Orientador do Projeto",
+    description:
+      "Doutor em Geofísica Espacial (INPE), Professor e pesquisador (IFSP-Jacareí). Responsável pela criação do projeto, orientação científica e coordenação da equipe.",
+    initials: "TS",
+    image: "https://media.licdn.com/dms/image/v2/D4D03AQE82lHurG-raw/profile-displayphoto-scale_400_400/B4DZ72HPNBI4Ag-/0/1782245555516?e=1788998400&v=beta&t=NXz3Jw__wfULFZ4_L_0rO_W4FoSY0VJtgMxxWYZE9hc",
+    links: [
+      { label: "GitHub", url: "https://github.com/tardellirs", icon: Github },
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/tardelli-ronan-coelho-stekel-2802402a/", icon: Linkedin },
+      { label: "Lattes", url: "http://lattes.cnpq.br/4733654913237092", icon: GraduationCap }
+    ]
+  },
+  {
+    name: "Gabriel de Paula Baroni",
+    role: "Cofundador, Desenvolvedor de Software e Pesquisador",
+    description:
+      "Técnico em Informática e pesquisador (IFSP-Jacareí), cursando Bacharelado Interdisciplinar em Ciência e Tecnologia (UNIFESP-São José dos Campos). Responsável pelo desenvolvimento do software com arquitetura em Flutter e serviços do Firebase.",
+    initials: "GB",
+    image: "https://gabrielbaroni.vercel.app/assets/hero/eu.jpg",
+    links: [
+      { label: "GitHub", url: "https://github.com/Gabriel-Baroni", icon: Github },
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/gabrieldpbaroni/", icon: Linkedin },
+      { label: "Lattes", url: "https://lattes.cnpq.br/0153768116859752", icon: GraduationCap },
+      { label: "Portfólio", url: "https://gabrielbaroni.vercel.app", icon: Globe },
+    ],
+  },
+  {
+    name: "José Antonio de Carvalho Neto",
+    role: "Cofundador, Desenvolvedor de Software e Pesquisador",
+    description:
+      "Cursando Análise e Desenvolvimento de Sistemas (IFSP-Jacareí). Responsável pelo desenvolvimento do software com arquitetura em Flutter e serviços do Firebase.",
+    initials: "JC",
+    image: "https://github.com/joseantoniodecarvalhoneto.png",
+  },
+  {
+    name: "Manuela Antonelli",
+    role: "Cofundadora, Desenvolvedora Web, Pesquisadora",
+    description:
+      "Cursando Análise e Desenvolvimento de Sistemas (IFSP-Jacareí) e Pedagogia e Educação (UNINTER). Responsável pelo desenvolvimento do site informativo, adaptações inclusivas e pedagógicas do aplicativo.",
+    initials: "MA",
+    image: "https://github.com/ManuelaAntonelli.png",
+    links: [
+      { label: "GitHub", url: "https://github.com/ManuelaAntonelli", icon: Github },
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/manuela-antonelli-a997672ab/", icon: Linkedin },
+      { label: "Lattes", url: "https://lattes.cnpq.br/1197160727366253", icon: GraduationCap }
+    ]
+  },
+  {
+    name: "Marcela Jordana Victoria Souza",
+    role: "Cofundadora, Designer de Produto (UI/UX), Desenvolvedora Web, Pesquisadora",
+    description:
+      "Técnica em Informática e pesquisadora (IFSP-Jacareí), cursando farmácia (UNESP-Araraquara). Responsável pela elaboração do design do aplicativo (UX/UI), identidade visual e pelo desenvolvimento do site informativo.",
+    initials: "MS",
+    image: "https://github.com/marcela-vic938.png",
+    links: [
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/marcela-jordana-victória-souza-011b2828b/", icon: Linkedin },
+    ]
+  },
+  {
+    name: "Ana Paula Kawabe de Lima Ferreira",
+    role: "Suporte acadêmico e inclusivo",
+    description:
+      "Graduada em Licenciatura em Química (UNESP), Mestrado em Ciências (UFLA), Pós Graduação em Educação Especial e Inclusiva em andamento (UFABC), Doutorado em Ensino de Ciências em Andamento (UNICAMP-SP). Fundadora do Grupo MIND.",
+    initials: "AF",
+  },
+  {
+    name: "Alexssandro Ferreira da Silva",
+    role: "Suporte acadêmico e inclusivo",
+    description:
+      "Graduado em Administração (FADMINAS) e Análise e Desenvolvimento de Sistemas (IFSP), Pós Graduado em Gestão Pública Municipal e em Educação Empreendedora (UFSJ), Licenciatura em Pedagogia em andamento (UNIVESP), Mestrado em Ensino de Ciências (UNICAMP-SP). Fundador do Grupo MIND.",
+    initials: "AS",
+  },
+  {
+    name: "Felipe Silva Mantuani",
+    role: "Desenvolvedor de Software",
+    description:
+      "Técnico em Informática (IFSP-Jacareí), cursando Bacharelado Interdisciplinar em Ciência e Tecnologia (UNIFESP-São José dos Campos). Auxiliar no desenvolvimento do software.",
+    initials: "FM",
+    image: "https://github.com/Felipe-Mantuani.png",
+    links: [
+      { label: "GitHub", url: "https://github.com/Felipe-Mantuani", icon: Github },
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/felipe-silva-mantuani-a7275a27a/", icon: Linkedin }
+    ],
+  },
+  {
+    name: "Leonardo Aleixo",
+    role: "Desenvolvedor de Software",
+    description: "Cursando Técnico em Informática (IFSP-Jacareí). Auxiliar no desenvolvimento do software.",
+    image: leonardoImage,
+    initials: "LA",
+  },
+  {
+    name: "Ranny Fabela",
+    role: "Social Media & Marketing",
+    description: "Cursando Análise e Desenvolvimento de Sistemas (IFSP-Jacareí). Auxiliar na comunicação & divulgação.",
+    image: rannyImage,
+    initials: "RF",
+  },
+  {
+    name: "Luiz Felipe Jesus Silva",
+    role: "Designer UI/UX & Desenvolvedor de Software",
+    description: "Cursando Bacharelado Interdisciplinar em Ciência e Tecnologia (UNIFESP-São José dos Campos). Auxiliar no desenvolvimento do software & design.",
+    image: "https://github.com/Luiz-fjs.png",
+    initials: "LF",
+  },
+  {
+    name: "Victor Anunciato",
+    role: "Designer & ilustrador",
+    description: "Cursando Bacharelado Interdisciplinar em Ciência e Tecnologia (UNIFESP-São José dos Campos). Auxiliar em ilustração e identidade visual.",
+    initials: "VA",
+    image: "https://media.licdn.com/dms/image/v2/D5603AQGqEUDFAJ2DfA/profile-displayphoto-scale_400_400/B56ZpHEA6zI0Ag-/0/1762128827905?e=1788998400&v=beta&t=vQgVh5XRYnQaHoVBh3viVijWaQUkYD4XAPqUw92ando",
+    links: [
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/victoranunciato/", icon: Linkedin }
+    ]
+  }
+];

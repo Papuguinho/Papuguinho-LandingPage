@@ -12,89 +12,13 @@ import {
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
-import { Github, Linkedin, Globe, GraduationCap, Mail } from "lucide-react";
-
-type DeveloperLink = {
-  label: string;
-  url: string;
-  icon: typeof Github;
-};
-
-type Developer = {
-  name: string;
-  role: string;
-  description: string;
-  initials: string;
-  image?: string;
-  links?: DeveloperLink[];
-};
+import { Mail } from "lucide-react";
+import { developers, type Developer } from "@/data/developersData";
 
 type DeveloperCardProps = {
   dev: Developer;
   active?: boolean;
 };
-
-const developers: Developer[] = [
-  {
-    name: "Tardelli Ronan Coelho Stekel",
-    role: "Cofundador e Orientador do Projeto",
-    description:
-      "Doutor em Geofísica Espacial (INPE), Professor e pesquisador (IFSP-Jacareí). Responsável pela criação do projeto, orientação científica e coordenação da equipe.",
-    initials: "TS",
-  },
-  {
-    name: "Gabriel de Paula Baroni",
-    role: "Cofundador, Desenvolvedor de Software e Pesquisador",
-    description:
-      "Técnico em Informática e pesquisador (IFSP-Jacareí), cursando Bacharelado Interdisciplinar em Ciência e Tecnologia (UNIFESP-São José dos Campos). Responsável pelo desenvolvimento do software com arquitetura em Flutter e serviços do Firebase.",
-    initials: "GB",
-    image: "https://gabrielbaroni.vercel.app/assets/hero/eu.jpg",
-    links: [
-      { label: "GitHub", url: "https://github.com/Gabriel-Baroni", icon: Github },
-      { label: "LinkedIn", url: "https://www.linkedin.com/in/gabrieldpbaroni/", icon: Linkedin },
-      { label: "Lattes", url: "https://lattes.cnpq.br/0153768116859752", icon: GraduationCap },
-      { label: "Portfólio", url: "https://gabrielbaroni.vercel.app", icon: Globe },
-    ],
-  },
-  {
-    name: "José Antonio de Carvalho Neto",
-    role: "Cofundador, Desenvolvedor de Software e Pesquisador",
-    description:
-      "Cursando Análise e Desenvolvimento de Sistemas (IFSP-Jacareí). Responsável pelo desenvolvimento do software com arquitetura em Flutter e serviços do Firebase.",
-    initials: "JC",
-    image: "https://github.com/joseantoniodecarvalhoneto.png",
-  },
-  {
-    name: "Manuela Antonelli",
-    role: "Cofundadora, Desenvolvedora Web, Pesquisadora",
-    description:
-      "Cursando Análise e Desenvolvimento de Sistemas (IFSP-Jacareí) e Pedagogia e Educação (UNINTER). Responsável pelo desenvolvimento do site informativo, adaptações inclusivas e pedagógicas do aplicativo.",
-    initials: "MA",
-    image: "https://github.com/ManuelaAntonelli.png",
-  },
-  {
-    name: "Marcela Jordana Victoria Souza",
-    role: "Cofundadora, Designer de Produto (UI/UX), Desenvolvedora Web, Pesquisadora",
-    description:
-      "Técnica em Informática e pesquisadora (IFSP-Jacareí), cursando farmácia (UNESP-Araraquara). Responsável pela elaboração do design do aplicativo (UX/UI), identidade visual e pelo desenvolvimento do site informativo.",
-    initials: "MS",
-    image: "https://github.com/marcela-vic938.png",
-  },
-  {
-    name: "Ana Paula Kawabe de Lima Ferreira",
-    role: "Suporte acadêmico e inclusivo",
-    description:
-      "Graduada em Licenciatura em Química (UNESP), Mestrado em Ciências (UFLA), Pós Graduação em Educação Especial e Inclusiva em andamento (UFABC), Doutorado em Ensino de Ciências em Andamento (UNICAMP-SP). Fundadora do Grupo MIND.",
-    initials: "AF",
-  },
-  {
-    name: "Alexssandro Ferreira da Silva",
-    role: "Suporte acadêmico e inclusivo",
-    description:
-      "Graduado em Administração (FADMINAS) e Análise e Desenvolvimento de Sistemas (IFSP), Pós Graduado em Gestão Pública Municipal e em Educação Empreendedora (UFSJ), Licenciatura em Pedagogia em andamento (UNIVESP), Mestrado em Ensino de Ciências (UNICAMP-SP). Fundador do Grupo MIND.",
-    initials: "AS",
-  },
-];
 
 const DeveloperCard = ({ dev, active = false }: DeveloperCardProps) => {
   return (
