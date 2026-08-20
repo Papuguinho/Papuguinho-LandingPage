@@ -17,105 +17,97 @@
  *
  * Ela vem ANTES da "More Sugar" em tailwind.config.ts → fontFamily.display.
  */
+
 @font-face {
   font-family: "Til";
+
   src:
     local("Arial Rounded MT Bold"), local("SF Pro Rounded"), local("Segoe UI"),
-    local("Roboto"), local("Noto Sans"), local("DejaVu Sans"), local("Verdana"), local("Arial");
+    local("Roboto"), local("Noto Sans"), local("DejaVu Sans"), local("Verdana"),
+    local("Arial");
+
   unicode-range: U+00C3, U+00E3, U+00D5, U+00F5; /* Ã ã Õ õ */
 }
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
+
 */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 210 20% 15%;
-
     --card: 0 0% 100%;
     --card-foreground: 210 20% 15%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 210 20% 15%;
-
     --primary: 142 76% 48%;
     --primary-foreground: 0 0% 100%;
-
     --secondary: 38 100% 58%;
     --secondary-foreground: 210 20% 15%;
-
     --muted: 142 30% 96%;
     --muted-foreground: 210 15% 45%;
-
     --accent: 192 78% 72%;
     --accent-foreground: 210 20% 15%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-
     --border: 142 30% 88%;
     --input: 142 30% 88%;
     --ring: 142 76% 48%;
-
     --radius: 1rem;
-    
-    --gradient-hero: linear-gradient(135deg, hsl(142 76% 48%) 0%, hsl(165 70% 55%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(38 100% 58%) 0%, hsl(35 100% 65%) 100%);
+
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(142 76% 48%) 0%,
+      hsl(165 70% 55%) 100%
+    );
+
+    --gradient-accent: linear-gradient(
+      135deg,
+      hsl(38 100% 58%) 0%,
+      hsl(35 100% 65%) 100%
+    );
+
     --shadow-soft: 0 4px 20px hsla(142 76% 48% / 0.15);
     --shadow-elevated: 0 10px 40px hsla(142 76% 48% / 0.2);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
     --background: 210 30% 8%;
     --foreground: 0 0% 98%;
-
     --card: 210 25% 12%;
     --card-foreground: 0 0% 98%;
-
     --popover: 210 25% 12%;
     --popover-foreground: 0 0% 98%;
-
     --primary: 142 76% 48%;
     --primary-foreground: 0 0% 100%;
-
     --secondary: 38 100% 58%;
     --secondary-foreground: 210 20% 15%;
-
     --muted: 210 25% 18%;
     --muted-foreground: 210 15% 65%;
-
     --accent: 192 78% 72%;
     --accent-foreground: 210 20% 15%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-
     --border: 210 25% 18%;
     --input: 210 25% 18%;
     --ring: 142 76% 48%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
@@ -132,7 +124,12 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display uppercase;
   }
 
@@ -142,11 +139,44 @@ All colors MUST be HSL.
    * embaixo dele. Feito no CSS de propósito: assim funciona no link nativo,
    * sem depender de JS.
    */
+
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
   }
+
   @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
+    html {
+      scroll-behavior: auto;
+    }
   }
+}
+
+/* estilos para os card com Swiper */
+
+.swiper-slide {
+  transition: opacity 0.4s ease;
+  opacity: 0.7; /* Deixa os laterais mais apagados */
+}
+
+.swiper-slide > div {
+  transform: translateY(0);
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.swiper-slide-active {
+  opacity: 1; /* Destaca o card central */
+  z-index: 10;
+}
+
+.swiper-slide-active > div {
+  transform: translateY(-20px); /* Sobe o card central */
+}
+
+.swiper-pagination {
+  /*forçando um espaço decente pro carrosel e barra de progresso*/
+  position: relative !important;
+  margin-top: 15px !important;
 }

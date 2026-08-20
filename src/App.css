@@ -51,6 +51,5 @@
 }
 
 .aSwiper .swiper-slide-active .testimonial-card {
-  transform: translateY(-24px);
   box-shadow: 0 16px 30px rgba(54, 184, 120, 0.2);
 }
