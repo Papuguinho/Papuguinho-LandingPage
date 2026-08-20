@@ -1,90 +1,155 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+
 import { Quote } from "lucide-react";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+
+import "swiper/css";
+
+import "swiper/css/navigation";
+
+import "swiper/css/pagination";
 
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Maria Silva",
-      role: "Mãe de João, 6 anos",
+      id: "1",
+      name: "Marcela Jordana",
+      occupation: "UX/UI Designer",
+      type: "usuário pelo android",
       content:
-        "O Papuguinho transformou a comunicação do meu filho. Ele consegue expressar suas necessidades e emoções de forma muito mais clara agora.",
-      initials: "MS",
+        "As funcionalidades de personalização de pictogramas com certeza é o diferencial, além da genialidade do modo infantil ",
+      stars: 5,
     },
+
     {
-      name: "Ana Costa",
-      role: "Mãe de Laura, 5 anos",
+      id: "2",
+      name: "Marcela Jordana",
+      occupation: "UX/UI Designer",
+      type: "usuário pelo android",
       content:
-        "Ferramenta incrível! A Laura adora usar o aplicativo e tem se desenvolvido muito. Os sons ajudam muito no aprendizado.",
-      initials: "AC",
+        "As funcionalidades de personalização de pictogramas com certeza é o diferencial, além da genialidade do modo infantil ",
+      stars: 5,
     },
+
     {
-      name: "Carlos Oliveira",
-      role: "Pai de Pedro, 7 anos",
+      id: "3",
+      name: "Marcela Jordana",
+      occupation: "UX/UI Designer",
+      type: "usuário pelo android",
       content:
-        "Gratuito e de qualidade! O Pedro usa todos os dias e conseguimos entender melhor o que ele quer nos dizer. Recomendo muito!",
-      initials: "CO",
+        "As funcionalidades de personalização de pictogramas com certeza é o diferencial, além da genialidade do modo infantil ",
+      stars: 5,
     },
+
     {
-      name: "Juliana Santos",
-      role: "Mãe de Gabriel, 4 anos",
+      id: "4",
+      name: "Marcela Jordana",
+      occupation: "UX/UI Designer",
+      type: "usuário pelo android",
       content:
-        "A interface é super intuitiva. Gabriel aprendeu a usar rapidamente e agora se comunica com muito mais autonomia.",
-      initials: "JS",
+        "As funcionalidades de personalização de pictogramas com certeza é o diferencial, além da genialidade do modo infantil ",
+      stars: 5,
     },
+
     {
-      name: "Roberto Lima",
-      role: "Pai de Sofia, 8 anos",
+      id: "5",
+      name: "Marcela Jordana",
+      occupation: "UX/UI Designer",
+      type: "usuário pelo android",
       content:
-        "Excelente recurso desenvolvido pelos estudantes do IFSP. A Sofia adora o papagainho e usa o app com entusiasmo.",
-      initials: "RL",
+        "As funcionalidades de personalização de pictogramas com certeza é o diferencial, além da genialidade do modo infantil ",
+      stars: 5,
     },
+
     {
-      name: "Patricia Ferreira",
-      role: "Mãe de Miguel, 5 anos",
+      id: "6",
+      name: "Marcela Jordana",
+      occupation: "UX/UI Designer",
+      type: "usuário pelo android",
       content:
-        "O Papuguinho facilitou muito nossa rotina. Miguel consegue montar frases e expressar o que sente. Gratidão aos desenvolvedores!",
-      initials: "PF",
+        "As funcionalidades de personalização de pictogramas com certeza é o diferencial, além da genialidade do modo infantil ",
+      stars: 5,
     },
   ];
 
   return (
-    <section id="testimonials" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12 animate-fade-in-up">
-          <h2 className="text-4xl font-bold mb-4 text-primary">Depoimentos</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Veja o que os pais e cuidadores estão dizendo sobre o Papuguinho
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <Card
-              key={index}
-              className="hover:shadow-lg transition-shadow duration-300 animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <CardContent className="pt-6">
-                <Quote className="h-8 w-8 text-primary/40 mb-4" />
-                <p className="text-muted-foreground mb-6 italic">"{testimonial.content}"</p>
-                <div className="flex items-center gap-3">
-                  <Avatar>
-                    <AvatarFallback className="bg-primary/20 text-primary">
-                      {testimonial.initials}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <p className="font-semibold">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+    <div className="carrousel-container mx-auto w-full overflow-hidden py-16">
+      <div className="mb-8 flex flex-col items-center justify-center text-center">
+        <h2 className="text-4xl font-bold mb-4 text-primary items-center">
+          Depoimentos
+        </h2>
+        <p className="text-lg text-muted-foreground items-center p-5">
+          Quem usa, indica
+        </p>
       </div>
-    </section>
+
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={32}
+        slidesPerView="auto"
+        centeredSlides={true}
+        initialSlide={0}
+        loop
+        navigation
+        pagination={{ clickable: true }}
+        style={
+          {
+            "--swiper-navigation-color": "#36B878",
+            "--swiper-navigation-size": "20px",
+            "--swiper-pagination-color": "#36B878",
+          } as React.CSSProperties
+        } // habilitar css nas propriedades do swiper
+        autoplay={{ delay: 5000, disableOnInteraction: true }}
+        className="aSwiper !overflow-visible"
+      >
+        {testimonials.map((testimonial) => (
+          <SwiperSlide
+            key={testimonial.id}
+            className="!h-[337px] !w-[calc(100vw-2rem)] sm:!w-[596px]" // estipular tamanho maximo
+          >
+            <div className="flex h-full flex-col items-center px-4 pb-12 pt-8">
+              <Card className="testimonial-card relative flex h-[249px] w-full items-center justify-center rounded-lg border-0 bg-[#F6FDFB] px-6 py-8 text-center shadow-md transition-transform duration-300 ease-out sm:w-[596px] sm:flex-none">
+                <div className="absolute left-6 top-0 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-md bg-[#36B878] text-white shadow-md">
+                  <Quote size={24} strokeWidth={2.5} className="fill-white" />
+                </div>
+
+                <CardContent className="relative flex h-full w-full flex-col items-center p-0">
+                  <p className="flex flex-1 items-center pb-10 text-base leading-relaxed text-slate-700">
+                    {testimonial.content}
+                  </p>
+
+                  <div className="absolute bottom-7 left-0 h-px w-full bg-[#B9E8D0]" />
+
+                  <div
+                    className="absolute bottom-0 left-0 flex items-center gap-1 text-[#F4B942]"
+                    aria-label={`${testimonial.stars} estrelas`}
+                  >
+                    {Array.from({ length: testimonial.stars }, (_, index) => (
+                      <span key={index} aria-hidden="true">
+                        ★
+                      </span>
+                    ))}
+                  </div>
+
+                  <span className="absolute bottom-0 right-0 text-right text-sm font-medium text-slate-500">
+                    {testimonial.type}
+                  </span>
+                </CardContent>
+              </Card>
+
+              <p className="mt-4 text-center text-sm font-semibold text-slate-700">
+                {testimonial.name}{" "}
+                <span className="px-1 text-[#36B878]">|</span>{" "}
+                {testimonial.occupation}
+              </p>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 };
 
