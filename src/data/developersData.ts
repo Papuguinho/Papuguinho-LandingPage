@@ -78,20 +78,6 @@ export const developers: Developer[] = [
     ]
   },
   {
-    name: "Ana Paula Kawabe de Lima Ferreira",
-    role: "Suporte acadêmico e inclusivo",
-    description:
-      "Graduada em Licenciatura em Química (UNESP), Mestrado em Ciências (UFLA), Pós Graduação em Educação Especial e Inclusiva em andamento (UFABC), Doutorado em Ensino de Ciências em Andamento (UNICAMP-SP). Fundadora do Grupo MIND.",
-    initials: "AF",
-  },
-  {
-    name: "Alexssandro Ferreira da Silva",
-    role: "Suporte acadêmico e inclusivo",
-    description:
-      "Graduado em Administração (FADMINAS) e Análise e Desenvolvimento de Sistemas (IFSP), Pós Graduado em Gestão Pública Municipal e em Educação Empreendedora (UFSJ), Licenciatura em Pedagogia em andamento (UNIVESP), Mestrado em Ensino de Ciências (UNICAMP-SP). Fundador do Grupo MIND.",
-    initials: "AS",
-  },
-  {
     name: "Felipe Silva Mantuani",
     role: "Desenvolvedor de Software",
     description:
@@ -109,6 +95,10 @@ export const developers: Developer[] = [
     description: "Cursando Técnico em Informática (IFSP-Jacareí). Auxiliar no desenvolvimento do software.",
     image: leonardoImage,
     initials: "LA",
+    links: [
+      { label: "GitHub", url: "https://github.com/frellantudyi", icon: Github },
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/leonardo-silva-0a59213a1/", icon: Linkedin }
+    ]
   },
   {
     name: "Ranny Fabela",
