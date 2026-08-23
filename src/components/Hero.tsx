@@ -45,19 +45,26 @@ const Hero = () => {
                 </a>
               </Button>
             </div>
+            {/* Alinhado com os botões acima (centro no celular, esquerda no
+                desktop) — é uma legenda dos botões, não um rodapé solto. */}
+            <p className="text-sm text-muted-foreground text-center lg:text-left">
+              Desenvolvido com ❤️ por estudantes do Instituto Federal de São Paulo (IFSP) - Campus Jacareí
+            </p>
             {/* Quem chega por reportagem raramente rola a página inteira. Esta
                 linha é a primeira menção ao apoio, ainda na primeira dobra —
                 de propósito discreta, para não competir com "Baixar Grátis". */}
-            <p className="flex justify-center lg:justify-start">
+            <p className="flex justify-center">
+              {/* Coração como `inline-block`, e não como item de flex: no celular a
+                  frase quebra em duas linhas, e num flex o ícone ficava centralizado
+                  na vertical, solto do texto. Assim ele acompanha a primeira palavra. */}
               <Link
                 to="/apoie"
-                className="inline-flex items-center gap-2 rounded-full bg-secondary/20 px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary/35"
+                className="rounded-full bg-secondary/20 px-4 py-2 text-center text-sm font-medium text-foreground transition-colors hover:bg-secondary/35"
               >
-                <Heart className="w-4 h-4 text-secondary-foreground" aria-hidden="true" />
+                <Heart className="mr-2 inline-block h-4 w-4 align-[-3px] text-secondary-foreground" aria-hidden="true" />
                 Gratuito e sem anúncios — ajude a manter no ar
               </Link>
             </p>
-            <p className="text-sm text-muted-foreground text-center">Desenvolvido com ❤️ por estudantes do Instituto Federal de São Paulo -  Campus Jacareí </p>
           </div>
           <div className="relative flex justify-center">
             <div className="relative">
