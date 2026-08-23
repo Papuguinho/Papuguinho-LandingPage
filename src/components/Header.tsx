@@ -38,6 +38,7 @@ const Header = () => {
     { label: "FAQ", id: "faq" },
     { label: "Parcerias", id: "partners" },
     { label: "Desenvolvedores", id: "developers" },
+    {label: "Apoiar", id: "support"},
   ];
 
   return (
