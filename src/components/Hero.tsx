@@ -53,7 +53,7 @@ const Hero = () => {
             {/* Quem chega por reportagem raramente rola a página inteira. Esta
                 linha é a primeira menção ao apoio, ainda na primeira dobra —
                 de propósito discreta, para não competir com "Baixar Grátis". */}
-            <p className="flex justify-center">
+            <p className="flex justify-center lg:justify-start">
               {/* Coração como `inline-block`, e não como item de flex: no celular a
                   frase quebra em duas linhas, e num flex o ícone ficava centralizado
                   na vertical, solto do texto. Assim ele acompanha a primeira palavra. */}
