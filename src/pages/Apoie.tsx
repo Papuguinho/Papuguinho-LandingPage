@@ -75,7 +75,7 @@ const Apoie = () => {
               <h2 className="text-3xl font-bold text-foreground md:text-4xl">Para onde vai o seu apoio</h2>
               <p className="text-lg text-muted-foreground">
                 O Papuguinho é um projeto público, feito por estudantes do IFSP — Campus Jacareí.
-                Ninguém tira lucro daqui: o apoio cobre custo e desenvolvimento.
+                Todo apoio cobre os custos e o desenvolvimento do projeto.
               </p>
             </div>
 
