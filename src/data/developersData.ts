@@ -24,10 +24,7 @@ export const developers: Developer[] = [
     description:
       "Doutor em Geofísica Espacial (INPE), Professor e pesquisador (IFSP-Jacareí). Responsável pela criação do projeto, orientação científica e coordenação da equipe.",
     initials: "TS",
-    image: "https://media.licdn.com/dms/image/v2/D4D03AQE82lHurG-raw/profile-displayphoto-scale_400_400/B4DZ72HPNBI4Ag-/0/1782245555516?e=1788998400&v=beta&t=NXz3Jw__wfULFZ4_L_0rO_W4FoSY0VJtgMxxWYZE9hc",
     links: [
-      { label: "GitHub", url: "https://github.com/tardellirs", icon: Github },
-      { label: "LinkedIn", url: "https://www.linkedin.com/in/tardelli-ronan-coelho-stekel-2802402a/", icon: Linkedin },
       { label: "Lattes", url: "http://lattes.cnpq.br/4733654913237092", icon: GraduationCap }
     ]
   },
@@ -52,6 +49,11 @@ export const developers: Developer[] = [
       "Cursando Análise e Desenvolvimento de Sistemas (IFSP-Jacareí). Responsável pelo desenvolvimento do software com arquitetura em Flutter e serviços do Firebase.",
     initials: "JC",
     image: "https://github.com/joseantoniodecarvalhoneto.png",
+    links: [
+      { label: "GitHub", url: "https://github.com/joseantoniodecarvalhoneto", icon: Github },
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/jos%C3%A9-antonio-de-carvalho-neto/", icon: Linkedin },
+      { label: "Lattes", url: "http://lattes.cnpq.br/8204205496019370", icon: GraduationCap }
+    ]
   },
   {
     name: "Manuela Antonelli",
@@ -106,6 +108,10 @@ export const developers: Developer[] = [
     description: "Cursando Análise e Desenvolvimento de Sistemas (IFSP-Jacareí). Auxiliar na comunicação & divulgação.",
     image: rannyImage,
     initials: "RF",
+    links: [
+      { label: "GitHub", url: "https://github.com/LealRanny", icon: Github },
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/ranny-fabela", icon: Linkedin }
+    ]
   },
   {
     name: "Luiz Felipe Jesus Silva",
@@ -113,6 +119,9 @@ export const developers: Developer[] = [
     description: "Cursando Bacharelado Interdisciplinar em Ciência e Tecnologia (UNIFESP-São José dos Campos). Auxiliar no desenvolvimento do software & design.",
     image: "https://github.com/Luiz-fjs.png",
     initials: "LF",
+    links: [
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/luiz-felipe-de-jesus/", icon: Linkedin }
+    ]
   },
   {
     name: "Victor Anunciato",
