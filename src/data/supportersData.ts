@@ -28,7 +28,7 @@ export const supporters: Supporter[] = [
     name: "Ítalo Rafael",
     role: "Suporte midiático",
     description:
-      "Técnico em Informática (IFSP-Jacareí), cursando Bacharelado Interdisciplinar em Ciência e Tecnologia (UNIFESP-São José dos Campos). Suporte na comunicação com meios de transmissão.",
+      "Técnico em Informática (IFSP-Jacareí), cursando Bacharelado Interdisciplinar em Ciência e Tecnologia (UNIFESP-São José dos Campos). Suporte na comunicação com veículos de imprensa.",
     initials: "IR",
     image: italoImage
   },
