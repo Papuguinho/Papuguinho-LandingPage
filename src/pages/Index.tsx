@@ -10,6 +10,7 @@ import Benefits from "@/components/Benefits";
 import CTA from "@/components/CTA";
 import Partners from "@/components/Partners";
 import Developers from "@/components/Developers";
+import Supporters from "@/components/Supporters";
 import Footer from "@/components/Footer";
 import SupportSection from "@/components/SupportSection";
 import SupportFab from "@/components/SupportFab";
@@ -44,6 +45,7 @@ const Index = () => {
       <Benefits />
       <Partners />
       <Developers />
+      <Supporters />
       <div id="cta">
         <CTA />
       </div>
