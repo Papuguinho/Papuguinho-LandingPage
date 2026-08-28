@@ -2,18 +2,41 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
 import { Mail } from "lucide-react";
 import { supporters, type Supporter } from "@/data/supportersData";
 
 type SupporterCardProps = {
   supporter: Supporter;
+  active?: boolean;
 };
 
-const SupporterCard = ({ supporter }: SupporterCardProps) => {
+const SupporterCard = ({ supporter, active = false }: SupporterCardProps) => {
   return (
-    <Card className="w-full max-w-[18rem] sm:max-w-sm h-[28rem] sm:h-[26rem] lg:h-[28rem] mx-auto overflow-hidden border-primary/70 bg-card shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+    <Card
+      className={cn(
+        "w-full max-w-[18rem] sm:max-w-sm h-[28rem] sm:h-[26rem] lg:h-[28rem] mx-auto transition-all duration-500 ease-out overflow-hidden",
+        active
+          ? "scale-[1.02] -translate-y-1 sm:scale-105 sm:-translate-y-2 shadow-[0_18px_45px_rgba(0,0,0,0.18)] border-primary/70 bg-card"
+          : "scale-90 translate-y-2 opacity-90"
+      )}
+    >
       <CardContent className="pt-5 sm:pt-6 text-center h-full flex flex-col px-4 sm:px-6 overflow-hidden">
-        <Avatar className="mx-auto mb-4 h-16 w-16 ring-2 ring-primary/20 shrink-0">
+        <Avatar
+          className={cn(
+            "mx-auto mb-4 transition-all duration-500 shrink-0",
+            active ? "h-16 w-16 ring-2 ring-primary/20" : "h-14 w-14"
+          )}
+        >
           {supporter.image && <AvatarImage src={supporter.image} alt={supporter.name} />}
           <AvatarFallback className="bg-primary/20 text-primary text-lg font-bold">
             {supporter.initials}
@@ -31,7 +54,11 @@ const SupporterCard = ({ supporter }: SupporterCardProps) => {
         {supporter.links && supporter.links.length > 0 && (
           <Popover>
             <PopoverTrigger asChild>
-              <Button variant="outline" size="sm" className="mt-4 shrink-0">
+              <Button
+                variant="outline"
+                size="sm"
+                className="mt-4 shrink-0 hover:bg-[#1DD762] hover:text-white"
+              >
                 <Mail className="h-4 w-4 mr-2" />
                 Contato
               </Button>
@@ -46,9 +73,9 @@ const SupporterCard = ({ supporter }: SupporterCardProps) => {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 rounded-md px-3 py-2 text-sm text-foreground hover:bg-accent transition-colors"
+                      className="group flex items-center gap-2 rounded-md px-3 py-2 text-sm text-foreground hover:bg-[#1DD762] hover:text-white transition-colors"
                     >
-                      <Icon className="h-4 w-4 text-primary" />
+                      <Icon className="h-4 w-4 text-primary group-hover:text-white" />
                       {link.label}
                     </a>
                   );
@@ -63,6 +90,25 @@ const SupporterCard = ({ supporter }: SupporterCardProps) => {
 };
 
 const Supporters = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const carouselSupporters = [...supporters, ...supporters];
+
+  useEffect(() => {
+    if (!api) return;
+
+    const onSelect = () => setActiveIndex(api.selectedScrollSnap());
+    onSelect();
+
+    api.on("select", onSelect);
+    api.on("reInit", onSelect);
+
+    return () => {
+      api.off("select", onSelect);
+      api.off("reInit", onSelect);
+    };
+  }, [api]);
+
   return (
     <section id="supporters" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -75,11 +121,34 @@ const Supporters = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto justify-items-center">
-          {supporters.map((supporter) => (
-            <SupporterCard key={supporter.name} supporter={supporter} />
-          ))}
-        </div>
+        <Carousel
+          setApi={setApi}
+          opts={{ align: "center", loop: true }}
+          className="max-w-6xl mx-auto"
+        >
+          <CarouselContent className="px-2 py-4 sm:px-4 sm:py-8">
+            {carouselSupporters.map((supporter, index) => (
+              <CarouselItem
+                key={`${supporter.name}-${index}`}
+                className="basis-full sm:basis-4/5 lg:basis-1/3 flex justify-center px-2 sm:px-3"
+              >
+                <SupporterCard
+                  supporter={supporter}
+                  active={index % supporters.length === activeIndex % supporters.length}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+
+          <CarouselPrevious
+            className="text-primary hover:bg-primary/10 -left-10 sm:-left-12"
+            aria-label="Apoiador anterior"
+          />
+          <CarouselNext
+            className="text-primary hover:bg-primary/10 -right-10 sm:-right-12"
+            aria-label="Próximo apoiador"
+          />
+        </Carousel>
       </div>
     </section>
   );

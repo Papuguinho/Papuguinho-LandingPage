@@ -1,6 +1,8 @@
 import { Github, Linkedin, Globe, GraduationCap } from "lucide-react";
-import  leonardoImage from "@/assets/profile/fotoLeonardo.png";
-import rannyImage from "@/assets/profile/rannyImage.png";
+import  leonardoImage from "@/assets/profile/leonardoImage.jpeg";
+import rannyImage from "@/assets/profile/rannyImage.jpeg";
+import deniseImage from "@/assets/profile/deniseImage.jpeg";
+import luizFelipeImage from "@/assets/profile/luizFelipeImage.jpeg";
 
 export type DeveloperLink = {
   label: string;
@@ -19,16 +21,6 @@ export type Developer = {
 
 export const developers: Developer[] = [
   {
-    name: "Tardelli Ronan Coelho Stekel",
-    role: "Cofundador e Orientador do Projeto",
-    description:
-      "Doutor em Geofísica Espacial (INPE), Professor e pesquisador (IFSP-Jacareí). Responsável pela criação do projeto, orientação científica e coordenação da equipe.",
-    initials: "TS",
-    links: [
-      { label: "Lattes", url: "http://lattes.cnpq.br/4733654913237092", icon: GraduationCap }
-    ]
-  },
-  {
     name: "Gabriel de Paula Baroni",
     role: "Cofundador, Desenvolvedor de Software e Pesquisador",
     description:
@@ -43,16 +35,14 @@ export const developers: Developer[] = [
     ],
   },
   {
-    name: "José Antonio de Carvalho Neto",
-    role: "Cofundador, Desenvolvedor de Software e Pesquisador",
+    name: "Marcela Jordana Victoria Souza",
+    role: "Cofundadora, Designer de Produto (UI/UX), Desenvolvedora Web, Pesquisadora",
     description:
-      "Cursando Análise e Desenvolvimento de Sistemas (IFSP-Jacareí). Responsável pelo desenvolvimento do software com arquitetura em Flutter e serviços do Firebase.",
-    initials: "JC",
-    image: "https://github.com/joseantoniodecarvalhoneto.png",
+      "Técnica em Informática e pesquisadora (IFSP-Jacareí), cursando farmácia (UNESP-Araraquara). Responsável pela elaboração do design do aplicativo (UX/UI), identidade visual e pelo desenvolvimento do site informativo.",
+    initials: "MS",
+    image: "https://github.com/marcela-vic938.png",
     links: [
-      { label: "GitHub", url: "https://github.com/joseantoniodecarvalhoneto", icon: Github },
-      { label: "LinkedIn", url: "https://www.linkedin.com/in/jos%C3%A9-antonio-de-carvalho-neto/", icon: Linkedin },
-      { label: "Lattes", url: "http://lattes.cnpq.br/8204205496019370", icon: GraduationCap }
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/marcela-jordana-victória-souza-011b2828b/", icon: Linkedin },
     ]
   },
   {
@@ -69,16 +59,28 @@ export const developers: Developer[] = [
     ]
   },
   {
-    name: "Marcela Jordana Victoria Souza",
-    role: "Cofundadora, Designer de Produto (UI/UX), Desenvolvedora Web, Pesquisadora",
+    name: "Denise Stringhini",
+    role: "Orientadora do Projeto",
     description:
-      "Técnica em Informática e pesquisadora (IFSP-Jacareí), cursando farmácia (UNESP-Araraquara). Responsável pela elaboração do design do aplicativo (UX/UI), identidade visual e pelo desenvolvimento do site informativo.",
-    initials: "MS",
-    image: "https://github.com/marcela-vic938.png",
+    "Doutora  e Mestre em Ciência da Computação pela UFRGS, Professora (UNIFESP), Responsável pela orientação científica e coordenação da equipe.",
+    initials: "DS",
+    image: deniseImage,
+  },
+
+  {
+    name: "José Antonio de Carvalho Neto",
+    role: "Cofundador, Desenvolvedor de Software e Pesquisador",
+    description:
+      "Cursando Análise e Desenvolvimento de Sistemas (IFSP-Jacareí). Responsável pelo desenvolvimento do software com arquitetura em Flutter e serviços do Firebase.",
+    initials: "JC",
+    image: "https://github.com/joseantoniodecarvalhoneto.png",
     links: [
-      { label: "LinkedIn", url: "https://www.linkedin.com/in/marcela-jordana-victória-souza-011b2828b/", icon: Linkedin },
+      { label: "GitHub", url: "https://github.com/joseantoniodecarvalhoneto", icon: Github },
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/jos%C3%A9-antonio-de-carvalho-neto/", icon: Linkedin },
+      { label: "Lattes", url: "http://lattes.cnpq.br/8204205496019370", icon: GraduationCap }
     ]
   },
+
   {
     name: "Felipe Silva Mantuani",
     role: "Desenvolvedor de Software",
@@ -117,7 +119,7 @@ export const developers: Developer[] = [
     name: "Luiz Felipe Jesus Silva",
     role: "Designer UI/UX & Desenvolvedor de Software",
     description: "Cursando Bacharelado Interdisciplinar em Ciência e Tecnologia (UNIFESP-São José dos Campos). Auxiliar no desenvolvimento do software & design.",
-    image: "https://github.com/Luiz-fjs.png",
+    image: luizFelipeImage,
     initials: "LF",
     links: [
       { label: "LinkedIn", url: "https://www.linkedin.com/in/luiz-felipe-de-jesus/", icon: Linkedin }
@@ -132,5 +134,12 @@ export const developers: Developer[] = [
     links: [
       { label: "LinkedIn", url: "https://www.linkedin.com/in/victoranunciato/", icon: Linkedin }
     ]
+  },
+    {
+    name: "Tardelli Ronan Coelho Stekel",
+    role: "Cofundador e Orientador do Projeto",
+    description:
+      "Doutor em Geofísica Espacial (INPE), Professor e pesquisador (IFSP-Jacareí). Responsável pela criação do projeto, orientação científica e coordenação da equipe.",
+    initials: "TS",
   }
 ];

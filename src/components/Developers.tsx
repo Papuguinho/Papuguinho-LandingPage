@@ -54,7 +54,11 @@ const DeveloperCard = ({ dev, active = false }: DeveloperCardProps) => {
         {dev.links && dev.links.length > 0 && (
           <Popover>
             <PopoverTrigger asChild>
-              <Button variant="outline" size="sm" className="mt-4 shrink-0">
+              <Button
+                variant="outline"
+                size="sm"
+                className="mt-4 shrink-0 hover:bg-[#1DD762] hover:text-white"
+              >
                 <Mail className="h-4 w-4 mr-2" />
                 Contato
               </Button>
@@ -69,9 +73,9 @@ const DeveloperCard = ({ dev, active = false }: DeveloperCardProps) => {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 rounded-md px-3 py-2 text-sm text-foreground hover:bg-accent transition-colors"
+                      className="group flex items-center gap-2 rounded-md px-3 py-2 text-sm text-foreground hover:bg-[#1DD762] hover:text-white transition-colors"
                     >
-                      <Icon className="h-4 w-4 text-primary" />
+                      <Icon className="h-4 w-4 text-primary group-hover:text-white" />
                       {link.label}
                     </a>
                   );
