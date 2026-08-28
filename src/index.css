@@ -127,12 +127,18 @@ All colors MUST be HSL.
 }
 
 @layer base {
+  #root {
+    overflow-x: hidden;
+  }
+
   * {
     @apply border-border;
   }
 
   body {
     @apply bg-background text-foreground;
+    width: 100vw;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {

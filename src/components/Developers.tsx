@@ -26,8 +26,8 @@ const DeveloperCard = ({ dev, active = false }: DeveloperCardProps) => {
       className={cn(
         "w-full max-w-[18rem] sm:max-w-sm h-[28rem] sm:h-[26rem] lg:h-[28rem] mx-auto transition-all duration-500 ease-out overflow-hidden",
         active
-          ? "scale-[1.02] -translate-y-1 sm:scale-105 sm:-translate-y-2 shadow-[0_18px_45px_rgba(0,0,0,0.18)] border-primary/70 bg-card"
-          : "scale-90 translate-y-2 opacity-90"
+          ? "scale-[1.02] -translate-y-1 max-[374px]:scale-100 max-[374px]:translate-y-0 sm:scale-105 sm:-translate-y-2 shadow-[0_18px_45px_rgba(0,0,0,0.18)] border-primary/70 bg-card"
+          : "scale-90 translate-y-2 max-[374px]:scale-95 max-[374px]:translate-y-0 opacity-90"
       )}
     >
       <CardContent className="pt-5 sm:pt-6 text-center h-full flex flex-col px-4 sm:px-6 overflow-hidden">
