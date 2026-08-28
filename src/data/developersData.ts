@@ -59,26 +59,25 @@ export const developers: Developer[] = [
     ]
   },
   {
+  name: "José Antonio de Carvalho Neto",
+  role: "Cofundador, Desenvolvedor de Software e Pesquisador",
+  description:
+    "Cursando Análise e Desenvolvimento de Sistemas (IFSP-Jacareí). Responsável pelo desenvolvimento do software com arquitetura em Flutter e serviços do Firebase.",
+  initials: "JC",
+  image: "https://github.com/joseantoniodecarvalhoneto.png",
+  links: [
+    { label: "GitHub", url: "https://github.com/joseantoniodecarvalhoneto", icon: Github },
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/jos%C3%A9-antonio-de-carvalho-neto/", icon: Linkedin },
+    { label: "Lattes", url: "http://lattes.cnpq.br/8204205496019370", icon: GraduationCap }
+  ]
+  },
+  {
     name: "Denise Stringhini",
     role: "Orientadora do Projeto",
     description:
     "Doutora  e Mestre em Ciência da Computação pela UFRGS, Professora (UNIFESP), Responsável pela orientação científica e coordenação da equipe.",
     initials: "DS",
     image: deniseImage,
-  },
-
-  {
-    name: "José Antonio de Carvalho Neto",
-    role: "Cofundador, Desenvolvedor de Software e Pesquisador",
-    description:
-      "Cursando Análise e Desenvolvimento de Sistemas (IFSP-Jacareí). Responsável pelo desenvolvimento do software com arquitetura em Flutter e serviços do Firebase.",
-    initials: "JC",
-    image: "https://github.com/joseantoniodecarvalhoneto.png",
-    links: [
-      { label: "GitHub", url: "https://github.com/joseantoniodecarvalhoneto", icon: Github },
-      { label: "LinkedIn", url: "https://www.linkedin.com/in/jos%C3%A9-antonio-de-carvalho-neto/", icon: Linkedin },
-      { label: "Lattes", url: "http://lattes.cnpq.br/8204205496019370", icon: GraduationCap }
-    ]
   },
 
   {

@@ -17,7 +17,9 @@ const Footer = () => {
             <h4 className="font-semibold text-foreground text-center">Desenvolvimento</h4>
             <p className="text-muted-foreground text-center">
               Desenvolvido com ❤️ por estudantes do{" "}
-              <a href="https://www.ifsp.edu.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-justify">Instituto Federal de São Paulo - Campus Jacareí</a>
+              <a href="https://www.ifsp.edu.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-justify">IFSP</a>,{" "}
+              <a href="https://portal.unifesp.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-justify">Unifesp</a> e{" "}
+              <a href="https://www2.unesp.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-justify">Unesp</a>
             </p>
           </div>
 
