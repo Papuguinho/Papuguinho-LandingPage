@@ -37,7 +37,7 @@ const partners = [
     name: "Grupo MIND",
     description: "Grupo de pesquisa do IFSP-Jacareí, certificado pelo CNPq. Tem o propósito de promover pesquisas que favoreçam a inclusão de todos os estudantes nos espaços escolares.",
     image: mind,
-    link: "https://grupopesquisamind.github.io/"
+    link: "https://grupopesquisamind.github.io/site_mind/index.html"
   },
   {
     name: "Prefeitura de Jacareí",
