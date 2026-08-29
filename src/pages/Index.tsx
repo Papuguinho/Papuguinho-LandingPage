@@ -12,6 +12,7 @@ import Partners from "@/components/Partners";
 import Developers from "@/components/Developers";
 import Footer from "@/components/Footer";
 import SupportSection from "@/components/SupportSection";
+import Timeline from "@/components/Timeline";
 import SupportFab from "@/components/SupportFab";
 
 const Index = () => {
@@ -21,7 +22,11 @@ const Index = () => {
   useEffect(() => {
     const alvo = window.location.hash?.slice(1);
     if (!alvo) return;
-    const t = setTimeout(() => document.getElementById(alvo)?.scrollIntoView(), 100);
+    const t = setTimeout(
+      // meu conhecimento limitado de react nn me permite saber o pq disso, tenho q ver dps [leo]
+      () => document.getElementById(alvo)?.scrollIntoView(),
+      100,
+    );
     return () => clearTimeout(t);
   }, []);
 
@@ -39,6 +44,7 @@ const Index = () => {
       </div>
       <Gallery />
       <VideoDemo />
+      <Timeline />
       <SupportSection />
       <FAQ />
       <Benefits />
