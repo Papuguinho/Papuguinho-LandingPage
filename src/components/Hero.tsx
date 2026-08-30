@@ -48,7 +48,10 @@ const Hero = () => {
             {/* Alinhado com os botões acima (centro no celular, esquerda no
                 desktop) — é uma legenda dos botões, não um rodapé solto. */}
             <p className="text-sm text-muted-foreground text-center lg:text-left">
-              Desenvolvido com ❤️ por estudantes do Instituto Federal de São Paulo (IFSP) - Campus Jacareí
+               Desenvolvido com ❤️ por estudantes do{" "}
+              <a href="https://www.ifsp.edu.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-justify">IFSP</a>,{" "}
+              <a href="https://portal.unifesp.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-justify">Unifesp</a> e{" "}
+              <a href="https://www2.unesp.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-justify">Unesp</a>
             </p>
             {/* Quem chega por reportagem raramente rola a página inteira. Esta
                 linha é a primeira menção ao apoio, ainda na primeira dobra —
