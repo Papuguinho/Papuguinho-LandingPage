@@ -23,7 +23,7 @@ const motivos = [
   {
     icon: Server,
     titulo: " Nossos servidores",
-    texto: "A hospedagem do aplicativo, do estúdio, visita às escolas.",
+    texto: "Para a hospedagem do aplicativo, site e estúdio ",
   },
   {
     icon: ShieldCheck,
