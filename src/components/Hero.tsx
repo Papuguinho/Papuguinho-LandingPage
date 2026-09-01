@@ -60,13 +60,6 @@ const Hero = () => {
               {/* Coração como `inline-block`, e não como item de flex: no celular a
                   frase quebra em duas linhas, e num flex o ícone ficava centralizado
                   na vertical, solto do texto. Assim ele acompanha a primeira palavra. */}
-              <Link
-                to="/apoie"
-                className="rounded-full bg-secondary/20 px-4 py-2 text-center text-sm font-medium text-foreground transition-colors hover:bg-secondary/35"
-              >
-                <Heart className="mr-2 inline-block h-4 w-4 align-[-3px] text-secondary-foreground" aria-hidden="true" />
-                Gratuito e sem anúncios — ajude a manter no ar
-              </Link>
             </p>
           </div>
           <div className="relative flex justify-center">
