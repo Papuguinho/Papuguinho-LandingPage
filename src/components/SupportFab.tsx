@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+/* import { useEffect, useState } from "react";
 import { Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
  * Só aparece depois de sair do topo para não brigar com os botões do Hero.
  */
 
+/*
 const SupportFab = () => {
   const [passouDoTopo, setPassouDoTopo] = useState(false);
   const [secaoNaTela, setSecaoNaTela] = useState(false);
@@ -56,3 +57,4 @@ const SupportFab = () => {
 };
 
 export default SupportFab;
+*/
