@@ -13,14 +13,14 @@ import {
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { Mail } from "lucide-react";
-import { developers, type Developer } from "@/data/developersData";
+import { supporters, type Supporter } from "@/data/supportersData";
 
-type DeveloperCardProps = {
-  dev: Developer;
+type SupporterCardProps = {
+  supporter: Supporter;
   active?: boolean;
 };
 
-const DeveloperCard = ({ dev, active = false }: DeveloperCardProps) => {
+const SupporterCard = ({ supporter, active = false }: SupporterCardProps) => {
   return (
     <Card
       className={cn(
@@ -37,21 +37,21 @@ const DeveloperCard = ({ dev, active = false }: DeveloperCardProps) => {
             active ? "h-16 w-16 ring-2 ring-primary/20" : "h-14 w-14"
           )}
         >
-          {dev.image && <AvatarImage src={dev.image} alt={dev.name} />}
+          {supporter.image && <AvatarImage src={supporter.image} alt={supporter.name} />}
           <AvatarFallback className="bg-primary/20 text-primary text-lg font-bold">
-            {dev.initials}
+            {supporter.initials}
           </AvatarFallback>
         </Avatar>
         <h3 className="font-semibold text-base sm:text-lg mb-1 text-foreground break-words leading-tight min-h-[3.25rem] sm:min-h-[3.5rem] shrink-0">
-          {dev.name}
+          {supporter.name}
         </h3>
         <p className="text-xs sm:text-sm font-medium text-primary mb-3 break-words leading-relaxed min-h-[2.5rem] sm:min-h-[3rem] shrink-0">
-          {dev.role}
+          {supporter.role}
         </p>
         <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed break-words hyphens-auto flex-1 overflow-hidden">
-          {dev.description}
+          {supporter.description}
         </p>
-        {dev.links && dev.links.length > 0 && (
+        {supporter.links && supporter.links.length > 0 && (
           <Popover>
             <PopoverTrigger asChild>
               <Button
@@ -65,7 +65,7 @@ const DeveloperCard = ({ dev, active = false }: DeveloperCardProps) => {
             </PopoverTrigger>
             <PopoverContent className="w-56 p-2" align="center">
               <div className="flex flex-col gap-1">
-                {dev.links.map((link) => {
+                {supporter.links.map((link) => {
                   const Icon = link.icon;
                   return (
                     <a
@@ -89,9 +89,10 @@ const DeveloperCard = ({ dev, active = false }: DeveloperCardProps) => {
   );
 };
 
-const Developers = () => {
+const Supporters = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [activeIndex, setActiveIndex] = useState(0);
+  const carouselSupporters = [...supporters, ...supporters];
 
   useEffect(() => {
     if (!api) return;
@@ -109,14 +110,14 @@ const Developers = () => {
   }, [api]);
 
   return (
-    <section id="developers" className="py-20 bg-background">
+    <section id="supporters" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10 sm:mb-12 animate-fade-in-up">
           <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 text-primary break-words leading-tight px-2">
-            Desenvolvedores
+            Com apoio de:
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-            Conheça a equipe por trás do Papuguinho
+            Fortalecendo nossa missão
           </p>
         </div>
 
@@ -125,24 +126,27 @@ const Developers = () => {
           opts={{ align: "center", loop: true }}
           className="max-w-6xl mx-auto"
         >
-          <CarouselContent className="py-4 sm:py-8">
-            {developers.map((dev, index) => (
+          <CarouselContent className="px-2 py-4 sm:px-4 sm:py-8">
+            {carouselSupporters.map((supporter, index) => (
               <CarouselItem
-                key={dev.name}
-                className="basis-full sm:basis-4/5 lg:basis-1/3 flex justify-center px-1 sm:px-2"
+                key={`${supporter.name}-${index}`}
+                className="basis-full sm:basis-4/5 lg:basis-1/3 flex justify-center px-2 sm:px-3"
               >
-                <DeveloperCard dev={dev} active={index === activeIndex} />
+                <SupporterCard
+                  supporter={supporter}
+                  active={index % supporters.length === activeIndex % supporters.length}
+                />
               </CarouselItem>
             ))}
           </CarouselContent>
 
           <CarouselPrevious
-            className="text-primary hover:bg-primary/10 -left-5 sm:-left-7"
-            aria-label="Desenvolvedor anterior"
+            className="text-primary hover:bg-primary/10 -left-10 sm:-left-12"
+            aria-label="Apoiador anterior"
           />
           <CarouselNext
-            className="text-primary hover:bg-primary/10 -right-2 sm:-right-4"
-            aria-label="Próximo desenvolvedor"
+            className="text-primary hover:bg-primary/10 -right-10 sm:-right-12"
+            aria-label="Próximo apoiador"
           />
         </Carousel>
       </div>
@@ -150,4 +154,4 @@ const Developers = () => {
   );
 };
 
-export default Developers;
+export default Supporters;
