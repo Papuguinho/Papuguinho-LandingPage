@@ -1,7 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card"; // pego  da pasta UI
-
 const events = [
-  // cont de cada elemnto da timeline
   {
     id: 1,
     content: "Idealização e início do projeto",
@@ -43,51 +40,153 @@ const events = [
     date: "6/2026",
   },
 ];
-// OBS: removi a imagem da const pq achei muito dificil de arrumar 
-// do jeito que a timeline está atualmente, se a gente mudar, dá
-// pra ver uma possibilidade de encaixar as fotos ali.
 
 const Timeline = () => {
+  const scrollTimeline = (direction: "left" | "right") => {
+    const container = document.getElementById("timeline-scroll");
+
+    if (!container) return;
+
+    const scrollAmount = 300;
+    const maxScroll = container.scrollWidth - container.clientWidth;
+
+    if (direction === "right") {
+      if (container.scrollLeft >= maxScroll - 10) {
+        container.scrollTo({
+          left: 0,
+          behavior: "smooth",
+        });
+      } else {
+        container.scrollBy({
+          left: scrollAmount,
+          behavior: "smooth",
+        });
+      }
+    } else {
+      if (container.scrollLeft <= 10) {
+        container.scrollTo({
+          left: maxScroll,
+          behavior: "smooth",
+        });
+      } else {
+        container.scrollBy({
+          left: -scrollAmount,
+          behavior: "smooth",
+        });
+      }
+    }
+  };
+
   return (
-    <section className="py-20">
+    <section className="py-20 overflow-hidden">
       <div className="container mx-auto px-4">
+        {/* Cabeçalho */}
         <div className="mb-12 text-center animate-fade-in-up">
           <h2 className="mb-4 text-4xl font-bold text-primary">
             Linha do Tempo
           </h2>
+
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             Conheça um pouco da nossa história
           </p>
         </div>
 
-        <div className="relative mx-auto max-w-4xl">
-          <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-border md:block" />
+        {/* Timeline */}
+        <div className="relative mx-auto max-w-7xl">
+          {/* Seta esquerda */}
+          <button
+            onClick={() => scrollTimeline("left")}
+            aria-label="Voltar na linha do tempo"
+            className="absolute left-0 top-1/2 z-20 flex h-10 w-10
+                       -translate-y-1/2 items-center justify-center
+                       rounded-full bg-background shadow-md
+                       transition hover:scale-110"
+          >
+            ←
+          </button>
 
-          <div className="space-y-8 md:space-y-12">
-            {events.map((event, index) => (
-              <div key={event.id} className="relative flex md:items-center">
-                <div
-                  className={`w-full md:w-1/2 ${
-                    index % 2 === 0
-                      ? "md:pr-8 md:justify-end"
-                      : "md:ml-auto md:pl-8"
-                  } flex`}
-                >
-                  <Card className="w-full max-w-md shadow-sm">
-                    <CardContent className="p-5">
-                      <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
-                        <span className="inline-block h-2.5 w-2.5 rounded-full bg-primary" />
+          {/* Área de scroll */}
+          <div
+            id="timeline-scroll"
+            className="overflow-x-auto scroll-smooth px-14
+                       [scrollbar-width:none]
+                       [&::-webkit-scrollbar]:hidden"
+          >
+            <div className="relative min-w-max py-8">
+              {/* Onda verde */}
+              <svg
+                className="pointer-events-none absolute left-0 top-0 h-64 w-full"
+                viewBox={`0 0 ${events.length * 240} 260`}
+                preserveAspectRatio="none"
+              >
+                <path
+                  d={events
+                    .map((_, index) => {
+                      const x = index * 240 + 120;
+
+                      if (index === 0) {
+                        return `M ${x - 120} 160 Q ${x - 60} 80 ${x} 80`;
+                      }
+
+                      const previousX = (index - 1) * 240 + 120;
+                      const midX = (previousX + x) / 2;
+
+                      return `Q ${midX} 80 ${x} 160`;
+                    })
+                    .join(" ")}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                  className="text-primary"
+                />
+              </svg>
+
+              {/* Eventos */}
+              <div className="relative flex">
+                {events.map((event) => (
+                  <div
+                    key={event.id}
+                    className="relative flex w-[240px] shrink-0
+                               flex-col items-center"
+                  >
+                    {/* Texto */}
+                    <div
+                      className="flex h-[105px] w-[190px]
+                                    flex-col items-center text-center"
+                    >
+                      <span className="mb-2 text-sm font-semibold text-primary">
                         {event.date}
-                      </div>
-                      <h3 className="text-xl font-bold leading-tight">
+                      </span>
+
+                      <h3 className="text-base font-bold leading-tight">
                         {event.content}
                       </h3>
-                    </CardContent>
-                  </Card>
-                </div>
+                    </div>
+
+                    {/* Ponto */}
+                    <div
+                      className="relative z-10 mt-[-1px]
+                                 h-5 w-5 rounded-full
+                                 border-4 border-background
+                                 bg-primary shadow-sm"
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
+
+          {/* Seta direita */}
+          <button
+            onClick={() => scrollTimeline("right")}
+            aria-label="Avançar na linha do tempo"
+            className="absolute right-0 top-1/2 z-20 flex h-10 w-10
+                       -translate-y-1/2 items-center justify-center
+                       rounded-full bg-background shadow-md
+                       transition hover:scale-110"
+          >
+            →
+          </button>
         </div>
       </div>
     </section>
