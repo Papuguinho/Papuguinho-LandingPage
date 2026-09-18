@@ -1,4 +1,4 @@
-import React, { CSSProperties, useState } from "react";
+import React, { CSSProperties, useRef, useState } from "react";
 
 const events = [
   { id: 1, content: "Idealização e início do projeto", date: "3/2024" },
@@ -43,8 +43,6 @@ const generateTimelineItems = (eventList) => {
 
 const timelineItems = generateTimelineItems(events); // Gera os 11 pontos da timeline
 
-// TAMANHO DA ONDA NOS DOIS EIXOS: O ARCO OCUPA 30% DA LARGURA DA PAGINA.
-const WAVE_WIDTH = 30;
 const WAVE_HEIGHT = 190;
 
 // Componente de segmento de onda individual com conteúdo no topo
@@ -70,14 +68,20 @@ function WaveSegment({ item }) {
           top: "28px",
           left: "50%",
           transform: "translateX(-50%)",
-          width: "min(280px, 72vw)",
+          width: item.isYearHeader ? "auto" : "min(280px, 72vw)",
           textAlign: "center",
-          padding: "16px 20px",
+          padding: item.isYearHeader ? 0 : "16px 20px",
           boxSizing: "border-box",
-          borderRadius: "16px",
-          border: "1px solid hsl(var(--primary) / 0.25)",
-          background: "hsl(var(--background) / 0.94)",
-          boxShadow: "0 12px 32px hsl(var(--primary) / 0.14)",
+          borderRadius: item.isYearHeader ? 0 : "16px",
+          border: item.isYearHeader
+            ? "none"
+            : "1px solid hsl(var(--primary) / 0.25)",
+          background: item.isYearHeader
+            ? "transparent"
+            : "hsl(var(--background) / 0.94)",
+          boxShadow: item.isYearHeader
+            ? "none"
+            : "0 12px 32px hsl(var(--primary) / 0.14)",
           zIndex: 3,
         }}
       >
@@ -85,10 +89,16 @@ function WaveSegment({ item }) {
           // Estilo destacado para quando for apenas a transição do Ano
           <span
             style={{
-              fontSize: "26px",
+              fontFamily: "Inter, sans-serif",
+              fontSize: "clamp(72px, 13vw, 135px)",
               fontWeight: "bold",
-              color: "hsl(var(--primary))",
+              background: "linear-gradient(90deg, #00CB29 0%, #20C7E5 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
               display: "block",
+              lineHeight: 1,
+              letterSpacing: "0.12em",
             }}
           >
             {item.displayTitle}
@@ -147,7 +157,7 @@ function WaveSegment({ item }) {
         style={{ display: "block", overflow: "visible" }}
       >
         <path
-          d={`M 0 50 H ${(100 - WAVE_WIDTH) / 2} Q 50 0, ${50 + WAVE_WIDTH / 2} 50 H 100`}
+          d="M 0 50 C 20 50, 30 0, 50 0 C 70 0, 80 50, 100 50"
           fill="none"
           stroke="hsl(var(--primary))"
           strokeWidth="2.5"
@@ -161,6 +171,7 @@ function WaveSegment({ item }) {
 export default function TimelineWaveCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [transitionEnabled, setTransitionEnabled] = useState(true);
+  const dragStartX = useRef<number | null>(null);
   const totalSegments = timelineItems.length;
   const slides = [...timelineItems, timelineItems[0]];
 
@@ -184,6 +195,21 @@ export default function TimelineWaveCarousel() {
     }
   };
 
+  const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
+    dragStartX.current = event.clientX;
+  };
+
+  const handlePointerUp = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (dragStartX.current === null) return;
+
+    const dragDistance = event.clientX - dragStartX.current;
+    dragStartX.current = null;
+
+    if (Math.abs(dragDistance) < 50) return;
+    if (dragDistance < 0) nextSlide();
+    else prevSlide();
+  };
+
   return (
     <div
       style={{
@@ -194,38 +220,61 @@ export default function TimelineWaveCarousel() {
         paddingTop: "40px",
       }}
     >
-      {/* Linha contínua movida horizontalmente */}
-      <div
-        style={{
-          display: "flex",
-          width: `${slides.length * 100}vw`,
-          transform: `translateX(-${currentIndex * 100}vw)`,
-          transition: transitionEnabled
-            ? "transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)"
-            : "none",
-        }}
-        onTransitionEnd={resetAfterLoop}
-      >
-        {slides.map((item, index) => (
-          <WaveSegment key={`${item.id}-${index}`} item={item} />
-        ))}
+      <div className="text-center mb-16 space-y-4">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 text-primary break-words leading-tight px-2">
+          LINHA DO TEMPO
+        </h2>
+        <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
+          Conheça um pouco da nossa trajetória
+        </p>
       </div>
 
-      {/* Setas de navegação */}
-      {currentIndex > 0 && (
-        <button onClick={prevSlide} style={{ ...navButtonStyle, left: "15px" }}>
-          &#10094;
-        </button>
-      )}
-
-      {currentIndex <= totalSegments && (
-        <button
-          onClick={nextSlide}
-          style={{ ...navButtonStyle, right: "15px" }}
+      <div
+        style={{ position: "relative", touchAction: "pan-y" }}
+        onPointerDown={handlePointerDown}
+        onPointerUp={handlePointerUp}
+        onPointerCancel={() => {
+          dragStartX.current = null;
+        }}
+      >
+        {/* Linha contínua movida horizontalmente */}
+        <div
+          style={{
+            display: "flex",
+            width: `${slides.length * 100}vw`,
+            transform: `translateX(-${currentIndex * 100}vw)`,
+            transition: transitionEnabled
+              ? "transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)"
+              : "none",
+          }}
+          onTransitionEnd={resetAfterLoop}
         >
-          &#10095;
-        </button>
-      )}
+          {slides.map((item, index) => (
+            <WaveSegment key={`${item.id}-${index}`} item={item} />
+          ))}
+        </div>
+
+        {/* Setas posicionadas ao lado do conteúdo central */}
+        {currentIndex > 0 && (
+          <button
+            aria-label="Voltar na linha do tempo"
+            onClick={prevSlide}
+            style={{ ...navButtonStyle, left: "max(12px, calc(50% - 240px))" }}
+          >
+            &#10094;
+          </button>
+        )}
+
+        {currentIndex < totalSegments && (
+          <button
+            aria-label="Avançar na linha do tempo"
+            onClick={nextSlide}
+            style={{ ...navButtonStyle, right: "max(12px, calc(50% - 240px))" }}
+          >
+            &#10095;
+          </button>
+        )}
+      </div>
     </div>
   );
 }
@@ -233,15 +282,14 @@ export default function TimelineWaveCarousel() {
 // Estilo auxiliar das setas em formato mobile
 const navButtonStyle: CSSProperties = {
   position: "absolute",
-  top: "70%",
+  top: "92px",
   transform: "translateY(-50%)",
-  background: "rgba(0, 0, 0, 0.5)",
-  color: "white",
+  background: "transparent",
+  color: "hsl(var(--primary))",
   border: "none",
-  borderRadius: "50%",
-  width: "40px",
-  height: "40px",
-  fontSize: "20px",
+  width: "32px",
+  height: "32px",
+  fontSize: "28px",
   cursor: "pointer",
   display: "flex",
   justifyContent: "center",
