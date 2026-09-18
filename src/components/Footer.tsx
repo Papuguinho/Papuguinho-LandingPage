@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return <footer className="bg-muted py-12">
       <div className="container mx-auto px-4">
-        <div className="grid gap-8 md:grid-cols-3 mb-8">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-foreground font-display text-center">Papuguinho</h3>
             <p className="text-muted-foreground text-center">
@@ -17,7 +17,20 @@ const Footer = () => {
             <h4 className="font-semibold text-foreground text-center">Desenvolvimento</h4>
             <p className="text-muted-foreground text-center">
               Desenvolvido com ❤️ por estudantes do{" "}
-              <a href="https://www.ifsp.edu.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-justify">Instituto Federal de São Paulo - Campus Jacareí</a>
+              <a href="https://www.ifsp.edu.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-justify">IFSP</a>,{" "}
+              <a href="https://portal.unifesp.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-justify">Unifesp</a> e{" "}
+              <a href="https://www2.unesp.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-justify">Unesp</a>
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h4 className="font-semibold text-foreground text-center">Apoie o projeto</h4>
+            <p className="text-muted-foreground text-center">
+              O Papuguinho é gratuito e sem anúncios.{" "}
+              <Link to="/apoie" className="text-primary hover:underline font-medium">
+                Ajude a manter no ar
+              </Link>
+              .
             </p>
           </div>
 
