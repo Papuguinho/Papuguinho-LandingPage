@@ -1,8 +1,9 @@
 import { Github, Linkedin, Globe, GraduationCap } from "lucide-react";
-import  leonardoImage from "@/assets/profile/leonardoImage.jpeg";
-import rannyImage from "@/assets/profile/rannyImage.jpeg";
-import deniseImage from "@/assets/profile/deniseImage.jpeg";
-import luizFelipeImage from "@/assets/profile/luizFelipeImage.jpeg";
+import  leonardoImage from "@/assets/profile/leonardoImage.webp";
+import rannyImage from "@/assets/profile/rannyImage.webp";
+import deniseImage from "@/assets/profile/deniseImage.webp";
+import luizFelipeImage from "@/assets/profile/luizFelipeImage.webp";
+import victorImage from "@/assets/profile/victorImage.webp";
 
 export type DeveloperLink = {
   label: string;
@@ -129,7 +130,7 @@ export const developers: Developer[] = [
     role: "Designer & ilustrador",
     description: "Cursando Bacharelado Interdisciplinar em Ciência e Tecnologia (UNIFESP-São José dos Campos). Auxiliar em ilustração e identidade visual.",
     initials: "VA",
-    image: "https://media.licdn.com/dms/image/v2/D5603AQGqEUDFAJ2DfA/profile-displayphoto-scale_400_400/B56ZpHEA6zI0Ag-/0/1762128827905?e=1788998400&v=beta&t=vQgVh5XRYnQaHoVBh3viVijWaQUkYD4XAPqUw92ando",
+    image: victorImage,
     links: [
       { label: "LinkedIn", url: "https://www.linkedin.com/in/victoranunciato/", icon: Linkedin }
     ]

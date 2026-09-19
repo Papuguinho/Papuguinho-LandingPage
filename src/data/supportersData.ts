@@ -1,5 +1,5 @@
 import { Github } from "lucide-react";
-import italoImage from "@/assets/profile/italoImage.png";
+import italoImage from "@/assets/profile/italoImage.webp";
 
 export type SupporterLink = {
   label: string;
