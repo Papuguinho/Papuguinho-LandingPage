@@ -3,6 +3,12 @@ import ifsp from "@/assets/partners/ifsp.webp";
 import logo from "../../public/icon-192.png";
 import equipe from "@/assets/timelineImages/expansaoEquipe.webp";
 import logoApp from "@/assets/timelineImages/logoApp.webp";
+import conict from "@/assets/timelineImages/conict.webp";
+import congressoX from "@/assets/timelineImages/congressoX.webp";
+import Eppeq from "@/assets/timelineImages/Eppeq.webp";
+import prefeitura from "@/assets/partners/prefeitura.webp";
+import secretaria from "@/assets/partners/secretaria.webp";
+import prancha from "@/assets/timelineImages/prancha.webp";
 
 const events = [
   {
@@ -15,8 +21,14 @@ const events = [
     id: 2,
     content: "Criação do MVP (Prancha única)",
     date: "6/2024",
+    image: prancha
   },
-  { id: 3, content: "Apresentação em congressos", date: "3/2025" },
+  { 
+  id: 3,
+    content: "Apresentação em congressos",
+    date: "3/2025",
+    images: [conict, congressoX, Eppeq]
+  },
   {
     id: 4, 
     content: "Lançamento do Website", 
@@ -29,7 +41,12 @@ const events = [
     date: "11/2025",
     image: logoApp
   },
-  { id: 6, content: "Parceria com a Prefeitura de Jacareí", date: "3/2026" },
+  { 
+    id: 6, 
+    content: "Parceria com a Prefeitura de Jacareí", 
+    date: "3/2026",
+    image: [prefeitura, secretaria]
+  },
   { 
     id: 7,
     content: "Publicação do aplicativo na Play Store",
@@ -66,6 +83,7 @@ const generateTimelineItems = (eventList) => {
     items.push({
       isYearHeader: false,
       image: event.image,
+      images: event.images,
       displayTitle: event.content,
       subtitle: event.date,
       id: `event-${event.id}`,
@@ -82,6 +100,7 @@ const WAVE_HEIGHT = 190;
 // Componente de segmento de onda individual com conteúdo no topo
 function WaveSegment({ item }) {
   const isTeamImage = item.image === equipe;
+  const galleryImages = item.images || (Array.isArray(item.image) ? item.image : null);
   const segmentHeight = isTeamImage ? 480 : 360;
 
   return (
@@ -133,7 +152,34 @@ function WaveSegment({ item }) {
       ) : (
         // Estilo para o evento convencional
         <>
-          {item.image && (
+          {galleryImages ? (
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "8px",
+                width: "min(340px, 88vw)",
+                height: "105px",
+                margin: "0 auto 8px",
+                transform: "translateX(-30px)",
+              }}
+            >
+              {galleryImages.map((image, index) => (
+                <img
+                  key={`${item.id}-image-${index}`}
+                  src={image}
+                  alt=""
+                  style={{
+                    width: "calc((100% - 16px) / 3)",
+                    height: "90px",
+                    objectFit: "contain",
+                    objectPosition: "center",
+                  }}
+                />
+              ))}
+            </div>
+          ) : item.image && (
             <img
               src={item.image}
               alt={item.imageAlt || "Imagem do evento"}
