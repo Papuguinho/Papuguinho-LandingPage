@@ -1,14 +1,47 @@
 import React, { CSSProperties, useRef, useState } from "react";
+import ifsp from "@/assets/partners/ifsp.webp";
+import logo from "../../public/icon-192.png";
+import equipe from "@/assets/timelineImages/expansaoEquipe.webp";
+import logoApp from "@/assets/timelineImages/logoApp.webp";
 
 const events = [
-  { id: 1, content: "Idealização e início do projeto", date: "3/2024" },
-  { id: 2, content: "Criação do MVP (Prancha única)", date: "6/2024" },
+  {
+    id: 1,
+    content: "Idealização e início do projeto",
+    date: "3/2024",
+    image: ifsp,
+  },
+  {
+    id: 2,
+    content: "Criação do MVP (Prancha única)",
+    date: "6/2024",
+  },
   { id: 3, content: "Apresentação em congressos", date: "3/2025" },
-  { id: 4, content: "Lançamento do Website", date: "10/2025" },
-  { id: 5, content: "Lançamento do App versão Web", date: "11/2025" },
+  {
+    id: 4, 
+    content: "Lançamento do Website", 
+    date: "10/2025",
+    image: logo
+  },
+  { 
+    id: 5,
+    content: "Lançamento do App versão Web", 
+    date: "11/2025",
+    image: logoApp
+  },
   { id: 6, content: "Parceria com a Prefeitura de Jacareí", date: "3/2026" },
-  { id: 7, content: "Publicação do aplicativo na Play Store", date: "5/2026" },
-  { id: 8, content: "Expansão da Equipe", date: "6/2026" },
+  { 
+    id: 7,
+    content: "Publicação do aplicativo na Play Store",
+    date: "5/2026",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_Play_2022_icon.svg/1920px-Google_Play_2022_icon.svg.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+  },
+  { 
+    id: 8,
+    content: "Expansão da Equipe",
+    date: "6/2026",
+    image: equipe
+  }
 ];
 
 // 1. Processa a lista para injetar os anos antes dos seus respectivos eventos
@@ -32,6 +65,7 @@ const generateTimelineItems = (eventList) => {
     // Injeta o evento logo em seguida
     items.push({
       isYearHeader: false,
+      image: event.image,
       displayTitle: event.content,
       subtitle: event.date,
       id: `event-${event.id}`,
@@ -47,13 +81,16 @@ const WAVE_HEIGHT = 190;
 
 // Componente de segmento de onda individual com conteúdo no topo
 function WaveSegment({ item }) {
+  const isTeamImage = item.image === equipe;
+  const segmentHeight = isTeamImage ? 480 : 360;
+
   return (
     <div
       style={{
         minWidth: "100vw",
         width: "100vw",
         position: "relative",
-        height: "360px",
+        height: `${segmentHeight}px`,
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-end",
@@ -61,27 +98,17 @@ function WaveSegment({ item }) {
         alignItems: "center",
       }}
     >
-      {/* O CARD FICA NO CENTRO DA PAGINA E NO TOPO DA ONDA. */}
+      {/* Conteúdo do evento acima do marcador da timeline. */}
       <div
         style={{
           position: "absolute",
-          top: "28px",
+          top: "12px",
           left: "50%",
           transform: "translateX(-50%)",
           width: item.isYearHeader ? "auto" : "min(280px, 72vw)",
           textAlign: "center",
-          padding: item.isYearHeader ? 0 : "16px 20px",
+          padding: 0,
           boxSizing: "border-box",
-          borderRadius: item.isYearHeader ? 0 : "16px",
-          border: item.isYearHeader
-            ? "none"
-            : "1px solid hsl(var(--primary) / 0.25)",
-          background: item.isYearHeader
-            ? "transparent"
-            : "hsl(var(--background) / 0.94)",
-          boxShadow: item.isYearHeader
-            ? "none"
-            : "0 12px 32px hsl(var(--primary) / 0.14)",
           zIndex: 3,
         }}
       >
@@ -103,39 +130,65 @@ function WaveSegment({ item }) {
           >
             {item.displayTitle}
           </span>
-        ) : (
-          // Estilo para o evento convencional
-          <>
-            <span
+      ) : (
+        // Estilo para o evento convencional
+        <>
+          {item.image && (
+            <img
+              src={item.image}
+              alt={item.imageAlt || "Imagem do evento"}
               style={{
-                fontSize: "12px",
-                color: "hsl(var(--muted-foreground))",
+                width: item.image === equipe ? "clamp(300px, 76vw, 490px)" : "200px",
+                height: isTeamImage ? "180px" : "105px",
+                maxWidth: "90vw",
+                objectFit: "contain",
+                objectPosition: "center",
                 display: "block",
-                marginBottom: "4px",
+                margin: "0 auto 8px",
+                position: item.image === equipe ? "relative" : undefined,
+                left: item.image === equipe ? "50%" : undefined,
+                transform: item.image === equipe ? "translateX(-50%)" : undefined,
               }}
-            >
-              {item.subtitle}
-            </span>
-            <p
-              style={{
-                fontSize: "14px",
-                margin: 0,
-                fontWeight: "500",
-                color: "hsl(var(--foreground))",
-                lineHeight: "1.3",
-              }}
-            >
-              {item.displayTitle}
-            </p>
-          </>
-        )}
+            />
+          )}
+
+          <p
+            style={{
+              fontSize: "14px",
+              margin: 0,
+              fontWeight: "500",
+              color: "hsl(var(--foreground))",
+              lineHeight: "1.3",
+            }}
+          >
+            {item.displayTitle}
+          </p>
+        </>
+      )}
       </div>
+
+      {!item.isYearHeader && (
+        <span
+          style={{
+            position: "absolute",
+            top: isTeamImage ? "300px" : "205px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            fontSize: "12px",
+            color: "hsl(var(--muted-foreground))",
+            whiteSpace: "nowrap",
+            zIndex: 3,
+          }}
+        >
+          {item.subtitle}
+        </span>
+      )}
 
       {/* MARCADOR CENTRALIZADO NO TOPO DA ONDA. */}
       <div
         style={{
           position: "absolute",
-          top: `${360 - WAVE_HEIGHT}px`,
+          top: `${segmentHeight - WAVE_HEIGHT}px`,
           left: "50%",
           transform: "translateY(-50%) translateX(-50%)",
           width: "14px",
