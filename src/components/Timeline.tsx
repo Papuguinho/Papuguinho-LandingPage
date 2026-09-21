@@ -193,7 +193,7 @@ function WaveSegment({ item }) {
                 margin: "0 auto 8px",
                 position: item.image === equipe ? "relative" : undefined,
                 left: item.image === equipe ? "50%" : undefined,
-                transform: item.image === equipe ? "translateX(-50%) translateY(-18px)" : undefined,
+                transform: item.image === equipe ? "translateX(-56%) translateY(-18px)" : undefined,
               }}
             />
           )}
