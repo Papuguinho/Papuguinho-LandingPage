@@ -101,7 +101,7 @@ const WAVE_HEIGHT = 190;
 function WaveSegment({ item }) {
   const isTeamImage = item.image === equipe;
   const galleryImages = item.images || (Array.isArray(item.image) ? item.image : null);
-  const segmentHeight = isTeamImage ? 480 : 360;
+  const segmentHeight = 360;
 
   return (
     <div
@@ -121,7 +121,7 @@ function WaveSegment({ item }) {
       <div
         style={{
           position: "absolute",
-          top: "12px",
+          top: isTeamImage ? "-10px" : "12px",
           left: "50%",
           transform: "translateX(-50%)",
           width: item.isYearHeader ? "auto" : "min(280px, 72vw)",
@@ -184,8 +184,8 @@ function WaveSegment({ item }) {
               src={item.image}
               alt={item.imageAlt || "Imagem do evento"}
               style={{
-                width: item.image === equipe ? "clamp(300px, 76vw, 490px)" : "200px",
-                height: isTeamImage ? "180px" : "105px",
+                width: item.image === equipe ? "clamp(210px, 66vw, 320px)" : "200px",
+                height: isTeamImage ? "135px" : "105px",
                 maxWidth: "90vw",
                 objectFit: "contain",
                 objectPosition: "center",
@@ -193,7 +193,7 @@ function WaveSegment({ item }) {
                 margin: "0 auto 8px",
                 position: item.image === equipe ? "relative" : undefined,
                 left: item.image === equipe ? "50%" : undefined,
-                transform: item.image === equipe ? "translateX(-50%)" : undefined,
+                transform: item.image === equipe ? "translateX(-50%) translateY(-18px)" : undefined,
               }}
             />
           )}
@@ -217,7 +217,7 @@ function WaveSegment({ item }) {
         <span
           style={{
             position: "absolute",
-            top: isTeamImage ? "300px" : "205px",
+            top: "205px",
             left: "50%",
             transform: "translateX(-50%)",
             fontSize: "12px",
