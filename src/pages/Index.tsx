@@ -13,7 +13,7 @@ import Developers from "@/components/Developers";
 import Supporters from "@/components/Supporters";
 import Footer from "@/components/Footer";
 import SupportSection from "@/components/SupportSection";
-// import SupportFab from "@/components/SupportFab";
+import Timeline from "@/components/Timeline";
 
 const Index = () => {
   // Numa SPA o navegador processa o #hash ANTES de o React montar, então o alvo
@@ -43,6 +43,7 @@ const Index = () => {
       </div>
       <Gallery />
       <VideoDemo />
+      <Timeline />
       <SupportSection />
       <FAQ />
       <Benefits />
