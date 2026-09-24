@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 // .webp: 123 KB no lugar de 1,73 MB do .png — esta é a imagem de LCP da página.
 import papuguinhoMascot from "@/assets/papuguinho-mascot.webp";
 const Hero = () => {
-  return <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5 pt-32 pb-20 md:pt-40 md:pb-32">
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5 pt-32 pb-20 md:pt-40 md:pb-32">
       <div className="container mx-auto px-4">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
           <div className="animate-fade-in-up space-y-6 text-center lg:text-left">
@@ -15,8 +16,9 @@ const Hero = () => {
               </span>
             </h1>
             <p className="text-lg text-muted-foreground md:text-xl max-w-2xl mx-auto lg:mx-0">
-              Papuguinho é um sistema de Comunicação Aumentativa e Alternativa (CAA) 
-              gratuito para crianças com Transtorno do Espectro Autista (TEA).
+              Papuguinho é um sistema de Comunicação Aumentativa e Alternativa
+              (CAA) gratuito para crianças com Transtorno do Espectro Autista
+              (TEA).
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               {/* Mesmo mecanismo do "Download" do cabeçalho, que é o que funciona nesta
@@ -28,19 +30,36 @@ const Hero = () => {
                 size="lg"
                 className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all"
                 onClick={() =>
-                  document.getElementById("cta")?.scrollIntoView({ behavior: "smooth", block: "start" })
+                  document
+                    .getElementById("cta")
+                    ?.scrollIntoView({ behavior: "smooth", block: "start" })
                 }
               >
                 Baixar Grátis
               </Button>
 
-              <Button size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary/5" onClick={() => document.getElementById("features")?.scrollIntoView({
-              behavior: "smooth"
-            })}>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-primary text-primary hover:bg-primary/5"
+                onClick={() =>
+                  document.getElementById("features")?.scrollIntoView({
+                    behavior: "smooth",
+                  })
+                }
+              >
                 Saiba Mais
               </Button>
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all" asChild>
-                <a href="https://estudio.papuguinho.com" target="_blank" rel="noopener noreferrer">
+              <Button
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all"
+                asChild
+              >
+                <a
+                  href="https://estudio.papuguinho.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Estúdio Papuguinho
                 </a>
               </Button>
@@ -48,10 +67,33 @@ const Hero = () => {
             {/* Alinhado com os botões acima (centro no celular, esquerda no
                 desktop) — é uma legenda dos botões, não um rodapé solto. */}
             <p className="text-sm text-muted-foreground text-center lg:text-left">
-               Desenvolvido com ❤️ por estudantes do{" "}
-              <a href="https://www.ifsp.edu.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-justify">IFSP</a>,{" "}
-              <a href="https://portal.unifesp.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-justify">Unifesp</a> e{" "}
-              <a href="https://www2.unesp.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-justify">Unesp</a>
+              Desenvolvido com ❤️ por estudantes do{" "}
+              <a
+                href="https://www.ifsp.edu.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline text-justify"
+              >
+                IFSP
+              </a>
+              ,{" "}
+              <a
+                href="https://portal.unifesp.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline text-justify"
+              >
+                Unifesp
+              </a>{" "}
+              e{" "}
+              <a
+                href="https://www2.unesp.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline text-justify"
+              >
+                Unesp
+              </a>
             </p>
             {/* Quem chega por reportagem raramente rola a página inteira. Esta
                 linha é a primeira menção ao apoio, ainda na primeira dobra —
@@ -64,8 +106,18 @@ const Hero = () => {
           </div>
           <div className="relative flex justify-center">
             <div className="relative">
-              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl"></div>
-              <img src={papuguinhoMascot} alt="Papuguinho — mascote do aplicativo de comunicação aumentativa e alternativa (CAA)" width="896" height="896" fetchPriority="high" className="relative w-full max-w-md animate-float drop-shadow-2xl" />
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl"
+              ></div>
+              <img
+                src={papuguinhoMascot}
+                alt="Papuguinho — mascote do aplicativo de comunicação aumentativa e alternativa (CAA)"
+                width="896"
+                height="896"
+                fetchPriority="high"
+                className="relative w-full max-w-md animate-float drop-shadow-2xl"
+              />
             </div>
           </div>
         </div>
@@ -73,8 +125,15 @@ const Hero = () => {
       {/* Enfeites: vêm DEPOIS no DOM, então ficavam por cima dos botões e engoliam o
           clique (o de baixo cobria o "Baixar Grátis" inteiro). Decoração nunca pode
           receber ponteiro — daí o pointer-events-none e o aria-hidden. */}
-      <div aria-hidden="true" className="pointer-events-none absolute top-10 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
-      <div aria-hidden="true" className="pointer-events-none absolute bottom-10 left-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
-    </section>;
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute top-10 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"
+      ></div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-10 left-10 h-96 w-96 max-w-[calc(100vw-2.5rem)] max-h-[calc(100vw-2.5rem)] rounded-full bg-accent/10 blur-3xl"
+      ></div>
+    </section>
+  );
 };
 export default Hero;
