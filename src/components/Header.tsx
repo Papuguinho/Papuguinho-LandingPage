@@ -33,7 +33,9 @@ const Header = () => {
       navigate(`/#${id}`);
       return;
     }
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document
+      .getElementById(id)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const navItems = [
@@ -49,14 +51,22 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md shadow-md" : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 overflow-x-clip transition-all duration-300 ${
+        isScrolled
+          ? "bg-background/95 backdrop-blur-md shadow-md"
+          : "bg-transparent"
       }`}
     >
-      <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <nav className="container mx-auto flex min-w-0 items-center justify-between px-4 py-4">
         <Link to="/" className="flex items-center gap-3">
-          <img src={papuguinhoLogo} alt="Papuguinho" className="h-10 w-10 object-contain" />
-          <span className="text-xl font-bold text-primary font-display">Papuguinho</span>
+          <img
+            src={papuguinhoLogo}
+            alt="Papuguinho"
+            className="h-10 w-10 object-contain"
+          />
+          <span className="text-xl font-bold text-primary font-display">
+            Papuguinho
+          </span>
         </Link>
 
         {/* Desktop Navigation (lg+) */}
@@ -115,7 +125,11 @@ const Header = () => {
         <SheetContent side="right" className="w-72 overflow-y-auto">
           <SheetHeader>
             <SheetTitle className="flex items-center gap-2">
-              <img src={papuguinhoLogo} alt="Papuguinho" className="h-8 w-8 object-contain" />
+              <img
+                src={papuguinhoLogo}
+                alt="Papuguinho"
+                className="h-8 w-8 object-contain"
+              />
               Papuguinho
             </SheetTitle>
           </SheetHeader>

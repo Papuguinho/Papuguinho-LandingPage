@@ -1,89 +1,107 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Quote } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+const testimonials = [
+  {
+    id: "1",
+    occupation: "Mãe atípica",
+    content:
+      "A minha filha é muito rígida, ela precisa de uma previsibilidade de tudo. Achei muito bacana a facilidade de colocar as fotos reais, foto dela, dos locais, para preparar ela antes de ir para algum lugar.",
+  },
+  {
+    id: "2",
+    occupation: "Professora de educação especial",
+    content:
+      "Você tendo a imagem, ele já sabe o que vai acontecer e vai se programando para poder realizar. Isso não quer dizer que não vai ter crise, mas tendo essa previsibilidade já ajuda mais.",
+  },
+  {
+    id: "3",
+    occupation: "Mãe atípica",
+    content:
+      "Neste app podem ser criados pictogramas para auxiliar a comunicação. Aos desenvolvedores estudantes, agradeço a iniciativa e a preocupação em buscar o melhor para aqueles que têm dificuldade em se comunicar. Parabéns pela excelente iniciativa.",
+  },
+  {
+    id: "4",
+    occupation: "Usuário do Papuguinho",
+    content:
+      "Aplicativo excelente, funcional e a interface é bastante intuitiva!",
+  },
+  {
+    id: "5",
+    occupation: "Usuário do Papuguinho",
+    content:
+      "Excelente aplicativo de CAA, espero que se espalhe rapidamente, vai ajudar muitas crianças a se comunicar!",
+  },
+  {
+    id: "6",
+    occupation: "Usuário do Papuguinho",
+    content: "Amei o app, interface intuitiva, 100% gratuito e sem anúncios.",
+  },
+];
 
 const Testimonials = () => {
-  const testimonials = [
-    {
-      name: "Maria Silva",
-      role: "Mãe de João, 6 anos",
-      content:
-        "O Papuguinho transformou a comunicação do meu filho. Ele consegue expressar suas necessidades e emoções de forma muito mais clara agora.",
-      initials: "MS",
-    },
-    {
-      name: "Ana Costa",
-      role: "Mãe de Laura, 5 anos",
-      content:
-        "Ferramenta incrível! A Laura adora usar o aplicativo e tem se desenvolvido muito. Os sons ajudam muito no aprendizado.",
-      initials: "AC",
-    },
-    {
-      name: "Carlos Oliveira",
-      role: "Pai de Pedro, 7 anos",
-      content:
-        "Gratuito e de qualidade! O Pedro usa todos os dias e conseguimos entender melhor o que ele quer nos dizer. Recomendo muito!",
-      initials: "CO",
-    },
-    {
-      name: "Juliana Santos",
-      role: "Mãe de Gabriel, 4 anos",
-      content:
-        "A interface é super intuitiva. Gabriel aprendeu a usar rapidamente e agora se comunica com muito mais autonomia.",
-      initials: "JS",
-    },
-    {
-      name: "Roberto Lima",
-      role: "Pai de Sofia, 8 anos",
-      content:
-        "Excelente recurso desenvolvido pelos estudantes do IFSP. A Sofia adora o papagainho e usa o app com entusiasmo.",
-      initials: "RL",
-    },
-    {
-      name: "Patricia Ferreira",
-      role: "Mãe de Miguel, 5 anos",
-      content:
-        "O Papuguinho facilitou muito nossa rotina. Miguel consegue montar frases e expressar o que sente. Gratidão aos desenvolvedores!",
-      initials: "PF",
-    },
-  ];
-
   return (
-    <section id="testimonials" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12 animate-fade-in-up">
-          <h2 className="text-4xl font-bold mb-4 text-primary">Depoimentos</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Veja o que os pais e cuidadores estão dizendo sobre o Papuguinho
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <Card
-              key={index}
-              className="hover:shadow-lg transition-shadow duration-300 animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <CardContent className="pt-6">
-                <Quote className="h-8 w-8 text-primary/40 mb-4" />
-                <p className="text-muted-foreground mb-6 italic">"{testimonial.content}"</p>
-                <div className="flex items-center gap-3">
-                  <Avatar>
-                    <AvatarFallback className="bg-primary/20 text-primary">
-                      {testimonial.initials}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <p className="font-semibold">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+    <section className="mx-auto w-full overflow-hidden bg-[#F7FAF9] py-16 sm:py-20">
+      <div className="mb-10 flex flex-col items-center justify-center text-center">
+        <h2 className="mb-3 text-3xl font-bold text-[#36B878] sm:text-4xl">
+          Depoimentos
+        </h2>
+        <p className="text-base text-slate-600 sm:text-lg">Quem usa, indica</p>
       </div>
+
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={28}
+        slidesPerView="auto"
+        centeredSlides={true}
+        loop
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 5000, disableOnInteraction: true }}
+        style={
+          {
+            "--swiper-navigation-color": "#36B878",
+            "--swiper-navigation-size": "20px",
+            "--swiper-pagination-color": "#36B878",
+          } as React.CSSProperties
+        }
+        className="!overflow-visible px-2 sm:px-0"
+      >
+        {testimonials.map(({ id, occupation, content }) => (
+          <SwiperSlide
+            key={id}
+            className="!h-auto !w-[calc(100vw-2rem)] sm:!w-[540px]"
+          >
+            <div className="flex h-full items-center justify-center px-1 py-4">
+              <Card className="relative w-full max-w-[540px] overflow-visible rounded-[24px] border border-[#DDECE7] bg-[#F6FDFB] px-4 pb-8 pt-10 shadow-[0_18px_40px_rgba(15,23,42,0.08)] sm:px-8 sm:pb-10">
+                <div className="absolute left-6 top-0 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-xl bg-[#36B878] text-white shadow-md">
+                  <Quote size={24} strokeWidth={2.5} className="fill-white" />
+                </div>
+
+                <CardContent className="space-y-6 p-0">
+                  <p className="text-base leading-7 text-slate-700 sm:text-lg">
+                    {content}
+                  </p>
+
+                  <div className="h-px w-full bg-[#B9E8D0]" />
+
+                  <div className="flex items-center justify-between gap-3 text-left">
+                    <span className="text-sm font-semibold text-slate-700">
+                      {occupation}
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </section>
   );
 };

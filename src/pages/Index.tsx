@@ -10,10 +10,8 @@ import Benefits from "@/components/Benefits";
 import CTA from "@/components/CTA";
 import Partners from "@/components/Partners";
 import Developers from "@/components/Developers";
-import Supporters from "@/components/Supporters";
 import Footer from "@/components/Footer";
-import SupportSection from "@/components/SupportSection";
-// import SupportFab from "@/components/SupportFab";
+import Testimonials from "@/components/Testimonials";
 
 const Index = () => {
   // Numa SPA o navegador processa o #hash ANTES de o React montar, então o alvo
@@ -22,10 +20,7 @@ const Index = () => {
   useEffect(() => {
     const alvo = window.location.hash?.slice(1);
     if (!alvo) return;
-    const t = setTimeout(
-      () => document.getElementById(alvo)?.scrollIntoView(),
-      100,
-    );
+    const t = setTimeout(() => document.getElementById(alvo)?.scrollIntoView(), 100);
     return () => clearTimeout(t);
   }, []);
 
@@ -41,19 +36,18 @@ const Index = () => {
       <div id="features">
         <Features />
       </div>
+      
       <Gallery />
       <VideoDemo />
-      <SupportSection />
       <FAQ />
       <Benefits />
+      <Testimonials />
       <Partners />
       <Developers />
-      <Supporters />
       <div id="cta">
         <CTA />
       </div>
       <Footer />
-      {/* <SupportFab /> */}
     </main>
   );
 };

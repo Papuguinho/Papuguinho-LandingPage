@@ -18,7 +18,9 @@ const VideoDemo = () => {
     <section id="videos" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fade-in-up">
-          <h2 className="text-4xl font-bold mb-4 text-primary">Vídeos Demonstrativos</h2>
+          <h2 className="break-words text-3xl font-bold mb-4 text-primary sm:text-4xl">
+            Vídeos Demonstrativos
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Assista aos vídeos para entender melhor como o Papuguinho funciona
           </p>
@@ -43,7 +45,9 @@ const VideoDemo = () => {
               </div>
               <div className="p-4">
                 <h3 className="font-semibold text-lg mb-2">{video.title}</h3>
-                <p className="text-sm text-muted-foreground">{video.description}</p>
+                <p className="text-sm text-muted-foreground">
+                  {video.description}
+                </p>
               </div>
             </Card>
           ))}
