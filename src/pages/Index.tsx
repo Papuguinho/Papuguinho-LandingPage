@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -13,7 +14,16 @@ import Developers from "@/components/Developers";
 import Supporters from "@/components/Supporters";
 import Footer from "@/components/Footer";
 import SupportSection from "@/components/SupportSection";
+import boasPraticasImage from "@/assets/gallery/awards/boaspraticasImage.jpg";
+import incentivoRhImage from "@/assets/gallery/awards/icentivoRhImage.png";
+import reditecImage from "@/assets/gallery/awards/reditecImage.jpg";
 // import SupportFab from "@/components/SupportFab";
+
+const awardImages = [
+  { title: "Prêmio Boas Práticas", image: boasPraticasImage },
+  { title: "Incentivo à Pesquisa", image: incentivoRhImage },
+  { title: "Reditec", image: reditecImage },
+];
 
 const Index = () => {
   // Numa SPA o navegador processa o #hash ANTES de o React montar, então o alvo
@@ -47,6 +57,30 @@ const Index = () => {
       <FAQ />
       <Benefits />
       <Partners />
+      <section id="awards" className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary break-words leading-tight px-2">
+            Premiações
+          </h2>
+
+          <div className="mt-10 grid gap-8 sm:grid-cols-3 justify-items-center">
+            {awardImages.map((award) => (
+              <Link
+                key={award.title}
+                to="/premios"
+                className="group flex flex-col items-center justify-center transition-transform duration-300 hover:-translate-y-1"
+                aria-label={award.title}
+              >
+                <img
+                  src={award.image}
+                  alt={award.title}
+                  className="h-44 w-44 rounded-full border-4 border-primary object-cover shadow-[0_12px_30px_rgba(0,0,0,0.12)] transition-transform duration-300 group-hover:scale-[1.03] sm:h-52 sm:w-52"
+                />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
       <Developers />
       <Supporters />
       <div id="cta">

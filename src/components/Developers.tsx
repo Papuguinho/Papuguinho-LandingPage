@@ -1,6 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
@@ -12,7 +16,8 @@ import {
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
-import { Mail } from "lucide-react";
+import { Mail, Trophy } from "lucide-react";
+import { Link } from "react-router-dom";
 import { developers, type Developer } from "@/data/developersData";
 
 type DeveloperCardProps = {
@@ -27,14 +32,14 @@ const DeveloperCard = ({ dev, active = false }: DeveloperCardProps) => {
         "w-full max-w-[18rem] sm:max-w-sm h-[28rem] sm:h-[26rem] lg:h-[28rem] mx-auto transition-all duration-500 ease-out overflow-hidden",
         active
           ? "scale-[1.02] -translate-y-1 max-[374px]:scale-100 max-[374px]:translate-y-0 sm:scale-105 sm:-translate-y-2 shadow-[0_18px_45px_rgba(0,0,0,0.18)] border-primary/70 bg-card"
-          : "scale-90 translate-y-2 max-[374px]:scale-95 max-[374px]:translate-y-0 opacity-90"
+          : "scale-90 translate-y-2 max-[374px]:scale-95 max-[374px]:translate-y-0 opacity-90",
       )}
     >
       <CardContent className="pt-5 sm:pt-6 text-center h-full flex flex-col px-4 sm:px-6 overflow-hidden">
         <Avatar
           className={cn(
             "mx-auto mb-4 transition-all duration-500 shrink-0",
-            active ? "h-16 w-16 ring-2 ring-primary/20" : "h-14 w-14"
+            active ? "h-16 w-16 ring-2 ring-primary/20" : "h-14 w-14",
           )}
         >
           {dev.image && <AvatarImage src={dev.image} alt={dev.name} />}
@@ -118,6 +123,20 @@ const Developers = () => {
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Conheça a equipe por trás do Papuguinho
           </p>
+
+          <div className="mt-6 flex justify-center">
+            <Button
+              asChild
+              variant="outline"
+              size="sm"
+              className="border-primary/30 text-primary hover:bg-primary hover:text-white"
+            >
+              <Link to="/premios">
+                <Trophy className="h-4 w-4 mr-2" />
+                Ver prêmios
+              </Link>
+            </Button>
+          </div>
         </div>
 
         <Carousel
