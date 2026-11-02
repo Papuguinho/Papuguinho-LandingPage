@@ -29,6 +29,16 @@ const PartnersCarrossel = () => {
     };
   }, [api]);
 
+  useEffect(() => {
+    if (!api) return;
+
+    const interval = window.setInterval(() => {
+      api.scrollNext();
+    }, 5000);
+
+    return () => window.clearInterval(interval);
+  }, [api]);
+
   return (
     <section id="partners" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
