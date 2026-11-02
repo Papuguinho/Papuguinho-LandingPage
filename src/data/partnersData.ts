@@ -6,6 +6,7 @@ import secretaria from "@/assets/partners/secretaria.webp";
 import emei from "@/assets/partners/emei.webp";
 import unifesp from "@/assets/partners/unifesp.webp";
 import codeLab from "@/assets/partners/codeLab.webp";
+import easyTech from "@/assets/partners/easyTech.webp";
 
 export type Partner = {
   name: string;
@@ -63,4 +64,10 @@ export const partners: Partner[] = [
     image: emei,
     link: "",
   },
+  {
+    name: "EasyTech",
+    description: "Parceira estratégica no suporte tecnológico e na conexão do projeto com a comunidade de TI, impulsionando nossa visibilidade por meio de entrevistas em podcasts, testes de novos sistemas e espaço para palestras em seus eventos.",
+    image: easyTech,
+    link: "https://easytechpodcast.com.br/"
+  }
 ];

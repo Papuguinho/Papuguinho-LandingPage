@@ -34,7 +34,7 @@ const PartnersCarrossel = () => {
 
     const interval = window.setInterval(() => {
       api.scrollNext();
-    }, 5000);
+    }, 4000);
 
     return () => window.clearInterval(interval);
   }, [api]);
