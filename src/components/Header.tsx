@@ -53,7 +53,7 @@ const Header = () => {
         isScrolled ? "bg-background/95 backdrop-blur-md shadow-md" : "bg-transparent"
       }`}
     >
-      <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <nav className="w-full px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
           <img src={papuguinhoLogo} alt="Papuguinho" className="h-10 w-10 object-contain" />
           <span className="text-xl font-bold text-primary font-display">Papuguinho</span>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
@@ -19,21 +19,21 @@ import reditecImage from "@/assets/gallery/awards/reditecImage.jpg";
 
 const awardSlides = [
   {
-    title: "Prêmio Boas Práticas",
+    title: "Prêmio Boas Práticas na Escola",
     description:
-      "Reconhecimento por ações inovadoras em educação inclusiva e impacto social.",
+      "Conquistado em 2026, a premiação envolve ações pedagógicas, de gestão e de convivência que transformam o ambiente de ensino em um espaço inclusivo, seguro e colaborativo.",
     image: boasPraticasImage,
   },
   {
-    title: "Incentivo à Pesquisa em Direitos Humanos",
+    title: " Prêmio de Incentivo à Pesquisa em Direitos Humanos ",
     description:
-      "Premiação por contribuição significativa em pesquisa e acessibilidade.",
+      "5° lugar em 2026, o reconhecimento consiste na importância de valorizar estudos, práticas e evidências voltadas para políticas públicas na área",
     image: incentivoRhImage,
   },
   {
     title: "Reditec",
     description:
-      "Distinção por experiências transformadoras e inovação com tecnologia educacional.",
+      "Conquistado em 2026, a Reunião Anual dos Dirigentes das Instituições Federais de Educação Profissional, Científica e Tecnológica é o principal encontro de gestão da Rede Federal no Brasil.",
     image: reditecImage,
   },
 ];
@@ -97,7 +97,7 @@ const Awards = () => {
                   <div
                     className={cn(
                       "rounded-[2rem] p-4 shadow-[0_12px_35px_rgba(0,0,0,0.08)] sm:p-8",
-                      index % 2 === 0 ? "bg-[#4DB9A6]" : "bg-[#D9DFE4]",
+                      index % 2 === 0 ? "bg-[#1dd762]" : "bg-[#a4a8ac]",
                     )}
                   >
                     <div className="mx-auto flex h-[220px] max-w-4xl items-center justify-center overflow-hidden rounded-[1.5rem] bg-white/10 sm:h-[260px]">

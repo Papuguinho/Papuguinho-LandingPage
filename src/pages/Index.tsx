@@ -20,9 +20,9 @@ import reditecImage from "@/assets/gallery/awards/reditecImage.jpg";
 // import SupportFab from "@/components/SupportFab";
 
 const awardImages = [
-  { title: "Prêmio Boas Práticas", image: boasPraticasImage },
-  { title: "Incentivo à Pesquisa", image: incentivoRhImage },
-  { title: "Reditec", image: reditecImage },
+  { title: "Prêmio Boas Práticas na Escola", image: boasPraticasImage },
+  { title: "Prêmio de Incentivo à Pesquisa em Direitos Humanos", image: incentivoRhImage },
+  { title: "REDITEC", image: reditecImage },
 ];
 
 const Index = () => {
@@ -76,6 +76,9 @@ const Index = () => {
                   alt={award.title}
                   className="h-44 w-44 rounded-full border-4 border-primary object-cover shadow-[0_12px_30px_rgba(0,0,0,0.12)] transition-transform duration-300 group-hover:scale-[1.03] sm:h-52 sm:w-52"
                 />
+                <span className="mt-4 text-sm font-semibold text-foreground sm:text-base">
+                  {award.title}
+                </span>
               </Link>
             ))}
           </div>
