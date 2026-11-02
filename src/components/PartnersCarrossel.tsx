@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
@@ -83,6 +84,12 @@ const PartnersCarrossel = () => {
             aria-label="Próxima parceria"
           />
         </Carousel>
+
+        <div className="text-center mt-8">
+          <Button asChild>
+            <Link to="/parcerias">Saiba mais</Link>
+          </Button>
+        </div>
       </div>
     </section>
   );

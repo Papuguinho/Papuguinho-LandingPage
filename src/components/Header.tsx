@@ -29,10 +29,6 @@ const Header = () => {
   // Index.tsx reposiciona depois de montar.
   const scrollToSection = (id: string) => {
     setIsMobileMenuOpen(false);
-    if (id === "partners") {
-      navigate("/parcerias");
-      return;
-    }
     if (pathname !== "/") {
       navigate(`/#${id}`);
       return;
