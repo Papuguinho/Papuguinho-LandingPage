@@ -8,7 +8,6 @@ import VideoDemo from "@/components/VideoDemo";
 import FAQ from "@/components/FAQ";
 import Benefits from "@/components/Benefits";
 import CTA from "@/components/CTA";
-import Partners from "@/components/Partners";
 import Developers from "@/components/Developers";
 import Supporters from "@/components/Supporters";
 import Footer from "@/components/Footer";
@@ -46,7 +45,6 @@ const Index = () => {
       <SupportSection />
       <FAQ />
       <Benefits />
-      <Partners />
       <Developers />
       <Supporters />
       <div id="cta">
