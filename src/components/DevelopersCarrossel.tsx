@@ -1,4 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
@@ -14,6 +13,7 @@ import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { Mail } from "lucide-react";
 import { developers, type Developer } from "@/data/developersData";
+import { Link } from "react-router-dom";
 
 type DeveloperCardProps = {
   dev: Developer;
@@ -22,44 +22,44 @@ type DeveloperCardProps = {
 
 const DeveloperCard = ({ dev, active = false }: DeveloperCardProps) => {
   return (
-    <Card
+    <div
       className={cn(
-        "w-full max-w-[18rem] sm:max-w-sm h-[28rem] sm:h-[26rem] lg:h-[28rem] mx-auto transition-all duration-500 ease-out overflow-hidden",
+        "w-full max-w-[18rem] h-[15rem] sm:h-[16rem] mx-auto text-center transition-all duration-500 ease-out",
         active
-          ? "scale-[1.02] -translate-y-1 max-[374px]:scale-100 max-[374px]:translate-y-0 sm:scale-105 sm:-translate-y-2 shadow-[0_18px_45px_rgba(0,0,0,0.18)] border-primary/70 bg-card"
-          : "scale-90 translate-y-2 max-[374px]:scale-95 max-[374px]:translate-y-0 opacity-90"
+          ? "scale-105 -translate-y-1"
+          : "scale-95 opacity-90"
       )}
     >
-      <CardContent className="pt-5 sm:pt-6 text-center h-full flex flex-col px-4 sm:px-6 overflow-hidden">
-        <Avatar
-          className={cn(
-            "mx-auto mb-4 transition-all duration-500 shrink-0",
-            active ? "h-16 w-16 ring-2 ring-primary/20" : "h-14 w-14"
-          )}
-        >
-          {dev.image && <AvatarImage src={dev.image} alt={dev.name} />}
-          <AvatarFallback className="bg-primary/20 text-primary text-lg font-bold">
-            {dev.initials}
-          </AvatarFallback>
-        </Avatar>
-        <h3 className="font-semibold text-base sm:text-lg mb-1 text-foreground break-words leading-tight min-h-[3.25rem] sm:min-h-[3.5rem] shrink-0">
+      <div className="flex h-full flex-col items-center">
+        <div className="flex h-32 w-32 shrink-0 items-center justify-center">
+          <Avatar
+            className={cn(
+              "transition-all duration-500 rounded-[2rem]",
+              active ? "h-32 w-32 ring-2 ring-primary/20" : "h-28 w-28"
+            )}
+          >
+            {dev.image && <AvatarImage src={dev.image} alt={dev.name} />}
+            <AvatarFallback className="bg-primary/20 text-primary text-lg font-bold">
+              {dev.initials}
+            </AvatarFallback>
+          </Avatar>
+        </div>
+        <h3 className="font-semibold text-xs sm:text-sm uppercase mb-1 text-foreground break-words leading-tight h-[2.25rem] flex items-center justify-center">
           {dev.name}
         </h3>
-        <p className="text-xs sm:text-sm font-medium text-primary mb-3 break-words leading-relaxed min-h-[2.5rem] sm:min-h-[3rem] shrink-0">
+        <p className="text-[0.65rem] sm:text-xs font-medium text-primary break-words leading-tight h-[2.5rem] flex items-start justify-center">
           {dev.role}
         </p>
-        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed break-words hyphens-auto flex-1 overflow-hidden">
-          {dev.description}
-        </p>
-        {dev.links && dev.links.length > 0 && (
+        <div className="mt-1 flex h-7 items-center justify-center">
+        {active && dev.links && dev.links.length > 0 && (
           <Popover>
             <PopoverTrigger asChild>
               <Button
                 variant="outline"
                 size="sm"
-                className="mt-4 shrink-0 hover:bg-[#1DD762] hover:text-white"
+                className="mt-1 h-7 rounded-md border-primary/30 px-2 text-[0.65rem] hover:bg-[#1DD762] hover:text-white"
               >
-                <Mail className="h-4 w-4 mr-2" />
+                <Mail className="h-3 w-3 mr-1" />
                 Contato
               </Button>
             </PopoverTrigger>
@@ -84,8 +84,10 @@ const DeveloperCard = ({ dev, active = false }: DeveloperCardProps) => {
             </PopoverContent>
           </Popover>
         )}
-      </CardContent>
-    </Card>
+        </div>
+      </div>
+      
+    </div>
   );
 };
 
@@ -109,27 +111,27 @@ const Developers = () => {
   }, [api]);
 
   return (
-    <section id="developers" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-10 sm:mb-12 animate-fade-in-up">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 text-primary break-words leading-tight px-2">
+    <section id="developers" className="bg-background">
+      <div className="text-center px-4 py-8 sm:py-10 animate-fade-in-up">
+          <h2 className="font-display text-2xl sm:text-3xl font-bold uppercase text-primary break-words leading-tight">
             Desenvolvedores
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
+          <p className="mt-2 text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto">
             Conheça a equipe por trás do Papuguinho
           </p>
-        </div>
+      </div>
 
+      <div className="bg-white px-4 py-14 sm:py-16">
         <Carousel
           setApi={setApi}
-          opts={{ align: "center", loop: true }}
-          className="max-w-6xl mx-auto"
+          opts={{ align: "center", loop: true, startIndex: 1 }}
+          className="max-w-7xl mx-auto"
         >
-          <CarouselContent className="py-4 sm:py-8">
+          <CarouselContent className="items-start py-4 sm:py-6">
             {developers.map((dev, index) => (
               <CarouselItem
                 key={dev.name}
-                className="basis-full sm:basis-4/5 lg:basis-1/3 flex justify-center px-1 sm:px-2"
+                className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/3 flex justify-center px-1 sm:px-4"
               >
                 <DeveloperCard dev={dev} active={index === activeIndex} />
               </CarouselItem>
@@ -145,6 +147,12 @@ const Developers = () => {
             aria-label="Próximo desenvolvedor"
           />
         </Carousel>
+
+        <div className="mt-8 text-center">
+          <Button asChild>
+            <Link to="/desenvolvedores">Saiba mais</Link>
+          </Button>
+        </div>
       </div>
     </section>
   );
