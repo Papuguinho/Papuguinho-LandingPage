@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { Mail } from "lucide-react";
 import { developers, type Developer } from "@/data/developersData";
+import { Link } from "react-router-dom";
 
 type DeveloperCardProps = {
   dev: Developer;
@@ -85,6 +86,7 @@ const DeveloperCard = ({ dev, active = false }: DeveloperCardProps) => {
         )}
         </div>
       </div>
+      
     </div>
   );
 };
@@ -145,6 +147,12 @@ const Developers = () => {
             aria-label="Próximo desenvolvedor"
           />
         </Carousel>
+
+        <div className="mt-8 text-center">
+          <Button asChild>
+            <Link to="/desenvolvedores">Saiba mais</Link>
+          </Button>
+        </div>
       </div>
     </section>
   );
