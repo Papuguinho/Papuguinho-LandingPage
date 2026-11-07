@@ -1,7 +1,5 @@
 import ifsp from "@/assets/partners/ifsp.webp";
-import arasaac from "@/assets/partners/arasaac.webp";
 import mind from "@/assets/partners/mind.webp";
-import prefeitura from "@/assets/partners/prefeitura.webp";
 import secretaria from "@/assets/partners/secretaria.webp";
 import emei from "@/assets/partners/emei.webp";
 import unifesp from "@/assets/partners/unifesp.webp";
@@ -35,22 +33,10 @@ export const partners: Partner[] = [
     link: "https://www.codelab-unifesp.org/",
   },
   {
-    name: "ARASAAC",
-    description: "Fornecedor dos recursos gráficos e sistemas de comunicação aumentativa e alternativa (CAA) utilizados nas interfaces do projeto.",
-    image: arasaac,
-    link: "https://arasaac.org/index.html",
-  },
-  {
     name: "Grupo MIND",
     description: "Grupo de pesquisa do IFSP-Jacareí, certificado pelo CNPq. Tem o propósito de promover pesquisas que favoreçam a inclusão de todos os estudantes nos espaços escolares.",
     image: mind,
     link: "https://grupopesquisamind.github.io/site_mind/index.html",
-  },
-  {
-    name: "Prefeitura de Jacareí",
-    description: "Parceira institucional responsável pela viabilização e implementação do projeto na rede municipal de ensino, promovendo a inclusão e o uso de tecnologias assistivas nas escolas públicas.",
-    image: prefeitura,
-    link: "https://www.jacarei.sp.gov.br/",
   },
   {
     name: "SECRETARIA MUNICIPAL DE EDUCAÇÃO DE JACAREÍ",
