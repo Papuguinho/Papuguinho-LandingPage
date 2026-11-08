@@ -11,22 +11,22 @@ import { supporters, type Supporter } from "@/data/supportersData";
 
 const DeveloperCard = ({ dev }: { dev: Developer }) => {
   return (
-    <Card className="h-full min-h-[28rem] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
-      <CardContent className="flex h-full flex-col overflow-hidden px-4 pt-5 text-center sm:px-6 sm:pt-6">
-        <Avatar className="mx-auto mb-4 h-16 w-16 shrink-0 ring-2 ring-primary/20">
+    <Card className="h-auto min-h-0 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(0,0,0,0.18)] sm:h-full sm:min-h-[24rem] 2xl:min-h-[28rem]">
+      <CardContent className="flex flex-col overflow-hidden px-4 pb-4 pt-4 text-center sm:h-full sm:px-6 sm:pb-6 sm:pt-6">
+        <Avatar className="mx-auto mb-3 h-14 w-14 shrink-0 ring-2 ring-primary/20 sm:mb-4 sm:h-16 sm:w-16">
           {dev.image && <AvatarImage src={dev.image} alt={dev.name} />}
           <AvatarFallback className="bg-primary/20 text-lg font-bold text-primary">
             {dev.initials}
           </AvatarFallback>
         </Avatar>
 
-        <h2 className="mb-1 min-h-[3.25rem] shrink-0 break-words text-base font-semibold leading-tight text-foreground sm:text-lg">
+        <h2 className="mb-1 shrink-0 break-words text-base font-semibold leading-tight text-foreground sm:text-lg">
           {dev.name}
         </h2>
-        <p className="mb-3 min-h-[2.5rem] shrink-0 break-words text-xs font-medium leading-relaxed text-primary sm:min-h-[3rem] sm:text-sm">
+        <p className="mb-3 shrink-0 break-words text-xs font-medium leading-relaxed text-primary sm:text-sm">
           {dev.role}
         </p>
-        <p className="flex-1 overflow-hidden break-words text-xs leading-relaxed text-muted-foreground sm:text-sm">
+        <p className="overflow-hidden break-words text-xs leading-relaxed text-muted-foreground sm:flex-1 sm:text-sm">
           {dev.description}
         </p>
 
@@ -36,7 +36,7 @@ const DeveloperCard = ({ dev }: { dev: Developer }) => {
               <Button
                 variant="outline"
                 size="sm"
-                className="mt-4 shrink-0 hover:bg-[#1DD762] hover:text-white"
+                className="mt-3 shrink-0 hover:bg-[#1DD762] hover:text-white sm:mt-4"
               >
                 <Mail className="mr-2 h-4 w-4" />
                 Contato
@@ -70,22 +70,22 @@ const DeveloperCard = ({ dev }: { dev: Developer }) => {
 
 const SupporterCard = ({ supporter }: { supporter: Supporter }) => {
   return (
-    <Card className="h-full min-h-[28rem] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
-      <CardContent className="flex h-full flex-col overflow-hidden px-4 pt-5 text-center sm:px-6 sm:pt-6">
-        <Avatar className="mx-auto mb-4 h-16 w-16 shrink-0 ring-2 ring-primary/20">
+    <Card className="h-auto min-h-0 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(0,0,0,0.18)] sm:h-full sm:min-h-[24rem] 2xl:min-h-[28rem]">
+      <CardContent className="flex flex-col overflow-hidden px-4 pb-4 pt-4 text-center sm:h-full sm:px-6 sm:pb-6 sm:pt-6">
+        <Avatar className="mx-auto mb-3 h-14 w-14 shrink-0 ring-2 ring-primary/20 sm:mb-4 sm:h-16 sm:w-16">
           {supporter.image && <AvatarImage src={supporter.image} alt={supporter.name} />}
           <AvatarFallback className="bg-primary/20 text-lg font-bold text-primary">
             {supporter.initials}
           </AvatarFallback>
         </Avatar>
 
-        <h2 className="mb-1 min-h-[3.25rem] shrink-0 break-words text-base font-semibold leading-tight text-foreground sm:text-lg">
+        <h2 className="mb-1 shrink-0 break-words text-base font-semibold leading-tight text-foreground sm:text-lg">
           {supporter.name}
         </h2>
-        <p className="mb-3 min-h-[2.5rem] shrink-0 break-words text-xs font-medium leading-relaxed text-primary sm:min-h-[3rem] sm:text-sm">
+        <p className="mb-3 shrink-0 break-words text-xs font-medium leading-relaxed text-primary sm:text-sm">
           {supporter.role}
         </p>
-        <p className="flex-1 overflow-hidden break-words text-xs leading-relaxed text-muted-foreground sm:text-sm">
+        <p className="overflow-hidden break-words text-xs leading-relaxed text-muted-foreground sm:flex-1 sm:text-sm">
           {supporter.description}
         </p>
 
@@ -95,7 +95,7 @@ const SupporterCard = ({ supporter }: { supporter: Supporter }) => {
               <Button
                 variant="outline"
                 size="sm"
-                className="mt-4 shrink-0 hover:bg-[#1DD762] hover:text-white"
+                className="mt-3 shrink-0 hover:bg-[#1DD762] hover:text-white sm:mt-4"
               >
                 <Mail className="mr-2 h-4 w-4" />
                 Contato
@@ -154,7 +154,7 @@ const Developers = () => {
             </p>
           </div>
 
-          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-6 sm:items-stretch sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {developers.map((dev) => (
               <DeveloperCard key={dev.name} dev={dev} />
             ))}
@@ -169,7 +169,7 @@ const Developers = () => {
             </p>
           </div>
 
-          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-6 sm:items-stretch sm:grid-cols-2 lg:grid-cols-3">
             {supporters.map((supporter) => (
               <SupporterCard key={supporter.name} supporter={supporter} />
             ))}
