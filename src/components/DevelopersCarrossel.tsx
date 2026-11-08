@@ -51,39 +51,6 @@ const DeveloperCard = ({ dev, active = false }: DeveloperCardProps) => {
           {dev.role}
         </p>
         <div className="mt-1 flex h-7 items-center justify-center">
-        {active && dev.links && dev.links.length > 0 && (
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button
-                variant="outline"
-                size="sm"
-                className="mt-1 h-7 rounded-md border-primary/30 px-2 text-[0.65rem] hover:bg-[#1DD762] hover:text-white"
-              >
-                <Mail className="h-3 w-3 mr-1" />
-                Contato
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-56 p-2" align="center">
-              <div className="flex flex-col gap-1">
-                {dev.links.map((link) => {
-                  const Icon = link.icon;
-                  return (
-                    <a
-                      key={link.label}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center gap-2 rounded-md px-3 py-2 text-sm text-foreground hover:bg-[#1DD762] hover:text-white transition-colors"
-                    >
-                      <Icon className="h-4 w-4 text-primary group-hover:text-white" />
-                      {link.label}
-                    </a>
-                  );
-                })}
-              </div>
-            </PopoverContent>
-          </Popover>
-        )}
         </div>
       </div>
       
