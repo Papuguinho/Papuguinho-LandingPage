@@ -110,7 +110,7 @@ const Supporters = () => {
   }, [api]);
 
   return (
-    <section id="supporters" className="py-20 bg-background">
+    <section id="supporters" className="bg-background pb-20 pt-8">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10 sm:mb-12 animate-fade-in-up">
           <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 text-primary break-words leading-tight px-2">
