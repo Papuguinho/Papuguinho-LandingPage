@@ -1,136 +1,59 @@
-import { useEffect, useState } from "react";
-import { ArrowLeft } from "lucide-react";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from "@/components/ui/carousel";
-import { cn } from "@/lib/utils";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { awards } from "@/data/awardsData";
 
 const Awards = () => {
-  const [api, setApi] = useState<CarouselApi>();
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    if (!api) return;
-
-    const onSelect = () => setActiveIndex(api.selectedScrollSnap());
-    onSelect();
-
-    api.on("select", onSelect);
-    api.on("reInit", onSelect);
-
-    return () => {
-      api.off("select", onSelect);
-      api.off("reInit", onSelect);
-    };
-  }, [api]);
-
   return (
-    <main className="min-h-screen bg-background">
-      <Header />
+    <div className="bg-background">
 
-      <section className="pt-28 pb-10">
+      <section className="pt-24 pb-8">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 text-primary break-words leading-tight px-2">
               Premiações
-            </h1>
+            </h2>
             <p className="mt-4 text-base text-muted-foreground sm:text-lg">
               Reconhecimentos que destacam a relevância do Papuguinho para a
               educação inclusiva e a inovação social.
             </p>
-
-            <div className="mt-8 flex justify-center">
-              <Button asChild size="lg">
-                <Link to="/">
-                  <ArrowLeft className="mr-2 h-4 w-4" />
-                  Voltar ao início
-                </Link>
-              </Button>
-            </div>
           </div>
         </div>
       </section>
 
-      <section className="pb-20">
+      <section className="pb-8">
         <div className="container mx-auto px-4">
-          <Carousel
-            setApi={setApi}
-            opts={{ align: "center", loop: true }}
-            className="mx-auto max-w-5xl"
-          >
-            <CarouselContent>
-              {awards.map((award, index) => (
-                <CarouselItem key={award.title} className="basis-full">
-                  <div
-                    className={cn(
-                      "rounded-[2rem] p-4 shadow-[0_12px_35px_rgba(0,0,0,0.08)] sm:p-8",
-                      index % 2 === 0 ? "bg-[#1dd762]" : "bg-[#a4a8ac]",
-                    )}
-                  >
-                    <div className="mx-auto flex h-[220px] max-w-4xl items-center justify-center overflow-hidden rounded-[1.5rem] bg-white/10 sm:h-[260px]">
-                      <img
-                        src={award.image}
-                        alt={award.title}
-                        className="h-full w-full object-contain p-3 sm:p-6"
-                      />
-                    </div>
+          <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-3">
+            {awards.map((award) => (
+              <article
+                key={award.title}
+                className="rounded-2xl border border-border/60 bg-card p-3 shadow-sm transition-shadow hover:shadow-md sm:p-4"
+              >
+                <div className="flex h-[170px] items-center justify-center overflow-hidden rounded-xl bg-muted/30 sm:h-[190px]">
+                  <img
+                    src={award.image}
+                    alt={award.title}
+                    className="h-full w-full object-contain p-4 sm:p-5"
+                  />
+                </div>
 
-                    <div className="mt-6 text-center">
-                      <h2 className="text-2xl font-bold text-foreground sm:text-4xl">
-                        {award.title}
-                      </h2>
-                      <p className="mt-3 text-sm font-bold uppercase tracking-wide text-foreground/80 sm:text-base">
-                        {award.description}
-                      </p>
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-
-            <CarouselPrevious
-              className="-left-2 text-foreground/80 hover:bg-black/5 sm:-left-5"
-              aria-label="Prêmio anterior"
-            />
-            <CarouselNext
-              className="-right-2 text-foreground/80 hover:bg-black/5 sm:-right-5"
-              aria-label="Próximo prêmio"
-            />
-          </Carousel>
-
+                <h2 className="mt-3 text-center text-sm font-medium leading-snug tracking-normal text-foreground sm:text-base">
+                  {award.title}
+                </h2>
+              </article>
+            ))}
+          </div>
           <div className="mt-8 flex justify-center">
-            <div className="flex items-center gap-2">
-              {awards.map((award, index) => (
-                <button
-                  key={award.title}
-                  type="button"
-                  onClick={() => api?.scrollTo(index)}
-                  aria-label={`Ir para ${award.title}`}
-                  className={cn(
-                    "h-2.5 rounded-full transition-all",
-                    activeIndex === index
-                      ? "w-8 bg-primary"
-                      : "w-2.5 bg-muted-foreground/30",
-                  )}
-                />
-              ))}
-            </div>
+            <Button
+              type="button"
+              size="lg"
+              variant="outline"
+              className="border-2 border-primary text-primary hover:bg-primary/5"
+            >
+              Saiba Mais
+            </Button>
           </div>
         </div>
       </section>
-
-      <Footer />
-    </main>
+    </div>
   );
 };
 

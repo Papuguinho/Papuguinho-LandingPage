@@ -10,6 +10,7 @@ import FAQ from "@/components/FAQ";
 import Benefits from "@/components/Benefits";
 import CTA from "@/components/CTA";
 import Partners from "@/components/Partners";
+import Awards from "@/components/Awards";
 import Developers from "@/components/Developers";
 import Supporters from "@/components/Supporters";
 import Footer from "@/components/Footer";
@@ -48,6 +49,7 @@ const Index = () => {
       <FAQ />
       <Benefits />
       <Partners />
+      <Awards />
       <Developers />
       <Supporters />
       <div id="cta">
