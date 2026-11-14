@@ -21,35 +21,30 @@ const Awards = () => {
 
       <section className="pb-8">
         <div className="container mx-auto px-4">
-          <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-3">
+          <div className="mx-auto grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {awards.map((award) => (
               <article
                 key={award.title}
-                className="rounded-2xl border border-border/60 bg-card p-3 shadow-sm transition-shadow hover:shadow-md sm:p-4"
+                className="w-full rounded-lg border bg-card p-4 text-center transition-all duration-500 sm:p-6"
               >
-                <div className="flex h-[170px] items-center justify-center overflow-hidden rounded-xl bg-muted/30 sm:h-[190px]">
+                <div className="flex h-28 items-center justify-center sm:h-36">
                   <img
                     src={award.image}
                     alt={award.title}
-                    className="h-full w-full object-contain p-4 sm:p-5"
+                    loading="lazy"
+                    decoding="async"
+                    className="max-h-full max-w-full object-contain"
                   />
                 </div>
 
-                <h2 className="mt-3 text-center text-sm font-medium leading-snug tracking-normal text-foreground sm:text-base">
+                <h3 className="mt-4 min-h-10 text-sm font-semibold text-foreground sm:mt-5 sm:min-h-12 sm:text-base">
                   {award.title}
-                </h2>
+                </h3>
               </article>
             ))}
           </div>
-          <div className="mt-8 flex justify-center">
-            <Button
-              type="button"
-              size="lg"
-              variant="outline"
-              className="border-2 border-primary text-primary hover:bg-primary/5"
-            >
-              Saiba Mais
-            </Button>
+          <div className="mt-8 text-center">
+            <Button type="button">Saiba mais</Button>
           </div>
         </div>
       </section>
