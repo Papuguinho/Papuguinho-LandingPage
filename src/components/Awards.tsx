@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { awards } from "@/data/awardsData";
 
 const Awards = () => {
@@ -44,7 +45,9 @@ const Awards = () => {
             ))}
           </div>
           <div className="mt-8 text-center">
-            <Button type="button">Saiba mais</Button>
+            <Button asChild>
+              <Link to="/premios">Saiba mais</Link>
+            </Button>
           </div>
         </div>
       </section>
