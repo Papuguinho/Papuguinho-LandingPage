@@ -1,6 +1,6 @@
-import boasPraticasImage from "@/assets/gallery/awards/boaspraticasImage.jpg";
-import incentivoRhImage from "@/assets/gallery/awards/icentivoRhImage.png";
-import reditecImage from "@/assets/gallery/awards/reditecImage.jpg";
+import premioModernaImage from "@/assets/awards/premioModernaImage.webp";
+import premioDireitosHumanosImage from "@/assets/awards/premioDireitosHumanosImage.webp";
+import premioReditecImage from "@/assets/awards/premioReditectImage.webp";
 
 export type Award = {
   title: string;
@@ -10,14 +10,14 @@ export type Award = {
 export const awards: Award[] = [
   {
     title: "Prêmio Boas Práticas na Escola",
-    image: boasPraticasImage,
+    image: premioModernaImage,
   },
   {
     title: "Prêmio de Incentivo à Pesquisa em Direitos Humanos",
-    image: incentivoRhImage,
+    image: premioDireitosHumanosImage,
   },
   {
     title: "Reditec",
-    image: reditecImage,
+    image: premioReditecImage,
   },
 ];
