@@ -8,6 +8,7 @@ import Partners from "./pages/Partners";
 import Privacidade from "./pages/Privacidade";
 import Apoie from "./pages/Apoie";
 import Premios from "./pages/Premios";
+import Galeria from "./pages/Galeria";
 import NotFound from "./pages/NotFound";
 import Developers from "./pages/Developers";
 
@@ -29,6 +30,8 @@ const App = () => (
           <Route path="/apoiar" element={<Apoie />} />
           <Route path="/apoia" element={<Apoie />} />
           <Route path="/premios" element={<Premios />} />
+          <Route path="/galeria" element={<Galeria />} />
+          <Route path="/telas" element={<Galeria />} />
           <Route path="/desenvolvedores" element={<Developers />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
