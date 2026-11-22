@@ -38,12 +38,11 @@ const Header = () => {
 
   const navItems = [
     { label: "Início", id: "hero" },
-    { label: "Sobre", id: "about" },
-    { label: "Recursos", id: "features" },
     { label: "Galeria", id: "gallery" },
     { label: "Vídeos", id: "videos" },
     { label: "FAQ", id: "faq" },
     { label: "Parcerias", id: "partners" },
+    { label: "Premiações", id: "awards" },
     { label: "Desenvolvedores", id: "developers" },
   ];
 

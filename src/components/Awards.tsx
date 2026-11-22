@@ -4,7 +4,7 @@ import { awards } from "@/data/awardsData";
 
 const Awards = () => {
   return (
-    <div className="bg-background">
+    <div id="awards" className="bg-background">
 
       <section className="pt-24 pb-8">
         <div className="container mx-auto px-4">
