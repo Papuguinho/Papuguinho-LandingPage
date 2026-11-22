@@ -4,6 +4,7 @@ import rannyImage from "@/assets/profile/rannyImage.webp";
 import deniseImage from "@/assets/profile/deniseImage.webp";
 import luizFelipeImage from "@/assets/profile/luizFelipeImage.webp";
 import victorImage from "@/assets/profile/victorImage.webp";
+import tardelli from "@/assets/profile/tardelli.webp";
 
 export type DeveloperLink = {
   label: string;
@@ -21,6 +22,14 @@ export type Developer = {
 };
 
 export const developers: Developer[] = [
+    {
+    name: "Tardelli Ronan Coelho Stekel",
+    role: "Cofundador e Orientador do Projeto",
+    description:
+      "Doutor em Geofísica Espacial (INPE), Professor e pesquisador (IFSP-Jacareí). Responsável pela criação do projeto, orientação científica e coordenação da equipe.",
+    initials: "TS",
+    image: tardelli
+  },
   {
     name: "Gabriel de Paula Baroni",
     role: "Cofundador, Desenvolvedor de Software e Pesquisador",
@@ -134,12 +143,5 @@ export const developers: Developer[] = [
     links: [
       { label: "LinkedIn", url: "https://www.linkedin.com/in/victoranunciato/", icon: Linkedin }
     ]
-  },
-    {
-    name: "Tardelli Ronan Coelho Stekel",
-    role: "Cofundador e Orientador do Projeto",
-    description:
-      "Doutor em Geofísica Espacial (INPE), Professor e pesquisador (IFSP-Jacareí). Responsável pela criação do projeto, orientação científica e coordenação da equipe.",
-    initials: "TS",
   }
 ];

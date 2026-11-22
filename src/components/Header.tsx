@@ -62,14 +62,15 @@ const Header = () => {
         {/* Desktop Navigation (lg+) */}
         <div className="hidden lg:flex items-center gap-6">
           {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className="text-foreground/80 hover:text-primary transition-colors font-medium"
-            >
-              {item.label}
-            </button>
-          ))}
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="text-foreground/80 hover:text-primary transition-colors font-medium"
+              >
+                {item.label}
+              </button>
+            )
+          )}
           {/* "Apoiar" era só mais um link de texto no meio dos outros oito e
               sumia. Vira botão âmbar: é a única coisa em âmbar no cabeçalho. */}
           <Button
@@ -121,14 +122,15 @@ const Header = () => {
           </SheetHeader>
           <nav className="flex flex-col gap-2 mt-6">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-left text-foreground/80 hover:text-primary hover:bg-accent transition-colors font-medium py-3 px-3 rounded-md"
-              >
-                {item.label}
-              </button>
-            ))}
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-left text-foreground/80 hover:text-primary hover:bg-accent transition-colors font-medium py-3 px-3 rounded-md"
+                >
+                  {item.label}
+                </button>
+              )
+            )}
             <Button
               asChild
               className="w-full mt-4 bg-secondary text-secondary-foreground hover:bg-secondary/90"

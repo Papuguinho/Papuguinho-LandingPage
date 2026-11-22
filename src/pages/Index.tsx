@@ -10,7 +10,7 @@ import Benefits from "@/components/Benefits";
 import PartnersCarrossel from "@/components/PartnersCarrossel";
 import Awards from "@/components/Awards";
 import CTA from "@/components/CTA";
-import Developers from "@/components/Developers";
+import Developers from "@/components/DevelopersHome";
 import Supporters from "@/components/Supporters";
 import Footer from "@/components/Footer";
 import SupportSection from "@/components/SupportSection";
