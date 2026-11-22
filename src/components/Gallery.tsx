@@ -1,23 +1,11 @@
 import { Card } from "@/components/ui/card";
-import papuguinho01 from "@/assets/gallery/cadastro.webp";
-import papuguinho02 from "@/assets/gallery/historico.webp";
-import papuguinho03 from "@/assets/gallery/Prancha_geral.webp";
-import papuguinho04 from "@/assets/gallery/pranchas.webp";
-import papuguinho05 from "@/assets/gallery/modo_infantil.webp";
-import papuguinho06 from "@/assets/gallery/editar_pranchas.webp";
+import papuguinho01 from "@/assets/gallery/rotinas.webp";
+import papuguinho03 from "@/assets/gallery/pranchaPrincipal.webp";
+import papuguinho04 from "@/assets/gallery/pranchasTematicas.webp";
+
 
 const Gallery = () => {
   const screenshots = [
-    {
-      title: "Tela de Cadastro",
-      description: "Crie sua conta de forma rápida e fácil",
-      image: papuguinho01,
-    },
-    {
-      title: "Entrar no Histórico",
-      description: "Acesse o histórico com e-mail e senha",
-      image: papuguinho02,
-    },
     {
       title: "Prancha Geral",
       description: "Comunicação visual com ícones intuitivos",
@@ -25,18 +13,13 @@ const Gallery = () => {
     },
     {
       title: "Pranchas Temáticas",
-      description: "Categorias organizadas por temas",
+      description: "Categorias organizadas por temas personalizáveis",
       image: papuguinho04,
     },
     {
-      title: "Modo Infantil",
-      description: "Fixe a tela para uso seguro por crianças",
-      image: papuguinho05,
-    },
-    {
-      title: "Personalize seu App",
-      description: "Crie pictogramas e edite à sua maneira",
-      image: papuguinho06,
+      title: "Rotinas",
+      description: "Rotinas personálizaveis",
+      image: papuguinho01,
     },
   ];
 
