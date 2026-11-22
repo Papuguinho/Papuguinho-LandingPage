@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import Partners from "./pages/Partners";
 import Privacidade from "./pages/Privacidade";
 import Apoie from "./pages/Apoie";
 import NotFound from "./pages/NotFound";
@@ -18,6 +19,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/parcerias" element={<Partners />} />
           <Route path="/privacidade" element={<Privacidade />} />
           {/* /apoie é o link curto de divulgar em entrevista e bio; /apoiar e
               /apoia existem só para quem digitar errado não cair no 404. */}
