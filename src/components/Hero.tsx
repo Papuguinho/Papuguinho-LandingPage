@@ -1,7 +1,6 @@
 import { Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-// .webp: 123 KB no lugar de 1,73 MB do .png — esta é a imagem de LCP da página.
 // .webp 896×896: 43 KB no lugar de 1,87 MB do .png — esta é a imagem de LCP da página.
 import papuguinhoMascot from "@/assets/papuguinho-mascot-v2.webp";
 const Hero = () => {
