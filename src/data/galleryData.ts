@@ -3,6 +3,7 @@ import pranchaPrincipalImage from "@/assets/gallery/pranchaPrincipal.webp";
 import pranchasTematicasImage from "@/assets/gallery/pranchasTematicas.webp";
 import historicoImage from "@/assets/gallery/historico.webp";
 import rotinasImage from "@/assets/gallery/rotinas.webp";
+import ModoInfantil from "@/assets/gallery/ModoInfantil.webp";
 
 export type ScreenItem = {
   id?: string;
@@ -51,13 +52,12 @@ export const galleryScreens: ScreenItem[] = [
   },
     {
     id: "cadastro",
-    title: "Tela de Cadastro",
+    title: "Tela de Cadastro e Login",
     description:
-      "Permite o cadastro rápido e seguro dos usuários, garantindo acesso personalizado às pranchas e configurações do aplicativo.",
+      "Permite o cadastro e Login rápido e seguro dos usuários, garantindo acesso personalizado às pranchas e configurações do aplicativo.",
     image: cadastroImage,
     features: [
-      "Cadastro simples com e-mail e senha",
-      "Perfis adaptados para mediadores e usuários",
+      "Cadastro simples com e-mail e senha ou por uma conta Google",
       "Segurança e privacidade dos dados salvos na nuvem",
     ],
   },
@@ -71,6 +71,18 @@ export const galleryScreens: ScreenItem[] = [
       "Acesso rápido às frases montadas recentemente",
       "Histórico cronológico de comunicações",
       "Agilidade no dia a dia com repetições comuns",
+    ],
+  },
+   {
+    id: "modo-infantil",
+    title: "Modo Infantil",
+    description:
+      "Ao ser ativado, esse modo bloqueia a seção de Ajustes e trava a tela do dispositivo no aplicativo.",
+    image: ModoInfantil,
+    features: [
+      "Torna o ambiente digital seguro para a criança",
+      "Bloqueia notificações",
+      "Ao ativar o Modo Infantil o responsável tem certeza de que a criança está dentro do Papuguinho",
     ],
   },
   /*
