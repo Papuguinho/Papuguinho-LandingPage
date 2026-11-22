@@ -1,10 +1,10 @@
 import { Card } from "@/components/ui/card";
-import papuguinho01 from "@/assets/gallery/papuguinho01.webp";
-import papuguinho02 from "@/assets/gallery/papuguinho02.webp";
-import papuguinho03 from "@/assets/gallery/papuguinho03.webp";
-import papuguinho04 from "@/assets/gallery/papuguinho04.webp";
-import papuguinho05 from "@/assets/gallery/papuguinho05.webp";
-import papuguinho06 from "@/assets/gallery/papuguinho06.webp";
+import papuguinho01 from "@/assets/gallery/cadastro.webp";
+import papuguinho02 from "@/assets/gallery/historico.webp";
+import papuguinho03 from "@/assets/gallery/Prancha_geral.webp";
+import papuguinho04 from "@/assets/gallery/pranchas.webp";
+import papuguinho05 from "@/assets/gallery/modo_infantil.webp";
+import papuguinho06 from "@/assets/gallery/editar_pranchas.webp";
 
 const Gallery = () => {
   const screenshots = [
