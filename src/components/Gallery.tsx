@@ -1,44 +1,11 @@
 import { Card } from "@/components/ui/card";
-import papuguinho01 from "@/assets/gallery/cadastro.webp";
-import papuguinho02 from "@/assets/gallery/historico.webp";
-import papuguinho03 from "@/assets/gallery/Prancha_geral.webp";
-import papuguinho04 from "@/assets/gallery/Pranchas.webp";
-import papuguinho05 from "@/assets/gallery/modo_infantil.webp";
-import papuguinho06 from "@/assets/gallery/editar_pranchas.webp";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { galleryScreens } from "@/data/galleryData";
 
 const Gallery = () => {
-  const screenshots = [
-    {
-      title: "Tela de Cadastro",
-      description: "Crie sua conta de forma rápida e fácil",
-      image: papuguinho01,
-    },
-    {
-      title: "Entrar no Histórico",
-      description: "Acesse o histórico com e-mail e senha",
-      image: papuguinho02,
-    },
-    {
-      title: "Prancha Geral",
-      description: "Comunicação visual com ícones intuitivos",
-      image: papuguinho03,
-    },
-    {
-      title: "Pranchas Temáticas",
-      description: "Categorias organizadas por temas",
-      image: papuguinho04,
-    },
-    {
-      title: "Modo Infantil",
-      description: "Fixe a tela para uso seguro por crianças",
-      image: papuguinho05,
-    },
-    {
-      title: "Personalize seu App",
-      description: "Crie pictogramas e edite à sua maneira",
-      image: papuguinho06,
-    },
-  ];
+  // Exibe as 3 primeiras telas como prévia na página inicial
+  const previewScreens = galleryScreens.slice(0, 3);
 
   return (
     <section id="gallery" className="py-20 bg-muted/30">
@@ -51,27 +18,35 @@ const Gallery = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {screenshots.map((screenshot, index) => (
+          {previewScreens.map((screen, index) => (
             <Card
-              key={index}
-              className="overflow-hidden hover:shadow-lg transition-shadow duration-300 animate-fade-in-up"
+              key={screen.title}
+              className="overflow-hidden hover:shadow-lg transition-shadow duration-300 animate-fade-in-up flex flex-col"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="aspect-video bg-gradient-to-br from-primary/5 to-accent/5 overflow-hidden flex items-center justify-center">
+              <div className="aspect-video bg-gradient-to-br from-primary/5 to-accent/5 overflow-hidden flex items-center justify-center p-2">
                 <img
-                  src={screenshot.image}
-                  alt={screenshot.title}
+                  src={screen.image}
+                  alt={screen.title}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-4">
-                <h3 className="font-semibold text-lg mb-2">{screenshot.title}</h3>
-                <p className="text-sm text-muted-foreground">{screenshot.description}</p>
+              <div className="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">{screen.title}</h3>
+                  <p className="text-sm text-muted-foreground line-clamp-2">{screen.description}</p>
+                </div>
               </div>
             </Card>
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <Button asChild>
+            <Link to="/galeria">Saiba mais</Link>
+          </Button>
         </div>
       </div>
     </section>
